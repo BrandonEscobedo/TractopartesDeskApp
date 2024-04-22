@@ -6,9 +6,7 @@ using System.Windows;
 
 namespace TractopartesDeskApp
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+    
     public partial class App : Application
     {
 
@@ -23,7 +21,6 @@ namespace TractopartesDeskApp
                     services.AddScoped< Data.ISqlDataAccess,  Data.SqlDataAccess>();
                 })
                 .Build();
-
         }
         protected override async void OnStartup(StartupEventArgs e)
         {

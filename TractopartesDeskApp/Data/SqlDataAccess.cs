@@ -25,8 +25,7 @@ namespace TractopartesDeskApp.Data
         {
             using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
             {
-                connection.Open();
-                MessageBox.Show("hola");
+                
             }
         }
         public async Task<bool> SaveData<T>(string sql,T parameters)

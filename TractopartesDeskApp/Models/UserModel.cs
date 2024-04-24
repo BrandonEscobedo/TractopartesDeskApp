@@ -19,7 +19,9 @@ namespace TractopartesDeskApp.Models
         [Column("p_genero")]
 
         public string p_genero { get; set; } = "";
-
+        public string email { get; set; } = "";
+        public int telefono1 { get; set; }
+        public int telefono2 { get; set; }
 
 
     }

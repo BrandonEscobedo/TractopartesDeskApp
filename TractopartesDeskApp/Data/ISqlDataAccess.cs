@@ -3,6 +3,6 @@
     public interface ISqlDataAccess
     {
         void LoadDataAsync();
-        Task<bool> SaveData<T>(string sql, T parameters);
+        Task<bool> SaveData<T>(string sql, T parameters);   
     }
 }

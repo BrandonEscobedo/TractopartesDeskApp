@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g8oLCvWwZ8jFvd9V8FR7Gv5D3HHQRYfNsVFcyaPQo9tvOvWId/5vsIkDsDx6oOFsL/kxPKRftx05d2Cci3aUxw==",
+  "dgSpecHash": "ni3rtwKhZVKZgVSMa8PBYcXpB//RTDzCLBvzhdopjAP4GoHGrJ1w9uEX4WGziyrOuATHkgJMMuFWX13PzBp7mw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\brand\\Source\\Repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj",
+  "projectFilePath": "C:\\Users\\brand\\source\\repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\brand\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\brand\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",

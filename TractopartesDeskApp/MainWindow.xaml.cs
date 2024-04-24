@@ -28,16 +28,19 @@ namespace TractopartesDeskApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlDataAccess.LoadDataAsync();
+
         }
 
         private async void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            UserModel model =new UserModel();
+            UserModel model = new UserModel();
             model.p_nombres = txtNombre.Text;
-            model.p_apellidomaterno =txtApMaterno.Text;
+            model.p_apellidomaterno = txtApMaterno.Text;
             model.p_apellidopaterno = txtApPaterno.Text;
             model.p_genero = txtGenero.Text;
+            model.telefono1 = Convert.ToInt32(txtTelefono1.Text);
+            model.telefono2 = Convert.ToInt32(txtTelefono2.Text);
+            model.email = txtCorreo.Text;
            bool response= await SqlDataAccess.SaveData("public.crearusuariosdatospersonales", model) ;
             if (response) CleanTxt();
         }

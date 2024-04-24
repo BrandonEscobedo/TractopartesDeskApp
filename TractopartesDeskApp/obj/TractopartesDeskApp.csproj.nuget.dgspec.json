@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brand\\Source\\Repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj": {}
+    "C:\\Users\\brand\\source\\repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brand\\Source\\Repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj": {
+    "C:\\Users\\brand\\source\\repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brand\\Source\\Repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj",
+        "projectUniqueName": "C:\\Users\\brand\\source\\repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj",
         "projectName": "TractopartesDeskApp",
-        "projectPath": "C:\\Users\\brand\\Source\\Repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj",
+        "projectPath": "C:\\Users\\brand\\source\\repos\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj",
         "packagesPath": "C:\\Users\\brand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brand\\Source\\Repos\\TractopartesDeskApp\\TractopartesDeskApp\\obj\\",
+        "outputPath": "C:\\Users\\brand\\source\\repos\\TractopartesDeskApp\\TractopartesDeskApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brand\\AppData\\Roaming\\NuGet\\NuGet.Config",

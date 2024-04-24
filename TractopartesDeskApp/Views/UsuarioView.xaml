@@ -15,7 +15,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TractopartesDeskApp"
-
+      
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -30,11 +30,14 @@
             <RowDefinition Height="341*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="800*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="579*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.RowSpan="2">
+        <Grid Grid.RowSpan="2" Grid.ColumnSpan="4">
 
             <!-- Rectangulos bordeados -->
             <Border CornerRadius="10" BorderThickness="1" Height="465" Width="758" Background="White"/>
@@ -42,9 +45,9 @@
             <Border CornerRadius="10,10,0,0" BorderThickness="1" Width="758" Background="#FF3CC0D4" Margin="21,18,21,430"/>
 
             <!-- Textos de Registrar Usuarios -->
-            <TextBlock HorizontalAlignment="Left" Height="18" Margin="38,42,0,0" TextWrapping="Wrap" Text="Registrar Usuarios" VerticalAlignment="Top" Width="108" Foreground="Black" Opacity="2" FontFamily="Arial" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="38,42,0,0" TextWrapping="Wrap" Text="Registrar Clientes" VerticalAlignment="Top" Width="108" Foreground="Black" Opacity="2" FontFamily="Arial" FontWeight="Bold"/>
         </Grid>
-        <Border BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Center" Height="145" Margin="0,80,0,0" VerticalAlignment="Top" Width="726" Grid.RowSpan="2">
+        <Border BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Left" Height="145" Margin="37,80,0,0" VerticalAlignment="Top" Width="726" Grid.RowSpan="2" Grid.ColumnSpan="4">
             <StackPanel>
                 <TextBlock HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="Datos Personlaes" VerticalAlignment="Top" Width="98" TextAlignment="Center" Foreground="#FF1C24CF" Margin="9,9,0,0" FontFamily="Arial"/>
             </StackPanel>
@@ -52,24 +55,20 @@
 
         <!-- Apartado de Datos Personales exceptuando Fecha de Nacimiento -->
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="60,120,0,0" TextWrapping="Wrap" Text="Nombres" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.938,0.476"/>
-        <TextBox x:Name="txtNombre" Margin="60,146,620,334" Grid.RowSpan="2"/>
+        <TextBox x:Name="txtNombre" Margin="60,146,400,334" Grid.RowSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="228,124,0,0" TextWrapping="Wrap" Text="Apellido Parterno" VerticalAlignment="Top" Width="95"/>
         <TextBox x:Name="txtApPaterno" HorizontalAlignment="Left" Height="20" Margin="228,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Grid.RowSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="390,124,0,0" TextWrapping="Wrap" Text="Apellido Materno" VerticalAlignment="Top" Width="95"/>
         <TextBox x:Name="txtApMaterno" HorizontalAlignment="Left" Height="20" Margin="390,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.RowSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="60,12,0,308" TextWrapping="Wrap" Text="Fecha de Nacimiento" Width="113" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="342,12,0,308" TextWrapping="Wrap" Text="Género" Width="44" Grid.Row="1"/>
-        <TextBox x:Name="txtGenero" HorizontalAlignment="Left" Margin="342,33,0,286" TextWrapping="Wrap" Width="85" TextAlignment="Center" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="68,10,0,310" TextWrapping="Wrap" Text="Género" Width="44" Grid.Row="1" RenderTransformOrigin="-5.41,0.792"/>
+        <TextBox x:Name="txtGenero" HorizontalAlignment="Left" Margin="60,31,0,288" TextWrapping="Wrap" Width="84" TextAlignment="Center" Grid.Row="1" RenderTransformOrigin="-2.726,0.609"/>
 
 
         <!-- Apartado de Fecha de Nacimiento -->
-        <StackPanel Grid.RowSpan="2">
-            <DatePicker x:Name="dpFecha" Margin="60,190,595,0" Height="25" Background="White" Foreground="Black" RenderTransformOrigin="0.475,0.844"/>
-            <Button x:Name="btnSeleccionar" Content="Seleccionar" Click="Button_Click" Height="24" Margin="205,-25,518,0"/>
-        </StackPanel>
+        <StackPanel Grid.RowSpan="2" Grid.ColumnSpan="4"/>
 
         <!-- Apartado de Datos Fiscales -->
-        <Border  BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Center" Height="138" Margin="0,83,0,0" VerticalAlignment="Top" Width="725" Grid.Row="1">
+        <Border  BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Left" Height="138" Margin="37,83,0,0" VerticalAlignment="Top" Width="725" Grid.Row="1" Grid.ColumnSpan="4">
             <StackPanel>
                 <Grid>
 
@@ -109,13 +108,14 @@
             </StackPanel>
         </Border>
 
-        <Border BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Center" Height="88" Margin="0,226,0,0" VerticalAlignment="Top" Width="725" Grid.Row="1">
+        <Border BorderBrush="Transparent" BorderThickness="1" HorizontalAlignment="Left" Height="88" Margin="37,226,0,0" VerticalAlignment="Top" Width="725" Grid.Row="1" Grid.ColumnSpan="4">
             <StackPanel>
                 <Grid>
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="32"/>
-                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="13.062"/>
+                        <RowDefinition Height="12.938"/>
                         <RowDefinition Height="26"/>
                     </Grid.RowDefinitions>
 
@@ -124,16 +124,16 @@
                         <ColumnDefinition Width="400"/>
                         <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock HorizontalAlignment="Left" Height="18" Margin="9,7,0,0" TextWrapping="Wrap" Text="Datos de Localización"  VerticalAlignment="Top" Width="129" Foreground="#FF1C24CF" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Arial"/>
-                    <TextBlock HorizontalAlignment="Left" Height="18" Margin="25,4,0,0" TextWrapping="Wrap" Text="Teléfono 1"  VerticalAlignment="Top" Width="117" Foreground="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
-                    <TextBlock HorizontalAlignment="Left" Height="18" Margin="165,4,0,0" TextWrapping="Wrap" Text="Teléfono 2"  VerticalAlignment="Top" Width="117" Foreground="Black" Grid.Row="1" Grid.Column="1"/>
-                    <TextBlock HorizontalAlignment="Left" Height="18" Margin="25,4,0,0" TextWrapping="Wrap" Text="Correo Electronico"  VerticalAlignment="Top" Width="117" Foreground="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Height="18" Margin="9,0,0,0" TextWrapping="Wrap" Text="Datos de Localización"  VerticalAlignment="Center" Width="129" Foreground="#FF1C24CF" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Arial"/>
+                    <TextBlock HorizontalAlignment="Left" Height="18" Margin="25,4,0,0" TextWrapping="Wrap" Text="Teléfono 1"  VerticalAlignment="Top" Width="117" Foreground="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Height="18" Margin="165,4,0,0" TextWrapping="Wrap" Text="Teléfono 2"  VerticalAlignment="Top" Width="117" Foreground="Black" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Height="18" Margin="25,0,0,0" TextWrapping="Wrap" Text="Correo Electronico"  VerticalAlignment="Center" Width="117" Foreground="Black" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-                    <TextBox x:Name="txtTelefono1" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextAlignment="Center" Grid.Row="1"/>
-                    <TextBox x:Name="txtTelefono2" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="233,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextAlignment="Center" Grid.Row="1"/>
-                    <TextBox x:Name="txtCorreo" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="20,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Grid.Row="2"/>
+                    <TextBox x:Name="txtTelefono1" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextAlignment="Center" Grid.Row="1" Grid.RowSpan="2"/>
+                    <TextBox x:Name="txtTelefono2" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="233,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" TextAlignment="Center" Grid.Row="1" Grid.RowSpan="2"/>
+                    <TextBox x:Name="txtCorreo" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="20,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Grid.Row="3"/>
 
-                    <Border CornerRadius="10" BorderThickness="1" Grid.Column="2" Grid.Row="2" Background="#FF1DFF1D" Margin="0,0,21,0">
+                    <Border CornerRadius="10" BorderThickness="1" Grid.Column="2" Grid.Row="3" Background="#FF1DFF1D" Margin="0,0,21,0">
 
                         <Button x:Name="btnGuardar"
                     Background="#FF1DFF1D"
@@ -145,10 +145,10 @@
                     Cursor=""
                     Grid.Row="2"
                     Grid.Column="2"
-                    Click="btnGuardar_Click" Margin="9,1,9,0" RenderTransformOrigin="0.5,0.5" Height="23" VerticalAlignment="Top"/>
+                    Click="btnGuardar_Click" Margin="9,1,9,0" RenderTransformOrigin="0.5,0.5"/>
                     </Border>
 
-                    <Border CornerRadius="10" BorderThickness="1" Grid.Column="2" Grid.Row="1" Background="Red" Margin="101,25,-85,1" Grid.RowSpan="2">
+                    <Border CornerRadius="10" BorderThickness="1" Grid.Column="2" Grid.Row="2" Background="Red" Margin="101,12,-85,1" Grid.RowSpan="2">
 
                         <Button x:Name="btnCancelar"
                     Background="red"
@@ -168,14 +168,15 @@
             </StackPanel>
         </Border>
 
-        <Line X1="778" Y1="380" X2="22" Y2="380" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2"></Line>
-        <Line X1="764" Y1="80" X2="38" Y2="80" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2"></Line>
-        <Line X1="764" Y1="224" X2="38" Y2="224" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2"></Line>
+        <Line X1="778" Y1="380" X2="22" Y2="380" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="4"></Line>
+        <Line X1="764" Y1="80" X2="38" Y2="80" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="4"></Line>
+        <Line X1="764" Y1="224" X2="38" Y2="224" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="4"></Line>
 
-        <Line X1="39" Y1="235" X2="39" Y2="370" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2"></Line>
-        <Line X1="764" Y1="90" X2="764" Y2="214" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2"></Line>
-        <Line X1="39" Y1="90" X2="39" Y2="214" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2"></Line>
-        <Line X1="764" Y1="235" X2="764" Y2="370" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2"></Line>
+        <Line X1="39" Y1="235" X2="39" Y2="370" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="4"></Line>
+        <Line X1="764" Y1="90" X2="764" Y2="214" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="4"></Line>
+        <Line X1="39" Y1="90" X2="39" Y2="214" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="4"></Line>
+        <Line X1="764" Y1="235" X2="764" Y2="370" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="4"></Line>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="198,-56,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 

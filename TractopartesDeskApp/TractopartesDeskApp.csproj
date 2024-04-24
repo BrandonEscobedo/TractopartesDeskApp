@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <Folder Include="Resource\" />
-    <Folder Include="VIewModel\" />
   </ItemGroup>
 
 </Project>

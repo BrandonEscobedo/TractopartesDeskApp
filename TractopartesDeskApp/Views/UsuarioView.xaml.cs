@@ -23,9 +23,7 @@ namespace TractopartesDeskApp
             InitializeComponent();
             SqlDataAccess = sqlDataAccess;
         }
-
-       
-
+  
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -50,6 +48,9 @@ namespace TractopartesDeskApp
             txtGenero.Clear();
             txtApPaterno.Clear();
             txtApMaterno.Clear();
+            txtTelefono1.Clear();
+            txtTelefono2.Clear();
+            txtCorreo.Clear();
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

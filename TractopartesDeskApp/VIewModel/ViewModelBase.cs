@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using TractopartesDeskApp.Commands;
+using TractopartesDeskApp.Data.UserCommandBd;
+using TractopartesDeskApp.Models;
 
 namespace TractopartesDeskApp.VIewModel
 {
-    internal class ViewModelBase : INotifyPropertyChanging
+    public abstract class ViewModelBase : INotifyPropertyChanged
     {
-        public event PropertyChangingEventHandler? PropertyChanging;
-
-        protected virtual void OnpropertyChanged(string propertyName)
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void OnPropertyChanged(string propertyName)
         {
-            PropertyChanging?.Invoke(this,new PropertyChangingEventArgs(propertyName));
-        }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }     
     }
 }

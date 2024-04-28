@@ -47,8 +47,6 @@ C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\Tractopartes
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\TractopartesDeskApp.pdb
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\TractopartesDeskApp.genruntimeconfig.cache
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\ref\TractopartesDeskApp.dll
-C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\usuariosView.g.cs
-C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\usuariosView.baml
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Dapper.dll
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Npgsql.dll
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Proveedores.g.cs
@@ -118,3 +116,6 @@ C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\Tractopartes
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Productos.baml
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UsuarioView.g.cs
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UsuarioView.baml
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\VIewUsuarios.g.cs
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\VIewUsuarios.baml

@@ -1,70 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using TractopartesDeskApp.Commands;
-using TractopartesDeskApp.Data;
-using TractopartesDeskApp.Data.UserCommandBd;
+﻿using System.Windows.Input;
 using TractopartesDeskApp.Models;
+using TractopartesDeskApp.Repository;
 
 namespace TractopartesDeskApp.VIewModel
 {
-    internal class UserByViewModel:ViewModelBase
+    public class UserByViewModel : UserViewModelPropertys
     {
-
-        private readonly UserBd userBd;
-        private ObservableCollection<UserModel> _users;
-        private UserModel _user;
+        private IUserRepository _userRepository;
+        public ICommand AddUserCommand { get; }
+        public ICommand GetUserCommand { get; }
         public UserByViewModel( )
         {
-            
-            _user = new UserModel();
-
-            //_users = _dataAccess.LoadDataAsync()
+            _userRepository = new UserRepository();
+            AddUserCommand = new ViewModelCommand(ExecuteUserCommand, CanExecuteUserCommand);
         }
-        public UserModel User
+        private void ExecuteUserCommand(object obj)
         {
-            get => _user;
-            set
-            {
-                if(_user != value)
-                {
-                    _user = value;
-                    OnpropertyChanged(nameof(User));
-                }
-            }
-        }
-        public ObservableCollection<UserModel> Users
-        {
-            get=> _users;
-            set
-            {
-
-                if (_users != value) 
-                {        
-                _users = value;
-                    OnpropertyChanged(nameof(Users));
-                }
-            }
-        }
-        public ICommand command
-        {
-            get
-            {
-                return new CommandHandler(AddExecute, AddCanExecute);
-            }
-        }
-        private void AddExecute(object user  )
-        {
-            userBd.AddUser(User);
-        }
-        private bool AddCanExecute(object user)
-        {
-            return true;
+                 _userRepository.AddUser(new UserModel { email=_email,p_nombres=_p_nombres,
+                p_apellidomaterno=_p_apellidomaterno,
+                p_apellidopaterno=_p_apellidopaterno, p_genero=_p_genero,telefono1=_telefono1,telefono2=_telefono2});
         }
 
+        private bool CanExecuteUserCommand(object obj)
+        {
+            bool validData;
+            if (string.IsNullOrWhiteSpace(_p_nombres) || string.IsNullOrWhiteSpace(_p_apellidomaterno) || string.IsNullOrWhiteSpace(_p_apellidopaterno) ||
+               string.IsNullOrWhiteSpace(_p_genero) )
+                validData = false;
+            else
+                validData = true;
+            return validData;
+        }
     }
 }

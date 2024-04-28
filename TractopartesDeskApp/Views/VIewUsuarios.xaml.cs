@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TractopartesDeskApp.Views
 {
     /// <summary>
-    /// Lógica de interacción para usuariosView.xaml
+    /// Lógica de interacción para VIewUsuarios.xaml
     /// </summary>
-    public partial class usuariosView : UserControl
+    public partial class VIewUsuarios : Window
     {
-        public usuariosView()
+        public VIewUsuarios()
         {
             InitializeComponent();
         }

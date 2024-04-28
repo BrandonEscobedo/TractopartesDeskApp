@@ -18,7 +18,6 @@ namespace TractopartesDeskApp
                 .ConfigureServices((hostservices, services) =>
                 {
                     services.AddSingleton<MainWindow>();
-                    services.AddScoped< Data.ISqlDataAccess,  Data.SqlDataAccess>();
                 })
                 .Build();
         }

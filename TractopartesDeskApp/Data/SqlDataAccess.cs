@@ -4,17 +4,9 @@ using System.Data;
 using Dapper;
 namespace TractopartesDeskApp.Data
 {
-    public class SqlDataAccess : ISqlDataAccess
+    public class SqlDataAccess 
     {
         public string ConnectionString = "server=localhost;port=5432;user id=postgres;password=1234;database=tractopartesdb;";
-        public void LoadDataAsync()
-        {
-            using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
-            {
-                
-            }
-
-        }
         public async Task<bool> SaveData<T>(string sql,T parameters)
         {
             using (IDbConnection connection = new NpgsqlConnection(ConnectionString))

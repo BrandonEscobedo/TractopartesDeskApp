@@ -14,7 +14,7 @@ namespace TractopartesDeskApp.Repository
         public async void AddUser(UserModel userModel)
         {
 
-           await SaveData("crearusuariosdatospersonales", userModel);
+           await SaveData("crearClienteDatosPersonales", userModel);
         }
 
         public IEnumerable<UserModel> GetAllUser()

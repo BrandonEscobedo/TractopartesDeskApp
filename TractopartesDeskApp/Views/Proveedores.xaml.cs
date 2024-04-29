@@ -20,12 +20,7 @@ namespace TractopartesDeskApp.Views
     /// </summary>
     public partial class Proveedores: Window
     {
-        public readonly ISqlDataAccess _dataAccess;
-        public Proveedores(ISqlDataAccess dataAccess)
-        {
-            _dataAccess= dataAccess;
-            InitializeComponent();
-        }
+     
 
  
         private void btnGuardar_Click(object sender, RoutedEventArgs e)

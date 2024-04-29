@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using TractopartesDeskApp.Models;
 using TractopartesDeskApp.Repository;
+using TractopartesDeskApp.VIewModel.Propertys;
 
 namespace TractopartesDeskApp.VIewModel
 {
@@ -16,16 +17,19 @@ namespace TractopartesDeskApp.VIewModel
         }
         private void ExecuteUserCommand(object obj)
         {
-                 _userRepository.AddUser(new UserModel { email=_email,p_nombres=_p_nombres,
-                p_apellidomaterno=_p_apellidomaterno,
-                p_apellidopaterno=_p_apellidopaterno, p_genero=_p_genero,telefono1=_telefono1,telefono2=_telefono2});
+                 _userRepository.AddUser(new UserModel { email=Email,p_nombres= P_nombres,
+                p_apellidomaterno= P_apellidomaterno,
+                p_apellidopaterno= P_apellidopaterno, p_genero= P_genero,
+                     telefono1= Telefono1,
+                     telefono2= Telefono2
+                 });
         }
 
         private bool CanExecuteUserCommand(object obj)
         {
             bool validData;
-            if (string.IsNullOrWhiteSpace(_p_nombres) || string.IsNullOrWhiteSpace(_p_apellidomaterno) || string.IsNullOrWhiteSpace(_p_apellidopaterno) ||
-               string.IsNullOrWhiteSpace(_p_genero) )
+            if (string.IsNullOrWhiteSpace(P_nombres) || string.IsNullOrWhiteSpace(P_apellidomaterno) || string.IsNullOrWhiteSpace(P_apellidopaterno) ||
+               string.IsNullOrWhiteSpace(P_genero) || Telefono1<=0|| Telefono2<=0 || string.IsNullOrEmpty(Email))   
                 validData = false;
             else
                 validData = true;

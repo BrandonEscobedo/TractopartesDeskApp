@@ -1,12 +1,13 @@
-﻿using TractopartesDeskApp.Models;
+﻿using TractopartesDeskApp.Data;
+using TractopartesDeskApp.Models;
 
 namespace TractopartesDeskApp.Repository
 {
-    public class ProveedorRepository : IProveedorRepository
+    public class ProveedorRepository :SqlDataAccess, IProveedorRepository
     {
-        public void AddProveedor(ProveedorModel proveedor)
+        public async void AddProveedor(ProveedorModel proveedor)
         {
-            throw new NotImplementedException();
-        }
+              await  SaveData("CrearProveedor", proveedor);
+      }
     }
 }

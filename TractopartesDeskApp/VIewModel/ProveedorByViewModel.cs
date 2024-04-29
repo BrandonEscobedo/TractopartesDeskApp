@@ -19,10 +19,10 @@ namespace TractopartesDeskApp.VIewModel
         {
             _proveedorRepository.AddProveedor(new ProveedorModel
             {
-                Correo = Correo,
-                NombreEmpresa = NombreEmpresa,
-                Telefono = Telefono,
-                RazonSocial = RazonSocial            
+                correo = Correo,
+                nombreempresa = NombreEmpresa,
+                telefono = Telefono,
+                razonsocial = RazonSocial            
             });
         }
 
@@ -30,6 +30,7 @@ namespace TractopartesDeskApp.VIewModel
         {
             bool validData;
             if (string.IsNullOrWhiteSpace(Correo) || string.IsNullOrWhiteSpace(NombreEmpresa) || string.IsNullOrWhiteSpace(RazonSocial) 
+                || string.IsNullOrWhiteSpace(direccion)
                 || Telefono <= 0)
                 validData = false;
             else

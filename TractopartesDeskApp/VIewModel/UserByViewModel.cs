@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using TractopartesDeskApp.Models;
 using TractopartesDeskApp.Repository;
 using TractopartesDeskApp.VIewModel.Propertys;
@@ -10,20 +11,24 @@ namespace TractopartesDeskApp.VIewModel
         private IUserRepository _userRepository;
         public ICommand AddUserCommand { get; }
         public ICommand GetUserCommand { get; }
+
         public UserByViewModel( )
         {
             _userRepository = new UserRepository();
+            Users = _userRepository.GetAllUser();
             AddUserCommand = new ViewModelCommand(ExecuteUserCommand, CanExecuteUserCommand);
         }
         private void ExecuteUserCommand(object obj)
         {
-                 _userRepository.AddUser(new UserModel { email=Email,p_nombres= P_nombres,
-                p_apellidomaterno= P_apellidomaterno,
-                p_apellidopaterno= P_apellidopaterno, p_genero= P_genero,
+                 _userRepository.AddUser(new UserModel { email=Email,nombres= P_nombres,
+                apellidomaterno= P_apellidomaterno,
+                apellidopaterno= P_apellidopaterno, genero= P_genero,
                      telefono1= Telefono1,
                      telefono2= Telefono2
                  });
+            _users = _userRepository.GetAllUser();
         }
+  
 
         private bool CanExecuteUserCommand(object obj)
         {

@@ -1,52 +1,65 @@
-﻿using TractopartesDeskApp.Models;
+﻿using System.Collections.ObjectModel;
+using TractopartesDeskApp.Models;
 
 namespace TractopartesDeskApp.VIewModel
 {
     public class UserViewModelPropertys : ViewModelBase
     {
         private UserModel _userModel;
+        public ObservableCollection<UserModel> Users;
 
         public UserViewModelPropertys()
         {
             _userModel = new UserModel();
         }
-
-        public string P_nombres
+        public ObservableCollection<UserModel> _users
         {
-            get { return _userModel.p_nombres; }
+            get => Users;
             set
             {
-                _userModel.p_nombres = value;
+                if (Users != value)
+                {
+                    Users = value;
+                    OnPropertyChanged(nameof(_users));
+                }
+            }
+        }
+        public string P_nombres
+        {
+            get { return _userModel.nombres; }
+            set
+            {
+                _userModel.nombres = value;
                 OnPropertyChanged(nameof(P_nombres));
             }
         }
 
         public string P_apellidomaterno
         {
-            get { return _userModel.p_apellidomaterno; }
+            get { return _userModel.apellidomaterno; }
             set
             {
-                _userModel.p_apellidomaterno = value;
+                _userModel.apellidomaterno = value;
                 OnPropertyChanged(nameof(P_apellidomaterno));
             }
         }
 
         public string P_apellidopaterno
         {
-            get { return _userModel.p_apellidopaterno; }
+            get { return _userModel.apellidopaterno; }
             set
             {
-                _userModel.p_apellidopaterno = value;
+                _userModel.apellidopaterno = value;
                 OnPropertyChanged(nameof(P_apellidopaterno));
             }
         }
 
         public string P_genero
         {
-            get { return _userModel.p_genero; }
+            get { return _userModel.genero; }
             set
             {
-                _userModel.p_genero = value;
+                _userModel.genero = value;
                 OnPropertyChanged(nameof(P_genero));
             }
         }

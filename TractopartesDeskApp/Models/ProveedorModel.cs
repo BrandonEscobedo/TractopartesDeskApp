@@ -1,13 +1,21 @@
-﻿namespace TractopartesDeskApp.Models
+﻿using NpgsqlTypes;
+
+namespace TractopartesDeskApp.Models
 {
     public class ProveedorModel
     {
-        public int? Idproveedor { get; set; }
-        public string NombreEmpresa { get; set; }
-        public string RazonSocial { get; set; }
-        public int Telefono { get; set; }
-        public string Correo { get; set; }
-
+     
+        [PgName("nombreempresa")]
+        public string nombreempresa { get; set; }
+        [PgName("razonsocial")]
+        public string razonsocial { get; set; }
+        [PgName("telefono")]
+        public int telefono { get; set; }
+        [PgName("correo")]
+        public string correo { get; set; }
+        [PgName("direccion")]
+        public string direccion {  get; set; }
+        
 
     }
 }

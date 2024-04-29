@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using TractopartesDeskApp.Views;
 
 namespace TractopartesDeskApp
 {
@@ -23,6 +24,7 @@ namespace TractopartesDeskApp
         }
         protected override async void OnStartup(StartupEventArgs e)
         {
+
             await AppHost!.StartAsync();
             var startupform = AppHost.Services.GetRequiredService<MainWindow>();
             startupform.Show();

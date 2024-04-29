@@ -18,20 +18,20 @@ namespace TractopartesDeskApp.VIewModel.Propertys
 
         public string NombreEmpresa
         {
-            get { return _proveedorModel.NombreEmpresa; }
+            get { return _proveedorModel.nombreempresa; }
             set
             {
-                _proveedorModel.NombreEmpresa = value;
+                _proveedorModel.nombreempresa = value;
                 OnPropertyChanged(nameof(NombreEmpresa));
             }
         }
 
         public string RazonSocial
         {
-            get { return _proveedorModel.RazonSocial; }
+            get { return _proveedorModel.razonsocial; }
             set
             {
-                _proveedorModel.RazonSocial = value;
+                _proveedorModel.razonsocial = value;
                 OnPropertyChanged(nameof(RazonSocial));
             }
         }
@@ -39,23 +39,36 @@ namespace TractopartesDeskApp.VIewModel.Propertys
 
         public string Correo
         {
-            get { return _proveedorModel.Correo; }
+            get { return _proveedorModel.correo; }
             set
             {
-                _proveedorModel.Correo = value;
+                _proveedorModel.correo = value;
                 OnPropertyChanged(nameof(Correo));
             }
         }
 
         public int Telefono
         {
-            get { return _proveedorModel.Telefono; }
+            get { return _proveedorModel.telefono; }
             set
             {
-                _proveedorModel.Telefono = value;
+                _proveedorModel.telefono = value;
                 OnPropertyChanged(nameof(Telefono));
             }
         }
+        public string direccion
+        {
+            get
+            {
+                return _proveedorModel.direccion;
+            }
+            set
+            {
+                _proveedorModel.direccion = value;
+                OnPropertyChanged(nameof(direccion));
+            }
+        }
+
 
 
     }

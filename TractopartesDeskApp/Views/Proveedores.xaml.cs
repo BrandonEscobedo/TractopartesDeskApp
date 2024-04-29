@@ -20,9 +20,13 @@ namespace TractopartesDeskApp.Views
     /// </summary>
     public partial class Proveedores: Window
     {
-     
+        public Proveedores()
+        {
+            InitializeComponent();
+        }
 
- 
+
+
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
 

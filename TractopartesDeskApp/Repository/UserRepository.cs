@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +15,14 @@ namespace TractopartesDeskApp.Repository
         public async void AddUser(UserModel userModel)
         {
 
-           await SaveData("crearClienteDatosPersonales", userModel);
+           await SaveData("crearclientedatospersonales", userModel);
         }
 
-        public IEnumerable<UserModel> GetAllUser()
+        public    ObservableCollection<UserModel> GetAllUser()
         {
-            throw new NotImplementedException();
+        var users = LoadDataObservable<UserModel>("select * from clientedatospersonales");
+            return users;
+
         }
 
         public void RemoveUser(UserModel userModel)

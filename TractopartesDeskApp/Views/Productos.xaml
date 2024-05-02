@@ -362,6 +362,7 @@
             <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="1,1,519,144" Grid.RowSpan="2"/>
             <TextBox Style="{DynamicResource TextBoxStyle2}" HorizontalAlignment="Left" Margin="250,50,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" Height="37"
                      FontSize="20"
+                     
                      Background="DarkGray"
                      Foreground="Black"
                      TextAlignment="Center"
@@ -384,7 +385,7 @@
                 Foreground="Black"
                 TextAlignment="Center"
                      />
-            <TextBox Style="{DynamicResource TextBoxStyle2}" HorizontalAlignment="Left" Margin="142,246,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"  Height="37"
+            <TextBox Style="{DynamicResource TextBoxStyle2}"  HorizontalAlignment="Left" Margin="142,246,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"  Height="37"
                 FontSize="20"
                 Background="DarkGray"
                 Foreground="Black"

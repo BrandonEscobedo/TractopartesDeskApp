@@ -10,14 +10,29 @@
     <Compile Update="Views\Productos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ProductosView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Proveedores.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\VIewUsuarios.xaml.cs">
+    <Compile Update="Views\UserControls\MyTexBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UsuariosView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\ProductosView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\MyTexBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UsuariosView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\UsuarioView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -25,9 +40,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Proveedores.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\VIewUsuarios.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

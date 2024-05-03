@@ -34,7 +34,8 @@ namespace TractopartesDeskApp.Views
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            Close();
         }
     }
 }

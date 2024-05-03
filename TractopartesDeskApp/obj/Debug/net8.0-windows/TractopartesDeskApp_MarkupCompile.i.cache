@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\App.xaml
-6-929252635
+10-776744703
 
-261069799438
-229979587315
-Views\Productos.xaml;Views\ProductosView.xaml;Views\Proveedores.xaml;Views\UserControls\MyTexBox.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
+28-843480796
+239851121994
+Styles\ButtonStyles.xaml;Styles\UIColors.xaml;Views\Dashboard.xaml;Views\Productos.xaml;Views\ProductosView.xaml;Views\Proveedores.xaml;Views\UserControls\MyTexBox.xaml;Views\UserControls\TablaUsuarios.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
 
-False
+True
 

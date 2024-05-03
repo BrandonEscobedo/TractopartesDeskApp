@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:TractopartesDeskApp.Views.UserControls"
         xmlns:local="clr-namespace:TractopartesDeskApp"
         xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
         WindowStyle="None"
@@ -145,77 +146,9 @@
         <Line X1="39" Y1="90" X2="39" Y2="214" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="13"/>
         <Line X1="764" Y1="235" X2="764" Y2="330" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="13"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="57,-56,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="18.059,2.966"/>
-        <ListView ItemsSource="{Binding _users}"
-        Name="lstusers" Grid.Column="1" Margin="22,192,0,34" Grid.Row="1" Grid.ColumnSpan="9">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Nombre">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding nombres}"/>
+        <uc:TablaUsuarios DataContext="{Binding }" Grid.ColumnSpan="8" Margin="16,185,82,32" Grid.Column="1" Grid.Row="1"/>
 
 
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="apellido paterno">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding apellidopaterno}"/>
-
-
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="apellido materno">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding apellidomaterno}"/>
-
-
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="genero">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding genero}"/>
-
-
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="email">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding email}"/>
-
-
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="telefono1">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding telefono1}"/>
-
-
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="telefono2">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding telefono2}"/>
-
-
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-
-                </GridView>
-            </ListView.View>
-        </ListView>
     </Grid>
 
 </Window>

@@ -16,7 +16,13 @@
     <Compile Update="Views\Proveedores.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControls\MyTexBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\TablaUsuarios.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UsuariosView.xaml.cs">
@@ -24,10 +30,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Styles\UIColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\ProductosView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Dashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\UserControls\MyTexBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\TablaUsuarios.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UsuariosView.xaml">

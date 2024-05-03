@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "enbx+2hT3XLTxGIq/dQnoY3inYCtHUso7x28PtdqsOvotmpFQYQXS/RkXHg2mIX8vSJbXJggWTahRPUrpBhm0A==",
+  "dgSpecHash": "2yWS+W53sMXNu+b3VnQhlDJRhczeL3VTFTs+p3/RzhfH/coa9zeFC89s+R5eQV+Ag9eJrHlKOKUF1LDFYQKM1A==",
   "success": true,
   "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\programas c#\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\mahapps.metro.iconpacks.material\\4.11.0\\mahapps.metro.iconpacks.material.4.11.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

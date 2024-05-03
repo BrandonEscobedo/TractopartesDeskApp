@@ -34,10 +34,21 @@ namespace TractopartesDeskApp.Views
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ClickCount == 2)
-            {
-                this.WindowState = WindowState.Normal;
-            }
+            //if (e.ClickCount == 2)
+            //{
+            //    this.WindowState = WindowState.Normal;
+            //}
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Proveedores proveedores = new Proveedores();
+            proveedores.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

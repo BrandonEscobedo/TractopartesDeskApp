@@ -109,87 +109,7 @@
 
             </StackPanel>
         </Border>
-        <Border CornerRadius="0,10,10,0"
-                    Grid.Column="1">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                    <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
-                    <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-
-            <Grid>
-                <Grid.RowDefinitions>
-                    <!--control bar-->
-                    <RowDefinition Height="25"/>
-                    <!--Header/caption-->
-                    <RowDefinition Height="35"/>
-                    <!--content section/child views-->
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <!--control bar-->
-                <StackPanel x:Name="pnlControlBAR"
-                            Grid.Row="0"
-                            Orientation="Horizontal"
-                            FlowDirection="RightToLeft"
-                            Background="Transparent"
-                            Margin="0 0 5 0"
-                            MouseLeftButtonDown="pnlControlBAR_MouseLeftButtonDown"
-                            MouseEnter="pnlControlBAR_MouseEnter">
-
-                    <Button x:Name="btnClose"
-                            Style="{StaticResource controlButton}"
-                            Tag="{StaticResource color11}"
-                            Click="btnClose_Click">
-                        <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
-
-                    </Button>
-
-                    <Button x:Name="btnMaximize"
-                            Style="{StaticResource controlButton}"
-                            Tag="{StaticResource color12}"
-                            Click="btnMaximize_Click">
-                        <fa:IconImage Icon="WindowMaximize" Style="{StaticResource controlButtonIcon}"/>
-                    </Button>
-
-
-                    <Button x:Name="btnMinimize"
-                            Style="{StaticResource controlButton}"
-                            Tag="{StaticResource color8}"
-                            Click="btnMinimize_Click">
-                        <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
-                    </Button>
-                </StackPanel>
-
-                <!--header / caption -->
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-
-                    <!--Caption -->
-                    <StackPanel Grid.Column="0"
-                                Orientation="Horizontal"
-                                VerticalAlignment="Center">
-
-                        <fa:IconImage Icon="Home"
-                                      Height="30"
-                                      Width="30"
-                                      Foreground="{StaticResource titleColor2}"
-                                      Margin="35 0 10 0"/>
-                        <TextBlock Text="Dashboard"
-                                   Foreground="{StaticResource titleColor2}"
-                                   FontSize="30"
-                                   FontFamily="Monserrat"
-                                   FontWeight="Medium"
-                                   VerticalAlignment="Center"/>
-                    </StackPanel>
-
-
-                </Grid>
-            </Grid>
-        </Border>
+       
         <Border CornerRadius="0,10,10,0"
             Grid.Column="1">
             <Border.Background>
@@ -266,25 +186,15 @@
                             FontWeight="Medium"
                             VerticalAlignment="Center"/>
                     </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2" x:Name="gridContainer">
 
+                    <ContentControl x:Name="ContentContainer" Content="{Binding }"/>
 
                 </Grid>
             </Grid>
         </Border>
-
-        <Button x:Name="btnEnviar"
-
-                    Background="#FF71FF00"
-                    BorderThickness="0"
-                    Content="Enviar"
-                    Foreground="Black"
-                    Command="{Binding UpdateSourceTrigger=PropertyChanged}"
-                    FontSize="16"
-                    FontFamily="Montserrat"
-                    Cursor="Hand"
-                    Grid.Column="1" Margin="886,70,40,583"  BorderBrush="#FF191919" Click="btnEnviar_Click"
-                        />
-        <uc:TablaUsuarios x:Name="dglist" DataContext="{Binding }" Margin="33,139,18,-18"  Grid.Column="1"/>
+       
 
     </Grid>
 </Window>

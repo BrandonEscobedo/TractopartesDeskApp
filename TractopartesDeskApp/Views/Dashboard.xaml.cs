@@ -1,7 +1,9 @@
 ﻿using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
+using TractopartesDeskApp.Views.UserControls;
 
 namespace TractopartesDeskApp.Views
 {
@@ -14,11 +16,9 @@ namespace TractopartesDeskApp.Views
         {
             InitializeComponent();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-            dglist.Focusable = true;
-
-
 
         }
+        private UsuariosView usuariosView;
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
 
@@ -62,25 +62,26 @@ namespace TractopartesDeskApp.Views
         }
 
         private void btnEnviar_Click(object sender, RoutedEventArgs e)
-        {
-            UsuariosView usuariosView= new UsuariosView();
-            usuariosView.Show();
+        {            
+           
+          
+           
         }
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
-            
-            
-                dglist.Visibility = Visibility.Visible;
-            btnEnviar.Visibility=Visibility.Visible;
-
-            
+            TablaUsuarios table = new();
+            table.DataContext= this.DataContext;
+            ContentContainer.Content= table;                                    
         }
 
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {
-            dglist.Visibility = Visibility.Collapsed;
-            dglist.Focus();
-            btnEnviar.Visibility = Visibility.Hidden;
+            
+        }
+
+        private void btnEnviar_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+
         }
     }
 }

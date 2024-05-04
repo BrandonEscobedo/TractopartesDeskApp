@@ -6,12 +6,13 @@ namespace TractopartesDeskApp.VIewModel
     public class UserViewModelPropertys : ViewModelBase
     {
         private UserModel _userModel;
-        public ObservableCollection<UserModel> Users;
+     
 
         public UserViewModelPropertys()
         {
             _userModel = new UserModel();
         }
+        public ObservableCollection<UserModel> Users;
         public ObservableCollection<UserModel> _users
         {
             get => Users;

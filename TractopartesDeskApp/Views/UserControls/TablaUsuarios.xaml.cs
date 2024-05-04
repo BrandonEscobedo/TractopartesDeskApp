@@ -35,5 +35,12 @@ namespace TractopartesDeskApp.Views.UserControls
             get { return (ObservableCollection<UserModel>)GetValue(PathSource); }
             set { SetValue(PathSource, value);}
         }
+
+        private void btnEnviar_Click(object sender, RoutedEventArgs e)
+        {
+            UsuariosView  usuarios = new UsuariosView();
+            this.DataContext = usuarios.DataContext;
+            usuarios.Show();
+        }
     }
 }

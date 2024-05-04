@@ -1,17 +1,24 @@
-﻿
-<Window x:Class="TractopartesDeskApp.Views.Dashboard"
+﻿<Window x:Class="TractopartesDeskApp.Views.Dashboard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TractopartesDeskApp.Views"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
+        xmlns:uc="clr-namespace:TractopartesDeskApp.Views.UserControls"
+
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1300"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
+    <Window.DataContext>
+        <viewModel:UserByViewModel>
+
+        </viewModel:UserByViewModel>
+    </Window.DataContext>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -72,7 +79,7 @@
                 </RadioButton>
 
                 <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color4}">
+                             Tag="{StaticResource color4}" Checked="RadioButton_Checked_3">
 
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Box" Style="{StaticResource menuButtonIcon}"/>
@@ -81,7 +88,7 @@
                 </RadioButton>
 
                 <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color6}">
+                             Tag="{StaticResource color6}" Checked="RadioButton_Checked_2">
 
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Registered" Style="{StaticResource menuButtonIcon}"/>
@@ -264,5 +271,20 @@
                 </Grid>
             </Grid>
         </Border>
+
+        <Button x:Name="btnEnviar"
+
+                    Background="#FF71FF00"
+                    BorderThickness="0"
+                    Content="Enviar"
+                    Foreground="Black"
+                    Command="{Binding UpdateSourceTrigger=PropertyChanged}"
+                    FontSize="16"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Grid.Column="1" Margin="886,70,40,583"  BorderBrush="#FF191919" Click="btnEnviar_Click"
+                        />
+        <uc:TablaUsuarios x:Name="dglist" DataContext="{Binding }" Margin="33,139,18,-18"  Grid.Column="1"/>
+
     </Grid>
 </Window>

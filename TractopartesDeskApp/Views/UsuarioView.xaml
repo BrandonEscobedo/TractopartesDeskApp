@@ -125,7 +125,6 @@
                     Content="Enviar"
                     Foreground="Black"
                      Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}"
-
                     FontSize="16"
                     FontFamily="Montserrat"
                     Cursor="Hand"
@@ -146,7 +145,7 @@
         <Line X1="39" Y1="90" X2="39" Y2="214" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="13"/>
         <Line X1="764" Y1="235" X2="764" Y2="330" Stroke="Gray" StrokeThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="13"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="57,-56,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="18.059,2.966"/>
-        <uc:TablaUsuarios DataContext="{Binding }" Grid.ColumnSpan="8" Margin="16,185,82,32" Grid.Column="1" Grid.Row="1"/>
+        <uc:TablaUsuarios x:Name="dglist" DataContext="{Binding NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="8" Margin="16,185,82,32" Grid.Column="1" Grid.Row="1"/>
 
 
     </Grid>

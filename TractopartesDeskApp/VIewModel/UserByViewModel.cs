@@ -1,8 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using TractopartesDeskApp.Models;
 using TractopartesDeskApp.Repository;
-using TractopartesDeskApp.VIewModel.Propertys;
 
 namespace TractopartesDeskApp.VIewModel
 {
@@ -28,8 +26,6 @@ namespace TractopartesDeskApp.VIewModel
                  });
             _users = _userRepository.GetAllUser();
         }
-  
-
         private bool CanExecuteUserCommand(object obj)
         {
             bool validData;

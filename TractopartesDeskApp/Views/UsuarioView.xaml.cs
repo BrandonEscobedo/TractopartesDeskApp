@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using TractopartesDeskApp.Views.UserControls;
 
 namespace TractopartesDeskApp
 {
@@ -28,7 +29,7 @@ namespace TractopartesDeskApp
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-
+           dglist.Visibility = Visibility.Collapsed;
         }
 
         private void btnEnviar_Click(object sender, RoutedEventArgs e)

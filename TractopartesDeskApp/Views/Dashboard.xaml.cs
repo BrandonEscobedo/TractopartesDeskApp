@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interop;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace TractopartesDeskApp.Views
 {
@@ -25,6 +14,9 @@ namespace TractopartesDeskApp.Views
         {
             InitializeComponent();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+            dglist.Focusable = true;
+
+
 
         }
         [DllImport("user32.dll")]
@@ -67,6 +59,28 @@ namespace TractopartesDeskApp.Views
         private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnEnviar_Click(object sender, RoutedEventArgs e)
+        {
+            UsuariosView usuariosView= new UsuariosView();
+            usuariosView.Show();
+        }
+        private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
+        {
+            
+            
+                dglist.Visibility = Visibility.Visible;
+            btnEnviar.Visibility=Visibility.Visible;
+
+            
+        }
+
+        private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
+        {
+            dglist.Visibility = Visibility.Collapsed;
+            dglist.Focus();
+            btnEnviar.Visibility = Visibility.Hidden;
         }
     }
 }

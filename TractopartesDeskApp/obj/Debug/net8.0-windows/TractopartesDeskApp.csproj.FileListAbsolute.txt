@@ -35,13 +35,11 @@ C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\ne
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\TractopartesDeskApp.csproj.AssemblyReference.cache
-C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Proveedores.g.cs
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\usuariosView.g.cs
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\TractopartesDeskApp_MarkupCompile.cache
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\TractopartesDeskApp_MarkupCompile.lref
-C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Proveedores.baml
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\usuariosView.baml
 C:\Users\brand\Source\Repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\TractopartesDeskApp.g.resources
@@ -133,3 +131,22 @@ C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\Tractopartes
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Dashboard.g.cs
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Dashboard.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\MahApps.Metro.IconPacks.Core.dll
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\MahApps.Metro.IconPacks.Material.dll
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Styles\ButtonStyles.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Styles\UIColors.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Dashboard.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProductosView.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MyTexBox.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\TablaUsuarios.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UsuarioView.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\App.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Dashboard.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProductosView.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MyTexBox.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\TablaUsuarios.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UsuarioView.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Page1.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Page1.baml

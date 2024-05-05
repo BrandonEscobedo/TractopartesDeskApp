@@ -19,7 +19,7 @@
  Text="{Binding  ElementName=MyTexBoxs,Path=Hint}"
                        Visibility="{Binding ElementName=texBox,Path=Text.IsEmpty
                 ,Converter={StaticResource boolToVis}}"/>
-            <TextBox x:Name="texBox" Text="{Binding ValueDb, ElementName=MyTexBoxs, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox />
         </Grid>
     </StackPanel>
 </UserControl>

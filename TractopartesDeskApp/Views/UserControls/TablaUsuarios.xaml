@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:local="clr-namespace:TractopartesDeskApp.Views.UserControls"
              xmlns:viewmodel="clr-namespace:TractopartesDeskApp.Models"
              xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
@@ -11,59 +12,43 @@
 
     <Grid Background="#151f2d" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="200" />
-                </Grid.ColumnDefinitions>
-                <Border Grid.Column="2" Margin="30  30 30 30">
-                    <Button x:Name="btnEnviar"
-Background="#FF71FF00"
-BorderThickness="0"
-Content="Enviar"
-Foreground="Black"
-Command="{Binding UpdateSourceTrigger=PropertyChanged}"
-FontSize="16"
-FontFamily="Montserrat"
-Cursor="Hand"
-Grid.Column="2"  BorderBrush="#FF191919" Click="btnEnviar_Click"
-    />
-                </Border>
 
-            </Grid>
         </Border>
-        <Border Grid.Row="1" >
-            <DataGrid   ItemsSource="{Binding _users}" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" 
-                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
-                  RowStyle="{DynamicResource DataGridRowStyle1}" 
-                   
-                  x:Name="ClientesDG" Margin="0,0,0,-2">
+        <Border Grid.Row="0" Margin="10 10 10 10" CornerRadius="100" >
+        
+            <DataGrid  ItemsSource="{Binding _users}" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
+                       RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
+                       ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
+
                 <DataGrid.Columns>
-                    <DataGridCheckBoxColumn CanUserResize="False" Width="auto">
-                        <DataGridCheckBoxColumn.HeaderTemplate>
-                            <DataTemplate>
-                                <CheckBox/>
-                            </DataTemplate>
-                        </DataGridCheckBoxColumn.HeaderTemplate>
-                    </DataGridCheckBoxColumn>
-                    <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False"
-                                    Width="auto" />
-                    <DataGridTemplateColumn  IsReadOnly="True" Width="auto">
+
+
+
+                    <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource GridEditButton}">
+                                        <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                    <Button Style="{StaticResource GridRemoveButton}">
+                                        <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
+                   
+
 
                 </DataGrid.Columns>
+
             </DataGrid>
+
         </Border>
     </Grid>
 </UserControl>

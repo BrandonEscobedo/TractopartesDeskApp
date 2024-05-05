@@ -19,9 +19,13 @@ namespace TractopartesDeskApp.Views
     /// </summary>
     public partial class UsuariosView : Window
     {
+        public List<string> YourCollection { get; set; }
+
         public UsuariosView()
         {
             InitializeComponent();
+            YourCollection = ["Elemento 1", "Elemento 2", "Elemento 3"];
+            DataContext = this;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)

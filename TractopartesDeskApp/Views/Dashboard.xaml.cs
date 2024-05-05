@@ -18,6 +18,18 @@ namespace TractopartesDeskApp.Views
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
 
         }
+        public string DataSource
+        {
+            get
+            {
+                return (string)GetValue(DataProperty);
+            }
+            set { SetValue(DataProperty, value); }
+
+        }
+        public static readonly DependencyProperty DataProperty =
+            DependencyProperty.Register("DataSource", typeof(string), typeof(MyTexBox));
+
         private UsuariosView usuariosView;
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
@@ -62,16 +74,20 @@ namespace TractopartesDeskApp.Views
         }
 
         private void btnEnviar_Click(object sender, RoutedEventArgs e)
-        {            
+        {
            
-          
-           
+
+
         }
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
             TablaUsuarios table = new();
-            table.DataContext= this.DataContext;
-            ContentContainer.Content= table;                                    
+            BtnAddUser AddUser = new();
+            table.DataContext = new VIewModel.UserByViewModel();
+            ContentContainer.Content= table;
+            BtnContentContainer.Content = AddUser;
+            BtnContentContainer.DataContext = table.DataContext;
+
         }
 
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)

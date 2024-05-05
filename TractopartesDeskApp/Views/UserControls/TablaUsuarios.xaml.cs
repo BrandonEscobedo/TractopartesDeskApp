@@ -28,13 +28,7 @@ namespace TractopartesDeskApp.Views.UserControls
             InitializeComponent();
             DataContext = this;
         }
-        public static readonly DependencyProperty PathSource =
-            DependencyProperty.Register("SourceList", typeof(ObservableCollection<UserModel>), typeof(TablaUsuarios));
-        public ObservableCollection<UserModel> SourceList
-        {
-            get { return (ObservableCollection<UserModel>)GetValue(PathSource); }
-            set { SetValue(PathSource, value);}
-        }
+
 
         private void btnEnviar_Click(object sender, RoutedEventArgs e)
         {
@@ -42,5 +36,8 @@ namespace TractopartesDeskApp.Views.UserControls
             this.DataContext = usuarios.DataContext;
             usuarios.Show();
         }
+
+  
+  
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,19 @@ namespace TractopartesDeskApp.VIewModel.Propertys
         {
             _proveedorModel = new ProveedorModel();
         }
-
+        public ObservableCollection<ProveedorModel> Proveedores;
+        public ObservableCollection<ProveedorModel> _proveedores
+        {
+            get => Proveedores;
+            set
+            {
+                if(Proveedores!= value)
+                {
+                    Proveedores = value;
+                    OnPropertyChanged(nameof(_proveedores));
+                }
+            }
+        }
         public string NombreEmpresa
         {
             get { return _proveedorModel.nombreempresa; }

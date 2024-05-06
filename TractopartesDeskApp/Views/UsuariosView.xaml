@@ -1,20 +1,12 @@
-﻿<Window
+﻿<Window x:Class="TractopartesDeskApp.Views.UsuariosView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:cd="clr-namespace:TractopartesDeskApp.Views.UserControls"
-        xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    x:Class="TractopartesDeskApp.Views.UsuariosView"
         Height="850" Width="750" MinHeight="850"
+        xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
         MinWidth="650" WindowStyle="none" WindowStartupLocation="CenterScreen"
-        mc:Ignorable="d" 
-        d:DesignWidth="200" d:Background="White" x:Name="MyTexBoxs"
         AllowsTransparency="True" Background="Transparent">
-    <Window.DataContext>
-        <viewModel:UserByViewModel/>
 
-    </Window.DataContext>
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
     </WindowChrome.WindowChrome>
@@ -77,52 +69,25 @@
                                     <cd:MyTexBox  Grid.Column="0" Grid.Row="1"  Caption="Nombres" Hint="Ingresa  los nombres"  ValueDb="{Binding P_nombres, Mode=TwoWay}"/>
                                     <cd:MyTexBox  Grid.Column="1" Grid.Row="1" Caption="Apellido Paterno" Hint="Apellido paterno" ValueDb="{Binding P_apellidopaterno, Mode=TwoWay}" />
                                     <cd:MyTexBox  Grid.Column="0" Grid.Row="2" Caption="Apellido Materno" Hint="Apellido materno" ValueDb="{Binding P_apellidomaterno, Mode=TwoWay}" />
-                                    <!--<ComboBox Grid.Column="1" Grid.Row="2" Margin="16,33,24,0" Height="36" VerticalAlignment="Top">
-                                        <ComboBox.Resources>
-                                            <Style TargetType="ToggleButton">
-                                                <Setter Property="Template">
-                                                    <Setter.Value>
-                                                        <ControlTemplate TargetType="ToggleButton">
-                                                            <Grid>
-                                                                <Grid.ColumnDefinitions>
-                                                                    <ColumnDefinition Width="*" />
-                                                                    <ColumnDefinition Width="Auto" />
-                                                                </Grid.ColumnDefinitions>
-                                                                <Border x:Name="Border" Grid.ColumnSpan="2" CornerRadius="3" BorderThickness="1" Background="Transparent"/>
-                                                                <Path x:Name="Arrow" Grid.Column="1" Fill="#384756" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z"/>
-                                                            </Grid>
-                                                            <ControlTemplate.Triggers>
-                                                                <Trigger Property="IsMouseOver" Value="True">
-                                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#4880ff"/>
-                                                                </Trigger>
-                                                            </ControlTemplate.Triggers>
-                                                        </ControlTemplate>
-                                                    </Setter.Value>
-                                                </Setter>
-                                            </Style>
-                                        </ComboBox.Resources>
-                                        <ComboBoxItem Content="Hombre">
-                                           
-                                                
-                                            
-                                        </ComboBoxItem>
-                                        <ComboBoxItem>
-                                            <TextBlock>
-                                             Mujer
-                                            </TextBlock>
-                                        </ComboBoxItem>
-                                    </ComboBox>-->
+                                   
+                                      
                                     <cd:MyTexBox  Grid.Column="1" Grid.Row="2" Caption="Genero"  ValueDb="{Binding P_genero, Mode=TwoWay}"/>
                                     <cd:MyTexBox  Grid.Column="0" Grid.Row="3" Caption="Telefono 1"  ValueDb="{Binding Telefono1, Mode=TwoWay}"/>
                                     <cd:MyTexBox  Grid.Column="1" Grid.Row="3" Caption="Telefono 2"  ValueDb="{Binding Telefono2, Mode=TwoWay}"/>
                                     <cd:MyTexBox  Grid.Column="0" Grid.Row="4" Caption="Email" Hint="user@example.com" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="5" Caption="Calle" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="1" Grid.Row="5" Caption="Número interior" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="6" Caption="Número exterior" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="1" Grid.Row="6" Caption="Colonia" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="7" Caption="Codigo Postal"  ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="1" Grid.Row="7" Caption="Estado"  ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="8" Caption="Ciudad" ValueDb="{Binding Email, Mode=TwoWay}"/>
+
+                                    <cd:MyTexBox x:Name="textBoxCalle"  Grid.Column="0" Grid.Row="5" Caption="Calle" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="textBoxNumeroInterior" Grid.Column="1" Grid.Row="5" Caption="Número interior" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="textBoxNumeroExterior" Grid.Column="0" Grid.Row="6" Caption="Número exterior" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="textBoxColonia" Grid.Column="1" Grid.Row="6" Caption="Colonia" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="textBoxCodigoPostal" Grid.Column="0" Grid.Row="7" Caption="Codigo Postal"  ValueDb="{Binding Email, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="textBoxEstado" Grid.Column="1" Grid.Row="7" Caption="Estado"  ValueDb="{Binding Email, Mode=TwoWay}"/>
+                                       <cd:MyTexBox x:Name="textBoxCiudad" Grid.Column="0" Grid.Row="8" Caption="Ciudad" ValueDb="{Binding Email, Mode=TwoWay}"/>
+                                 
+                                    <Label Content="Ocoltar datos fiscales" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left"
+                                           VerticalAlignment="Bottom" Margin="148,0,0,80" Grid.RowSpan="2"/>
+                                    <CheckBox x:Name="cbox" Padding="50 0 0 0" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right"
+                                              VerticalAlignment="Bottom" Margin="0,0,6,6" Checked="CheckBox_Checked"/>
                                     <Border Grid.Row="8" Grid.ColumnSpan="2" Height="80"
             Background="#f6f6f6" CornerRadius="0 0 10 10"
             Margin="0,81,0,0" Grid.RowSpan="2"

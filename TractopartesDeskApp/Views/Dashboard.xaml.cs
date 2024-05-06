@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
 using TractopartesDeskApp.Views.UserControls;
-
+using TractopartesDeskApp.VIewModel;
 namespace TractopartesDeskApp.Views
 {
     /// <summary>
@@ -16,8 +16,15 @@ namespace TractopartesDeskApp.Views
         {
             InitializeComponent();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-
+            UserViewmodel = new();
+            ProveedorViewModel = new ProveedorByViewModel();
+            tableData=new();
+            DataContext=this;
         }
+
+        TablaUsuarios tableData;
+        ProveedorByViewModel ProveedorViewModel;
+        UserByViewModel UserViewmodel;
         public string DataSource
         {
             get
@@ -30,7 +37,6 @@ namespace TractopartesDeskApp.Views
         public static readonly DependencyProperty DataProperty =
             DependencyProperty.Register("DataSource", typeof(string), typeof(MyTexBox));
 
-        private UsuariosView usuariosView;
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
 
@@ -68,36 +74,41 @@ namespace TractopartesDeskApp.Views
             else this.WindowState = WindowState.Normal;
         }
 
-        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
-        {
-
-        }
+ 
 
         private void btnEnviar_Click(object sender, RoutedEventArgs e)
         {
-           
 
+
+
+        }
+        private void ProveedorChecked(object sender, RoutedEventArgs e)
+        {
+           
 
         }
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
-            TablaUsuarios table = new();
+            this.DataContext = UserViewmodel;
             BtnAddUser AddUser = new();
-            table.DataContext = new VIewModel.UserByViewModel();
-            ContentContainer.Content= table;
-            BtnContentContainer.Content = AddUser;
-            BtnContentContainer.DataContext = table.DataContext;
-
+            AddUser.DataContext = this.DataContext;
+            AddUser.WindowType = typeof(UsuariosView);
+            tableData.DataContext=this.DataContext;
+            tableData.UpdateUsers(UserViewmodel._users);
+            BtnContentContainer.Content = AddUser;       
+            ContentContainer.Content = tableData;
+          
         }
-
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {
-            
+           
         }
 
         private void btnEnviar_GiveFeedback(object sender, GiveFeedbackEventArgs e)
         {
 
         }
+
+   
     }
 }

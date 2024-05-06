@@ -50,5 +50,10 @@ namespace TractopartesDeskApp.VIewModel
                 validData = true;
             return validData;
         }
+
+        public static implicit operator string(UserByViewModel v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

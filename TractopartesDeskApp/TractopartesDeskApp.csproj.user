@@ -60,6 +60,9 @@
     <Page Update="Views\UserControls\TablaUsuarios.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ProveedoresView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\UsuariosView.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -57,7 +57,7 @@
                            Margin="0 -40 0 10" Width="230" Height="79">
                 </TextBlock>
                 <!--Menu Buttons-->
-                <RadioButton Style="{StaticResource menuButton}"
+                <RadioButton x:Name="ProveedoresPanel" Style="{StaticResource menuButton}"
                              Tag="{StaticResource color1}">
 
                     <StackPanel Orientation="Horizontal">
@@ -67,7 +67,7 @@
                 </RadioButton>
 
                 <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color3}" Checked="RadioButton_Checked_1">
+                             Tag="{StaticResource color3}" Checked="ProveedorChecked">
 
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Truck" Style="{StaticResource menuButtonIcon}"/>
@@ -196,10 +196,12 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="200"/>
                             </Grid.ColumnDefinitions>
-                            <ContentControl  x:Name="BtnContentContainer"  Content="{Binding }" Grid.Column="2"/>
+                            <StackPanel Grid.Column="2" Margin="5 5 5 5" >
+                                <ContentControl  x:Name="BtnContentContainer"   />
+                            </StackPanel>
                         </Grid>
 
-                        <ContentControl Grid.Row="1" x:Name="ContentContainer" Content="{Binding   }"/>
+                        <ContentControl Grid.Row="1" x:Name="ContentContainer" />
                     </Grid>
                 </Grid>
             </Grid>

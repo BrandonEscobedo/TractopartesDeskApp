@@ -13,6 +13,8 @@ namespace TractopartesDeskApp.VIewModel
         public ProveedorByViewModel()
         {
             _proveedorRepository = new ProveedorRepository();
+            Proveedores = _proveedorRepository.GetProveedores();
+
             AddProveedorCommand = new ViewModelCommand(ExecuteProveedorCommand, CanExecuteProveedorCommand);
         }
         private void ExecuteProveedorCommand(object obj)
@@ -24,18 +26,20 @@ namespace TractopartesDeskApp.VIewModel
                 telefono = Telefono,
                 razonsocial = RazonSocial            
             });
+            _proveedores = _proveedorRepository.GetProveedores();
         }
 
         private bool CanExecuteProveedorCommand(object obj)
         {
-            bool validData;
-            if (string.IsNullOrWhiteSpace(Correo) || string.IsNullOrWhiteSpace(NombreEmpresa) || string.IsNullOrWhiteSpace(RazonSocial) 
-                || string.IsNullOrWhiteSpace(direccion)
-                || Telefono <= 0)
-                validData = false;
-            else
-                validData = true;
-            return validData;
+            return true;
+            //bool validData;
+            //if (string.IsNullOrWhiteSpace(Correo) || string.IsNullOrWhiteSpace(NombreEmpresa) || string.IsNullOrWhiteSpace(RazonSocial) 
+            //    || string.IsNullOrWhiteSpace(direccion)
+            //    || Telefono <= 0)
+            //    validData = false;
+            //else
+            //    validData = true;
+            //return validData;
         }
     }
 }

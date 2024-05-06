@@ -19,6 +19,13 @@
 
   <ItemGroup>
     <Folder Include="Resource\" />
+    <Folder Include="Views\UserControls\Proveedor\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ProveedoresView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

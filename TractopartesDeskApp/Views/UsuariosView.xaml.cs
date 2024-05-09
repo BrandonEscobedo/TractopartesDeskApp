@@ -14,6 +14,7 @@ namespace TractopartesDeskApp.Views
         {
             InitializeComponent();
             YourCollection = ["Elemento 1", "Elemento 2", "Elemento 3"];
+           
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)

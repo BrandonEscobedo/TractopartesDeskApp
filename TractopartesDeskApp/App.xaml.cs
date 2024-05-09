@@ -12,7 +12,9 @@ namespace TractopartesDeskApp
         public static IHost? AppHost { get; private set; }
 
         public App()
+
         {
+            
             AppHost = Host.CreateDefaultBuilder()
                 .ConfigureServices((hostservices, services) =>
                 {

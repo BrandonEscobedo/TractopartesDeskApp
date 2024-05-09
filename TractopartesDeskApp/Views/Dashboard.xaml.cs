@@ -16,15 +16,12 @@ namespace TractopartesDeskApp.Views
         {
             InitializeComponent();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-            UserViewmodel = new();
-            ProveedorViewModel = new ProveedorByViewModel();
-            tableData=new();
-            DataContext=this;
+           
+           
         }
-
-        TablaUsuarios tableData;
         ProveedorByViewModel ProveedorViewModel;
-        UserByViewModel UserViewmodel;
+
+
         public string DataSource
         {
             get
@@ -89,13 +86,10 @@ namespace TractopartesDeskApp.Views
         }
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
+            TablaUsuarios tableData=new();
+            UserByViewModel UserViewmodel=new();
             this.DataContext = UserViewmodel;
-            BtnAddUser AddUser = new();
-            AddUser.DataContext = this.DataContext;
-            AddUser.WindowType = typeof(UsuariosView);
-            tableData.DataContext=this.DataContext;
-            tableData.UpdateUsers(UserViewmodel._users);
-            BtnContentContainer.Content = AddUser;       
+            tableData.DataContext=UserViewmodel;
             ContentContainer.Content = tableData;
           
         }

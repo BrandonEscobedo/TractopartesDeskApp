@@ -12,23 +12,44 @@
 
     <Grid Background="#151f2d" >
         <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="1">
+                    <StackPanel>
+                        <local:MyTexBox  Caption="Buscar Cliente" Hint="Nombres/apellidos"/>
 
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="2">
+                  
+                        <Button  HorizontalAlignment="Center" VerticalAlignment="Center" Content="Agregar cliente" 
+ Style="{StaticResource AgregarButton}"
+Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}" Click="btnAdd_Click">
+
+                        </Button>
+                  
+
+
+                </Border>
+            </Grid>
         </Border>
-        <Border Grid.Row="0" Margin="10 10 10 10" CornerRadius="100" >
-        
-            <DataGrid  ItemsSource="{Binding }" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
+        <Border Grid.Row="1" Margin="10 10 10 10" CornerRadius="100" >
+
+            <DataGrid Loaded="MembersDataGrid_Loaded" ItemsSource="{Binding _users}" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
                        RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
 
                 <DataGrid.Columns>
-
-
-
-                    <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
-                        <DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto" DisplayIndex="7"  >
+                        <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Style="{StaticResource GridEditButton}">
@@ -42,7 +63,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                   
+
 
 
                 </DataGrid.Columns>

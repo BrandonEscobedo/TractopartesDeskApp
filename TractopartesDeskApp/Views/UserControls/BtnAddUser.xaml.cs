@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TractopartesDeskApp.VIewModel;
 
 namespace TractopartesDeskApp.Views.UserControls
 {
@@ -21,11 +22,11 @@ namespace TractopartesDeskApp.Views.UserControls
     public partial class BtnAddUser : UserControl
     {
         public Type WindowType { get; set; }
-        public string ad="";
+        public UserByViewModel viewModel;
         public BtnAddUser()
         {
             InitializeComponent();
-            DataContext = this;
+            DataContext = viewModel;
         }
 
         private void btnEnviar_Click(object sender, RoutedEventArgs e)
@@ -35,7 +36,7 @@ namespace TractopartesDeskApp.Views.UserControls
                 // Crea una instancia de la ventana T
                 Window windowInstance = (Window)Activator.CreateInstance(WindowType);
                 // Muestra la ventana
-                windowInstance.DataContext = this.DataContext;
+                windowInstance.DataContext = viewModel;
                 windowInstance.Show();
             }
             else

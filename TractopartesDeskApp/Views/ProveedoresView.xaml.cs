@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using TractopartesDeskApp.VIewModel;
 
 namespace TractopartesDeskApp.Views
 {
@@ -13,6 +14,8 @@ namespace TractopartesDeskApp.Views
         {
             InitializeComponent();
             DataContext = this;
+            ProveedorByViewModel proveedorByViewModel = new ProveedorByViewModel();
+            this.DataContext= proveedorByViewModel;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

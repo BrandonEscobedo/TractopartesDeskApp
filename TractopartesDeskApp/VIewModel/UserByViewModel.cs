@@ -1,63 +1,52 @@
-﻿using System.Windows.Data;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using TractopartesDeskApp.Models;
-using TractopartesDeskApp.Repository;
 using TractopartesDeskApp.Views;
 namespace TractopartesDeskApp.VIewModel
 {
-    public class UserByViewModel : UserViewModelPropertys
+    public class UserByViewModel 
     {
-        private IUserRepository _userRepository;
-        public ICommand AddUserCommand { get; }
-        public ICommand ClearFieldsCommand { get; }
-        public event EventHandler UsersUpdated;
+        public ICommand ShowWindowCommand { get; }
+        public ICommand UpdateByUserCommand { get; }
+        public ObservableCollection<UserModel> userModels { get; set; }
 
         public UserByViewModel()
         {
-            _userRepository = new UserRepository();
-            Users = _userRepository.GetAllUser();
-            ClearFieldsCommand = new ViewModelCommand(ExecuteClearFieldsCommand);
-            AddUserCommand = new ViewModelCommand(ExecuteUserCommand, CanExecuteUserCommand);
-           _ClientesCollection = CollectionViewSource.GetDefaultView(_users);
+            userModels = Usermanager.GetUsers();
+            ShowWindowCommand = new ViewModelCommand(ExecuteUserCommand, CanExecuteUserCommand);
+            UpdateByUserCommand = new ViewModelCommand(UpdateUserCommand, CanExecuteUserCommand);
         }
-        private void ExecuteClearFieldsCommand(object obj)
+        private void UpdateUserCommand(object obj)
         {
+            UserModel user = (UserModel)obj;
+            UsuariosView usuarios = new UsuariosView();
+            usuarios.DataContext = new AddUserByViewModel()
+            { P_apellidomaterno=user.apellidopaterno,
+            
+            P_genero=user.genero,
+            P_nombres=user.nombres,
+            P_apellidopaterno=user.apellidopaterno,
+            Telefono1=user.telefono1,
+            Telefono2=user.telefono2,
+            Email=user.email,
+           }
+            ;
+            usuarios.Show();
 
-
-            P_nombres = string.Empty;
-            P_genero = string.Empty;
-            Telefono1 = new int();
-            P_apellidomaterno = string.Empty;
-            Telefono2 = new int();
-            P_apellidopaterno = string.Empty;
-            Email = string.Empty;
         }
         private void ExecuteUserCommand(object obj)
         {
             UsuariosView usuarios = new UsuariosView();
+            usuarios.DataContext = new UserByViewModel();
             usuarios.Show();
-
-          
-            _users = _userRepository.GetAllUser();
-            _ClientesCollection = CollectionViewSource.GetDefaultView(_users);
-            ExecuteClearFieldsCommand(null);
-            UsersUpdated?.Invoke(this, EventArgs.Empty);
 
         }
         private bool CanExecuteUserCommand(object obj)
         {
-            bool validData;
-            if (string.IsNullOrWhiteSpace(P_nombres) || string.IsNullOrWhiteSpace(P_apellidomaterno) || string.IsNullOrWhiteSpace(P_apellidopaterno) ||
-               string.IsNullOrWhiteSpace(P_genero) || Telefono1 <= 0 || Telefono2 <= 0 || string.IsNullOrEmpty(Email)|| !Email.Contains("@"))
-                validData = false;
-            else
-                validData = true;
-            return validData;
+            return true;
+          
         }
 
-        public static implicit operator string(UserByViewModel v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

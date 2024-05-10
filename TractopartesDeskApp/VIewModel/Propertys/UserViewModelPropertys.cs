@@ -6,26 +6,25 @@ namespace TractopartesDeskApp.VIewModel
 {
     public class UserViewModelPropertys : ViewModelBase
     {
-        private UserModel _userModel;
+        public UserModel _userModel;
      
 
         public UserViewModelPropertys()
         {
             _userModel = new UserModel();
         }
-        internal ObservableCollection<UserModel> Users=new ObservableCollection<UserModel>();
-        public ObservableCollection<UserModel> _users
-        {
-            get => Users;
-            set
-            {
-                if (Users != value)
-                {
-                    Users = value;
-                    OnPropertyChanged(nameof(_users));
-                }
-            }
-        }
+        //public ObservableCollection<UserModel> _users
+        //{
+        //    get => Users;
+        //    set
+        //    {
+        //        if (Users != value)
+        //        {
+        //            Users = value;
+        //            OnPropertyChanged(nameof(_users));
+        //        }
+        //    }
+        //}
         public ICollectionView _ClientesCollection;
         public ICollectionView ClientesCollection
         {
@@ -49,6 +48,7 @@ namespace TractopartesDeskApp.VIewModel
                 }
             }
         }
+   
         public string P_nombres
         {
             get { return _userModel.nombres; }

@@ -15,7 +15,7 @@ namespace TractopartesDeskApp.Repository
         public async void AddUser(UserModel userModel)
         {
 
-           await SaveData("crearclientedatospersonales", userModel);
+           await ExecuteGeneric("crearclientedatospersonales", userModel);
         }
 
         public    ObservableCollection<UserModel> GetAllUser()
@@ -30,9 +30,9 @@ namespace TractopartesDeskApp.Repository
             throw new NotImplementedException();
         }
 
-        public void UpdateUser(UserModel userModel)
+        public async void UpdateUser(UserModel userModel)
         {
-            throw new NotImplementedException();
+            await ExecuteGeneric("updatecliente",userModel);
         }
     }
 }

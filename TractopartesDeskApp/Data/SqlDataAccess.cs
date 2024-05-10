@@ -35,30 +35,8 @@ namespace TractopartesDeskApp.Data
                     throw;
                 }
             }
-        }   public ICollection<T> GetAll<T>(string sql)
-        {
-            ObservableCollection<T> ObservableCollection=new ObservableCollection<T>();
-            using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
-            {
-
-                try
-                {
-                    connection.Open();
-                    var rows = connection.Query<T>(sql);
-                    foreach(var row in rows)
-                    {
-                        ObservableCollection.Add(row);
-                    }
-                    return ObservableCollection ;
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
-        }
-        public async Task<bool> SaveData<T>(string sql,T parameters)
+        }  
+        public async Task<bool> ExecuteGeneric<T>(string sql,T parameters)
         {
             using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
             {

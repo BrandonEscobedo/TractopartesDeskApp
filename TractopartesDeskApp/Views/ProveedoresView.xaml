@@ -7,7 +7,9 @@
         MinWidth="700" WindowStyle="none" WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" Background="Transparent">
     <Window.DataContext>
-        <viewModel:ProveedorByViewModel/>
+        <viewModel:WindowProveedorViewModel>
+            
+        </viewModel:WindowProveedorViewModel>
 
     </Window.DataContext>
     <WindowChrome.WindowChrome>
@@ -23,10 +25,11 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="45"/>
-                <RowDefinition Height="232*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="226*"/>
+                <RowDefinition Height="174*"/>
+                <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="1" Grid.RowSpan="2"  Margin="10 10 10 10" >
+            <Border Grid.Row="1" Grid.RowSpan="2"  Margin="10,10,10,5" >
 
                 <Grid VerticalAlignment="Center" >
                     <Grid.RowDefinitions>
@@ -48,7 +51,7 @@
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
-                                       
+
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
@@ -71,7 +74,7 @@
                                     <cd:MyTexBox  Grid.Column="1" Grid.Row="1" Caption="Razón social" Hint="" ValueDb="{Binding RazonSocial, Mode=TwoWay}" />
                                     <cd:MyTexBox  Grid.Column="0" Grid.Row="2" Caption="Direccion" Hint="Av mexico calle 31, No. #413, Guadalupe N.L" ValueDb="{Binding direccion, Mode=TwoWay}" />
                                     <cd:MyTexBox  Grid.Column="1" Grid.Row="2" Caption="Correo"  ValueDb="{Binding Correo, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="3" Caption="Telefono 1"  ValueDb="{Binding tele, Mode=TwoWay}"/>
+                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="3" Caption="Telefono 1"  ValueDb="{Binding Telefono, Mode=TwoWay}"/>
                                     <Border Grid.Row="3" Grid.ColumnSpan="2" Height="80"
             Background="#f6f6f6" CornerRadius="0 0 10 10"
             Margin="0,81,0,0" Grid.RowSpan="2"

@@ -9,7 +9,7 @@ namespace TractopartesDeskApp.Repository
 
         public async void AddProveedor(ProveedorModel proveedor)
         {
-              await  SaveData("CrearProveedor", proveedor);
+              await  ExecuteGeneric("CrearProveedor", proveedor);
       }
 
       public  ObservableCollection<ProveedorModel> GetProveedores()

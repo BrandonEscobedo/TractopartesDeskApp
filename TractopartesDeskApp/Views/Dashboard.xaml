@@ -104,7 +104,15 @@
 
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Building" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Empresas" Style="{StaticResource menuButtonText}" Foreground="White"/>
+                            <TextBlock Text="Productos" Style="{StaticResource menuButtonText}" Foreground="White"/>
+                        </StackPanel>
+                    </RadioButton>    
+                    <RadioButton Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color15}">
+
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Store" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Generar venta" Style="{StaticResource menuButtonText}" Foreground="White"/>
                         </StackPanel>
                     </RadioButton>
 
@@ -177,11 +185,12 @@
                             Foreground="{StaticResource titleColor2}"
                             Margin="35 0 10 0"/>
                             <TextBlock Text="Dashboard"
+                                       Name="txtitulo"
                             Foreground="{StaticResource titleColor2}"
                             FontSize="30"
                             FontFamily="Monserrat"
                             FontWeight="Medium"
-                                       x:Name="txtTitulo"
+                                     
                             VerticalAlignment="Center"/>
                         </StackPanel>
                         

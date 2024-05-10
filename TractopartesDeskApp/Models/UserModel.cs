@@ -1,16 +1,12 @@
 ﻿using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace TractopartesDeskApp.Models
 {
     public class UserModel
     {
-        
+       
         [PgName("nombres")]
         [Column(TypeName = "nombres")]
        
@@ -24,5 +20,7 @@ namespace TractopartesDeskApp.Models
         public string email { get; set; } = "";
         public int telefono1 { get; set; }
         public int telefono2 { get; set; }
+
+       
     }
 }

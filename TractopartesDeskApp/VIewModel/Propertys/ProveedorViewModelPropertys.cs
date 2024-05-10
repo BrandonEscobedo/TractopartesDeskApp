@@ -16,19 +16,19 @@ namespace TractopartesDeskApp.VIewModel.Propertys
         {
             _proveedorModel = new ProveedorModel();
         }
-        public ObservableCollection<ProveedorModel> Proveedores;
-        public ObservableCollection<ProveedorModel> _proveedores
-        {
-            get => Proveedores;
-            set
-            {
-                if(Proveedores!= value)
-                {
-                    Proveedores = value;
-                    OnPropertyChanged(nameof(_proveedores));
-                }
-            }
-        }
+        //public ObservableCollection<ProveedorModel> Proveedores;
+        //public ObservableCollection<ProveedorModel> _proveedores
+        //{
+        //    get => Proveedores;
+        //    set
+        //    {
+        //        if(Proveedores!= value)
+        //        {
+        //            Proveedores = value;
+        //            OnPropertyChanged(nameof(_proveedores));
+        //        }
+        //    }
+        //}
         public string NombreEmpresa
         {
             get { return _proveedorModel.nombreempresa; }

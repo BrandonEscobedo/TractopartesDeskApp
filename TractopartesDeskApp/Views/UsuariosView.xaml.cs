@@ -20,8 +20,8 @@ namespace TractopartesDeskApp.Views
             YourCollection = ["Elemento 1", "Elemento 2", "Elemento 3"];
            _usrModel=new UserModel();
             viewModel = new UserByViewModel();
-            DataContext = viewModel;
-            viewModel.P_nombres = "";
+      
+           
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -32,16 +32,7 @@ namespace TractopartesDeskApp.Views
             }
         }
 
-        private void Clear()
-        {
-            txtnombres.txttexto.Text = _usrModel.nombres;
-            
-            txtapellidoMaterno.txttexto.Text = "";
-            txtapellidoPaterno.txttexto.Text = "";
-            txtelefono1.txttexto.Text = "";
-            txtelefono1.txttexto.Text = "";
-            email.txttexto.Text = "";
-        }
+
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

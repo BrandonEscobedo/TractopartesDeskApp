@@ -18,10 +18,8 @@ namespace TractopartesDeskApp.Views
         {
             InitializeComponent();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-             UserViewmodel = new();
         }
-        ProveedorByViewModel ProveedorViewModel;
-        UserByViewModel UserViewmodel;
+
 
         public string DataSource
         {
@@ -82,14 +80,14 @@ namespace TractopartesDeskApp.Views
         }
         private void ProveedorChecked(object sender, RoutedEventArgs e)
         {
-          
+          txtitulo.Text = "Proveedores";
+         MainContainerPage.NavigationService.Navigate(new ProveedoresPage()); 
         }
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
-            MainContainerPage.NavigationService.Navigate(new Test());
-            //TablaUsuarios tableData=new();
-            //ContentContainer.Content = tableData;
-            //txtTitulo.Text = "Clientes";       
+            txtitulo.Text = "Clientes";
+            MainContainerPage.NavigationService.Navigate(new ClientesPage());
+            
         }
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {

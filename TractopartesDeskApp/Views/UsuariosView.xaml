@@ -80,14 +80,14 @@
                                     <cd:MyTexBox x:Name="txtelefono2" Grid.Column="1" Grid.Row="3" Caption="Telefono 2"  ValueDb="{Binding Telefono2, Mode=TwoWay}"/>
                                     <cd:MyTexBox x:Name="email" Grid.Column="0" Grid.Row="4" Caption="Email" Hint="user@example.com" ValueDb="{Binding Email, Mode=TwoWay}"/>
 
-                                    <cd:MyTexBox x:Name="textBoxCalle"  Grid.Column="0" Grid.Row="5" Caption="Calle" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox x:Name="textBoxNumeroInterior" Grid.Column="1" Grid.Row="5" Caption="Número interior" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox x:Name="textBoxNumeroExterior" Grid.Column="0" Grid.Row="6" Caption="Número exterior" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox x:Name="textBoxColonia" Grid.Column="1" Grid.Row="6" Caption="Colonia" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox x:Name="textBoxCodigoPostal" Grid.Column="0" Grid.Row="7" Caption="Codigo Postal"  ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                    <cd:MyTexBox x:Name="textBoxEstado" Grid.Column="1" Grid.Row="7" Caption="Estado"  ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                       <cd:MyTexBox x:Name="textBoxCiudad" Grid.Column="0" Grid.Row="8" Caption="Ciudad" ValueDb="{Binding Email, Mode=TwoWay}"/>
-                                 
+                                    <cd:MyTexBox x:Name="textBoxCalle"  Grid.Column="0" Grid.Row="5" Caption="Calle"/>
+                                    <cd:MyTexBox x:Name="textBoxNumeroInterior" Grid.Column="1" Grid.Row="5" Caption="Número interior" />
+                                    <cd:MyTexBox x:Name="textBoxNumeroExterior" Grid.Column="0" Grid.Row="6" Caption="Número exterior" />
+                                    <cd:MyTexBox x:Name="textBoxColonia" Grid.Column="1" Grid.Row="6" Caption="Colonia" Hint="" />
+                                    <cd:MyTexBox x:Name="textBoxCodigoPostal" Grid.Column="0" Grid.Row="7" Caption="Codigo Postal" />
+                                    <cd:MyTexBox x:Name="textBoxEstado" Grid.Column="1" Grid.Row="7" Caption="Estado"  />
+                                    <cd:MyTexBox x:Name="textBoxCiudad" Grid.Column="0" Grid.Row="8" Caption="Ciudad" />
+
                                     <Label Content="Ocoltar datos fiscales" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left"
                                            VerticalAlignment="Bottom" Margin="148,0,0,80" Grid.RowSpan="2"/>
                                     <CheckBox x:Name="cbox" Padding="50 0 0 0" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right"

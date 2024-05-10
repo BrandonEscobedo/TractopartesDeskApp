@@ -5,6 +5,8 @@ using System.Windows.Input;
 using System.Windows.Interop;
 using TractopartesDeskApp.Views.UserControls;
 using TractopartesDeskApp.VIewModel;
+using System.Windows.Navigation;
+using TractopartesDeskApp.Views.Pages;
 namespace TractopartesDeskApp.Views
 {
     /// <summary>
@@ -16,11 +18,10 @@ namespace TractopartesDeskApp.Views
         {
             InitializeComponent();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-           
-           
+             UserViewmodel = new();
         }
         ProveedorByViewModel ProveedorViewModel;
-
+        UserByViewModel UserViewmodel;
 
         public string DataSource
         {
@@ -81,17 +82,14 @@ namespace TractopartesDeskApp.Views
         }
         private void ProveedorChecked(object sender, RoutedEventArgs e)
         {
-           
-
+          
         }
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
-            TablaUsuarios tableData=new();
-            UserByViewModel UserViewmodel=new();
-            this.DataContext = UserViewmodel;
-            tableData.DataContext=UserViewmodel;
-            ContentContainer.Content = tableData;
-          
+            MainContainerPage.NavigationService.Navigate(new Test());
+            //TablaUsuarios tableData=new();
+            //ContentContainer.Content = tableData;
+            //txtTitulo.Text = "Clientes";       
         }
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {

@@ -16,24 +16,19 @@ namespace TractopartesDeskApp.Views.UserControls
         public TablaUsuarios()
         {
             InitializeComponent();
-            Loaded += MembersDataGrid_Loaded;
-
+            txtbuscar.DataContext = this.DataContext;
         }
 
-        private void MembersDataGrid_Loaded(object sender, RoutedEventArgs e)
-        {
-            usuarios = new UsuariosView();
-            usuarios.DataContext = this.DataContext;
 
-        }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             if (usuarios == null || !usuarios.IsVisible)
             {
                 usuarios = new();
-
-                usuarios.DataContext = this.DataContext;
+                this.DataContext = usuarios.DataContext;
+                txtbuscar.Text = "";
+                usuarios.txtnombres.txttexto.Text = "";
             }
             else
             {

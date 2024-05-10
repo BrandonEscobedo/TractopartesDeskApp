@@ -6,6 +6,11 @@
         xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
         MinWidth="650" WindowStyle="none" WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" Background="Transparent">
+    <Window.DataContext>
+        <viewModel:UserByViewModel>
+            
+        </viewModel:UserByViewModel>
+    </Window.DataContext>
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
     </WindowChrome.WindowChrome>
@@ -65,15 +70,15 @@
                                     </StackPanel>
                                     <!--inputs-->
 
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="1"  Caption="Nombres" Hint="Ingresa  los nombres"  ValueDb="{Binding P_nombres, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="1" Grid.Row="1" Caption="Apellido Paterno" Hint="Apellido paterno" ValueDb="{Binding P_apellidopaterno, Mode=TwoWay}" />
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="2" Caption="Apellido Materno" Hint="Apellido materno" ValueDb="{Binding P_apellidomaterno, Mode=TwoWay}" />
-                                   
-                                      
-                                    <cd:MyTexBox  Grid.Column="1" Grid.Row="2" Caption="Genero"  ValueDb="{Binding P_genero, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="3" Caption="Telefono 1"  ValueDb="{Binding Telefono1, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="1" Grid.Row="3" Caption="Telefono 2"  ValueDb="{Binding Telefono2, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="4" Caption="Email" Hint="user@example.com" ValueDb="{Binding Email, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="txtnombres" Grid.Column="0" Grid.Row="1"  Caption="Nombres" Hint="Ingresa  los nombres"  ValueDb="{Binding P_nombres, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="txtapellidoPaterno" Grid.Column="1" Grid.Row="1" Caption="Apellido Paterno" Hint="Apellido paterno" ValueDb="{Binding P_apellidopaterno, Mode=TwoWay}" />
+                                    <cd:MyTexBox x:Name="txtapellidoMaterno" Grid.Column="0" Grid.Row="2" Caption="Apellido Materno" Hint="Apellido materno" ValueDb="{Binding P_apellidomaterno, Mode=TwoWay}" />
+
+
+                                    <cd:MyTexBox x:Name="txtgenero" Grid.Column="1" Grid.Row="2" Caption="Genero"  ValueDb="{Binding P_genero, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="txtelefono1" Grid.Column="0" Grid.Row="3" Caption="Telefono 1"  ValueDb="{Binding Telefono1, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="txtelefono2" Grid.Column="1" Grid.Row="3" Caption="Telefono 2"  ValueDb="{Binding Telefono2, Mode=TwoWay}"/>
+                                    <cd:MyTexBox x:Name="email" Grid.Column="0" Grid.Row="4" Caption="Email" Hint="user@example.com" ValueDb="{Binding Email, Mode=TwoWay}"/>
 
                                     <cd:MyTexBox x:Name="textBoxCalle"  Grid.Column="0" Grid.Row="5" Caption="Calle" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>
                                     <cd:MyTexBox x:Name="textBoxNumeroInterior" Grid.Column="1" Grid.Row="5" Caption="Número interior" Hint="" ValueDb="{Binding Email, Mode=TwoWay}"/>

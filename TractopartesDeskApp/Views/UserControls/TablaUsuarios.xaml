@@ -8,31 +8,45 @@
              xmlns:viewmodel="clr-namespace:TractopartesDeskApp.Models"
              xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="900" d:DesignWidth="800">
-
-    <Grid Background="#151f2d" >
+             MinHeight="200"
+            >
+    <UserControl.DataContext>
+        <viewModel:UserByViewModel>
+            
+        </viewModel:UserByViewModel>
+    </UserControl.DataContext>
+    <Grid Background="#ffffff" >
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="500"/>
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.Column="1">
-                    <StackPanel>
-                        <local:MyTexBox  Caption="Buscar Cliente" Hint="Nombres/apellidos"/>
-
-                    </StackPanel>
-                </Border>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="1">
+                        <StackPanel>
+                            <TextBox x:Name="txtbuscar" Text="{Binding P_nombresBuscar,UpdateSourceTrigger=PropertyChanged}"/>
+         
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            
                 <Border Grid.Column="2">
                   
                         <Button  HorizontalAlignment="Center" VerticalAlignment="Center" Content="Agregar cliente" 
  Style="{StaticResource AgregarButton}"
-Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}" Click="btnAdd_Click">
+Click="btnAdd_Click">
 
                         </Button>
                   
@@ -43,16 +57,24 @@ Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}" Click="b
         </Border>
         <Border Grid.Row="1" Margin="10 10 10 10" CornerRadius="100" >
 
-            <DataGrid Loaded="MembersDataGrid_Loaded" ItemsSource="{Binding _users}" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
+            <DataGrid  ItemsSource="{Binding _users}" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
                        RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
 
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto" DisplayIndex="7"  >
+                    <DataGridTextColumn  Header="Apellido Nombres" Binding="{Binding nombres}"/>
+                    <DataGridTextColumn  Header="Apellido Materno" Binding="{Binding apellidomaterno}"/>
+                    <DataGridTextColumn  Header="Apellido Paterno" Binding="{Binding apellidopaterno}"/>
+                    <DataGridTextColumn  Header="Genero" Binding="{Binding genero}" />
+                    <DataGridTextColumn  Header="Telefono 1 " Binding="{Binding telefono1}"/>
+                    <DataGridTextColumn  Header="Telefono 2 " Binding="{Binding telefono2}"/>
+                    <DataGridTextColumn  Header="Correo" Binding="{Binding email}"/>
+
+                    <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource GridEditButton}">
+                                    <Button Command="{Binding apellidomaterno}"  Style="{StaticResource GridEditButton}">
                                         <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                     <Button Style="{StaticResource GridRemoveButton}">
@@ -65,11 +87,49 @@ Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}" Click="b
 
 
 
-
                 </DataGrid.Columns>
 
             </DataGrid>
 
+        </Border>
+        <Border Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+
+                <Border  Grid.Column="1"  HorizontalAlignment="Center" BorderBrush="#dee4ec" BorderThickness="1" CornerRadius="5" 
+                         Padding="5" Background="White"
+                        >
+                    <StackPanel Orientation="Horizontal">
+                        <Button>
+                            <Icon:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource pagingButtonIcon}"/>
+                        </Button>
+
+                        <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
+
+                        <Button Style="{StaticResource pagingButton}" Content="1"/>
+                        <Button Style="{StaticResource pagingButton}" Content="2"/>
+                        <Button Style="{StaticResource pagingButton}" Content="3"/>
+                        <Button Style="{StaticResource pagingButton}" Content="..."/>
+
+
+                        <Button Style="{StaticResource pagingButton}" Content="7"/>
+                        <Button Style="{StaticResource pagingButton}" Content="8"/>
+                        <Button Style="{StaticResource pagingButton}" Content="9"/>
+
+                        <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
+
+
+                        <Button>
+                            <Icon:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource pagingButtonIcon}"/>
+                        </Button>
+
+                    </StackPanel>
+                </Border>
+            </Grid>
+     
         </Border>
     </Grid>
 </UserControl>

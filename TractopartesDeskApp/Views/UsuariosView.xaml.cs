@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using TractopartesDeskApp.Models;
+using TractopartesDeskApp.VIewModel;
 
 namespace TractopartesDeskApp.Views
 {
@@ -9,12 +11,17 @@ namespace TractopartesDeskApp.Views
     public partial class UsuariosView : Window
     {
         public List<string> YourCollection { get; set; }
+        private UserModel _usrModel;
+        private UserByViewModel viewModel;
 
         public UsuariosView()
         {
             InitializeComponent();
             YourCollection = ["Elemento 1", "Elemento 2", "Elemento 3"];
-           
+           _usrModel=new UserModel();
+            viewModel = new UserByViewModel();
+            DataContext = viewModel;
+            viewModel.P_nombres = "";
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -23,6 +30,17 @@ namespace TractopartesDeskApp.Views
             {
                 this.DragMove();
             }
+        }
+
+        private void Clear()
+        {
+            txtnombres.txttexto.Text = _usrModel.nombres;
+            
+            txtapellidoMaterno.txttexto.Text = "";
+            txtapellidoPaterno.txttexto.Text = "";
+            txtelefono1.txttexto.Text = "";
+            txtelefono1.txttexto.Text = "";
+            email.txttexto.Text = "";
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

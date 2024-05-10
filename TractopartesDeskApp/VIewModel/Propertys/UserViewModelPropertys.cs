@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using TractopartesDeskApp.Models;
 
 namespace TractopartesDeskApp.VIewModel
@@ -12,7 +13,7 @@ namespace TractopartesDeskApp.VIewModel
         {
             _userModel = new UserModel();
         }
-        public ObservableCollection<UserModel> Users;
+        internal ObservableCollection<UserModel> Users=new ObservableCollection<UserModel>();
         public ObservableCollection<UserModel> _users
         {
             get => Users;
@@ -25,6 +26,29 @@ namespace TractopartesDeskApp.VIewModel
                 }
             }
         }
+        public ICollectionView _ClientesCollection;
+        public ICollectionView ClientesCollection
+        {
+            get { return _ClientesCollection;}
+            set
+            {
+                _ClientesCollection=value;
+            }
+        }
+        public string P_nombresBuscar
+        {
+
+            get => P_nombres;
+            set
+            {
+                if(P_nombres != value)
+                {
+                    _userModel.nombres = value;
+
+                    ClientesCollection.Filter += Filter;
+                }
+            }
+        }
         public string P_nombres
         {
             get { return _userModel.nombres; }
@@ -32,6 +56,24 @@ namespace TractopartesDeskApp.VIewModel
             {
                 _userModel.nombres = value;
                 OnPropertyChanged(nameof(P_nombres));
+              
+            }
+        }
+        private bool Filter(Object obj)
+        {
+            UserModel data = obj as UserModel;
+            if(!string.IsNullOrEmpty(P_nombres) && !string.IsNullOrEmpty(P_apellidomaterno))
+            {
+                return data.nombres.Contains(P_nombres);
+
+            }
+            else if(string.IsNullOrEmpty(P_nombres))
+            {
+                return data.nombres.Contains(P_nombres);
+            }
+            else
+            {
+                return data.nombres.Contains(P_nombres);
             }
         }
 

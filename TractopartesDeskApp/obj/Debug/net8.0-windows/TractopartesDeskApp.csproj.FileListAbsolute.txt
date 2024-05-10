@@ -156,3 +156,5 @@ C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\Tractopartes
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\BtnAddUser.baml
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProveedoresView.g.cs
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProveedoresView.baml
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\Test.g.cs
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\Test.baml

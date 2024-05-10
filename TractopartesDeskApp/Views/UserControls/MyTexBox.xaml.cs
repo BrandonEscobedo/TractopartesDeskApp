@@ -8,6 +8,7 @@ namespace TractopartesDeskApp.Views.UserControls
         public MyTexBox()
         {
             InitializeComponent();
+            txttexto.Text= string.Empty;
         }
         public string Hint
         {

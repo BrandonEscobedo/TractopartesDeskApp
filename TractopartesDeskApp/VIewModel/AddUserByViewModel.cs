@@ -19,12 +19,10 @@ namespace TractopartesDeskApp.VIewModel
             AddUserCommand = new ViewModelCommand(ExecuteAddUserCommand, CanExecuteUserCommand);
             UpdateUserCommand = new ViewModelCommand(ExecuteUpdateUserCommand, CanExecuteUserCommand);
         }
-
         private void ExecuteUpdateUserCommand(object obj)
         {
             throw new NotImplementedException();
         }
-
         private void ExecuteClearFieldsCommand(object obj)
         {
             P_nombres = string.Empty;
@@ -37,7 +35,10 @@ namespace TractopartesDeskApp.VIewModel
         }
         private void ExecuteAddUserCommand(object obj)
         {
+            if (userModel.idclientedp == 0)
+            {
 
+            }
             userModel.email = Email;
             userModel.nombres = P_nombres;
             userModel.apellidomaterno = P_apellidomaterno;
@@ -45,15 +46,11 @@ namespace TractopartesDeskApp.VIewModel
             userModel.genero = P_genero;
             userModel.telefono1 = Telefono1;
             userModel.telefono2 = Telefono2;
-
-
-
             _userRepository.AddUser(userModel);
             Usermanager.AddUsers(userModel);
             ExecuteClearFieldsCommand(null);
-
-
         }
+        e
         private bool CanExecuteUserCommand(object obj)
         {
             bool validData;

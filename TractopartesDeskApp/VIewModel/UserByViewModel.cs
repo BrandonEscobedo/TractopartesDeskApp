@@ -9,7 +9,6 @@ namespace TractopartesDeskApp.VIewModel
         public ICommand ShowWindowCommand { get; }
         public ICommand UpdateByUserCommand { get; }
         public ObservableCollection<UserModel> userModels { get; set; }
-
         public UserByViewModel()
         {
             userModels = Usermanager.GetUsers();
@@ -32,21 +31,17 @@ namespace TractopartesDeskApp.VIewModel
            }
             ;
             usuarios.Show();
-
         }
         private void ExecuteUserCommand(object obj)
         {
             UsuariosView usuarios = new UsuariosView();
-            usuarios.DataContext = new UserByViewModel();
+            usuarios.DataContext = new AddUserByViewModel();
             usuarios.Show();
-
         }
         private bool CanExecuteUserCommand(object obj)
         {
             return true;
           
-        }
-
-        
+        }        
     }
 }

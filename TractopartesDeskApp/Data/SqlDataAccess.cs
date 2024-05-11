@@ -44,6 +44,7 @@ namespace TractopartesDeskApp.Data
                 {
                     connection.Open();
                     await connection.ExecuteAsync(sql, parameters, commandType: CommandType.StoredProcedure);
+
                     return true;
                 }
                 catch (Exception)

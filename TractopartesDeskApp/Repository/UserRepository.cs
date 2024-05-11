@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using TractopartesDeskApp.Data;
 using TractopartesDeskApp.Models;
 
@@ -11,13 +6,21 @@ namespace TractopartesDeskApp.Repository
 {
     public class UserRepository : SqlDataAccess, IUserRepository
     {
- 
-        public async void AddUser(UserModel userModel)
+
+        public async void AddUser(UserModel userModel )
         {
-
-           await ExecuteGeneric("crearclientedatospersonales", userModel);
+            var parmetrs = new 
+            {
+                apellidomaterno = userModel.apellidopaterno,
+                apellidopaterno = userModel.apellidopaterno,
+                nombres = userModel.nombres,
+                genero = userModel.genero,
+                email = userModel.email,
+                telefono1 = userModel.telefono1,
+                telefono2 = userModel.telefono2,
+            };
+            await ExecuteGeneric ("crearclientedatospersonales", parmetrs);
         }
-
         public    ObservableCollection<UserModel> GetAllUser()
         {
         var users = LoadDataObservable<UserModel>("select * from clientedatospersonales");
@@ -32,6 +35,7 @@ namespace TractopartesDeskApp.Repository
 
         public async void UpdateUser(UserModel userModel)
         {
+
             await ExecuteGeneric("updatecliente",userModel);
         }
     }

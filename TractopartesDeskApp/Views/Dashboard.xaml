@@ -49,7 +49,7 @@
                                     <DropShadowEffect BlurRadius="10" Opacity="0.3"
                                                       />
                                 </Border.Effect>
-                                <Image Width="60" Height="60" Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\Logo2.png" />                                    
+                                <Image Width="60" Height="60" Source="C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\logo2.png" />                                    
                             </Border>
                             
                         </Grid>

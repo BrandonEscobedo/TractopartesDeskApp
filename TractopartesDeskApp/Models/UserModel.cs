@@ -1,12 +1,11 @@
 ﻿using NpgsqlTypes;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.Serialization;
 
 namespace TractopartesDeskApp.Models
 {
     public class UserModel
     {
-       
+        public int idclientedp { get; set; }
         [PgName("nombres")]
         [Column(TypeName = "nombres")]
        

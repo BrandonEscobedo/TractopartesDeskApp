@@ -1,7 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using TractopartesDeskApp.Command;
 using TractopartesDeskApp.Models;
 using TractopartesDeskApp.Repository;
+using TractopartesDeskApp.Stores;
 
 namespace TractopartesDeskApp.VIewModel
 {
@@ -11,42 +13,12 @@ namespace TractopartesDeskApp.VIewModel
         public ICommand DeleteUserCommand { get; }
         private IUserRepository _userRepository;
         public UserModel userModel { get; set; } = new UserModel();
-
-        public AddUserByViewModel()
+        private readonly UsuariosStore _usersStore;
+        public AddUserByViewModel(UsuariosStore usuariosStore )
         {
             _userRepository = new UserRepository();
-            AddUserCommand = new ViewModelCommand(ExecuteAddUserCommand, CanExecuteUserCommand);
-            DeleteUserCommand = new ViewModelCommand(ExecuteDeleteUserCommand);
-            
-        }
-        private void ExecuteDeleteUserCommand(object obj)
-        {
-            if (P_idclientedp != 0)
-                _userRepository.RemoveUser(P_idclientedp);
-            Usermanager.RemoveUserList(P_idclientedp);
-            CloseWindow();
-        }
-        private void CloseWindow()
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.DataContext == this)
-                {
-                    window.Close();
-                    break;
-                }
-            }
-        }
-
-        private void ExecuteClearFieldsCommand( )
-        {
-            P_nombres = string.Empty;
-            P_genero = string.Empty;
-            Telefono1 = new int();
-            P_apellidomaterno = string.Empty;
-            Telefono2 = new int();
-            P_apellidopaterno = string.Empty;
-            Email = string.Empty;
+            _usersStore= usuariosStore;
+            AddUserCommand = new ViewModelCommand(ExecuteAddUserCommand, CanExecuteUserCommand); 
         }
         private async void ExecuteAddUserCommand(object obj)
         {
@@ -63,26 +35,19 @@ namespace TractopartesDeskApp.VIewModel
                 if (userModel.idclientedp == 0)
                 {
                     var result = await _userRepository.AddUser(userModel);
-                    userModel.idclientedp = result;
-                    Usermanager.AddUsers(userModel);
+                    _usersStore.CreateUser(userModel);
                 }
                 else
-                {
-                    _userRepository.UpdateUser(userModel);
-                    Usermanager.UpdateUserList(userModel);
+                {                              
                 }
-                ExecuteClearFieldsCommand();
+             
             }
             catch (Exception)
             {
-
                 throw;
             }
 
-
-
         }
-
         private bool CanExecuteUserCommand(object obj)
         {
             bool validData;

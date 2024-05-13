@@ -14,6 +14,6 @@ namespace TractopartesDeskApp.Repository
         void RemoveUser(int idCliente);
 
         void UpdateUser(UserModel userModel);
-          Task<ObservableCollection<UserModel>> GetAllUser();
+          ObservableCollection<UserModel> GetAllUser();
     }
 }

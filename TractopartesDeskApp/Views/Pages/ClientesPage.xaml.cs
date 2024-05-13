@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TractopartesDeskApp.Models;
+using TractopartesDeskApp.Stores;
 using TractopartesDeskApp.VIewModel;
 
 namespace TractopartesDeskApp.Views.Pages
@@ -20,20 +21,28 @@ namespace TractopartesDeskApp.Views.Pages
     /// <summary>
     /// Lógica de interacción para Test.xaml
     /// </summary>
-    public partial class ClientesPage : Page
-    {
-
-        public ClientesPage()
+        public partial class ClientesPage : Page
         {
-            InitializeComponent();
-            UserByViewModel viewModel = new UserByViewModel();  
-            this.DataContext=viewModel;
-
-        }
+           public UsuariosStore productosPage;
+            public AddUserByViewModel addUserByViewModel;
+            public UserByViewModel userByViewModel;
+            public MainClientesViewModel mainClientesViewModel;
+            public ClientesPage()
+            {
+                InitializeComponent();
+                productosPage = new UsuariosStore();
+                addUserByViewModel = new AddUserByViewModel(productosPage);
+                userByViewModel = new UserByViewModel(productosPage);
+                mainClientesViewModel = new MainClientesViewModel(addUserByViewModel, userByViewModel);
+                this.DataContext = mainClientesViewModel.UserByViewModel;
+            }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
-           
+            //UsuariosView usuarios = new()
+            //{
+            //    DataContext = mainClientesViewModel.CreateUserViewModel
+            //};
+            //usuarios.Show();
         }
 
         private void txtbuscar_TextChanged(object sender, TextChangedEventArgs e)
@@ -45,7 +54,7 @@ namespace TractopartesDeskApp.Views.Pages
         private bool OnFilter(object obj)
         {
             var cliente = (UserModel)obj;
-           return  cliente.nombres.Contains(txtbuscar.Text);           
+            return cliente.nombres.Contains(txtbuscar.Text);
         }
 
 

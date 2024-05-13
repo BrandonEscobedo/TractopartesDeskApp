@@ -5,15 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TractopartesDeskApp.Views.Pages"
       xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
-      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Clientes">
-    <Page.DataContext>
-        <viewModel:UserByViewModel>
-            
-        </viewModel:UserByViewModel>
-    </Page.DataContext>
     <Grid Background="#ffffff" >
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -42,18 +37,16 @@
                 </Grid>
 
                 <Border Grid.Column="2">
-
-                    <Button  HorizontalAlignment="Center" Command="{Binding ShowWindowCommand}" VerticalAlignment="Center" Content="Agregar cliente" 
+                    <Button  HorizontalAlignment="Center" Command="{Binding ShowWindowCommand}"   CommandParameter="{Binding }" VerticalAlignment="Center" Content="Agregar cliente" 
  Style="{StaticResource AgregarButton}"
 Click="btnAdd_Click">
-
                     </Button>
                 </Border>
             </Grid>
-        </Border>
-        <Border Grid.Row="1" Margin="10 10 10 10" CornerRadius="100" >
+        </Border >
+        <Border  Grid.Row="1" Margin="10 10 10 10" CornerRadius="100" >
 
-            <DataGrid  ItemsSource="{Binding userModels}" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
+            <DataGrid  ItemsSource="{Binding  UserByViewModel._users }"  AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
                        RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
 

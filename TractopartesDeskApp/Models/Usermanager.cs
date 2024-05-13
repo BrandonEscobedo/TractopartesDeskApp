@@ -25,7 +25,7 @@ namespace TractopartesDeskApp.Models
         public static async void SetUsers()
         {
             Users.Clear();
-            Users=await _userRepository.GetAllUser();
+           
         }
         public static void UpdateUserList(UserModel user)
         {

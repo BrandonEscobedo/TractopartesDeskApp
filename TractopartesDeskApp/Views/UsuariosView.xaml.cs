@@ -19,8 +19,7 @@ namespace TractopartesDeskApp.Views
             InitializeComponent();
             YourCollection = ["Elemento 1", "Elemento 2", "Elemento 3"];
            _usrModel=new UserModel();
-            viewModel = new UserByViewModel();
-      
+           
            
         }
 

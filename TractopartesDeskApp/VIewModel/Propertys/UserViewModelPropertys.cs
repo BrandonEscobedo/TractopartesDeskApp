@@ -8,23 +8,12 @@ namespace TractopartesDeskApp.VIewModel
     {
         public UserModel _userModel;
 
-
+      
         public UserViewModelPropertys()
         {
             _userModel = new UserModel();
         }
-        //public ObservableCollection<UserModel> _users
-        //{
-        //    get => Users;
-        //    set
-        //    {
-        //        if (Users != value)
-        //        {
-        //            Users = value;
-        //            OnPropertyChanged(nameof(_users));
-        //        }
-        //    }
-        //}
+       
         public ICollectionView _ClientesCollection;
         public ICollectionView ClientesCollection
         {
@@ -66,25 +55,7 @@ namespace TractopartesDeskApp.VIewModel
 
             }
         }
-        //private bool Filter(Object obj)
-        //{
-        //    UserModel data = obj as UserModel;
-        //    if(!string.IsNullOrEmpty(P_nombres) && !string.IsNullOrEmpty(P_apellidomaterno))
-        //    {
-        //        return data.nombres.Contains(P_nombres);
-
-        //    }
-        //    else if(string.IsNullOrEmpty(P_nombres))
-        //    {
-        //        return data.nombres.Contains(P_nombres);
-        //    }
-        //    else
-        //    {
-        //        return data.nombres.Contains(P_nombres);
-        //    }
-        //}
-
-
+ 
         public string P_apellidomaterno
         {
             get { return _userModel.apellidomaterno; }

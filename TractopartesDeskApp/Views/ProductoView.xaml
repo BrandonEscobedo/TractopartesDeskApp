@@ -10,13 +10,8 @@
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d"
         Title="ProductoView" Height="850" Width="800">
-    <Window.DataContext>
-        <viewmodel:ProductosViewModel>
-            
-        </viewmodel:ProductosViewModel>
-    </Window.DataContext>
-    <Border CornerRadius="5" Background="White" MouseDown="Border_MouseDown"
-         MouseLeftButtonDown="Border_MouseLeftButtonDown">
+
+    <Border CornerRadius="5" Background="White" >
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -103,7 +98,7 @@ Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}" Click="B
                                     <!--Botones-->
                                     <Button Grid.Column="1" Grid.Row="9" Content="Guardar" Margin="0,104,13,17"
          HorizontalAlignment="Right" Style="{StaticResource mainbutton}"
-         Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}" Click="Button_Click_1"
+         Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}"
 
          >
                                         <Button.Effect>

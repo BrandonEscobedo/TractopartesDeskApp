@@ -10,7 +10,7 @@ namespace TractopartesDeskApp.Data
     public class SqlDataAccess 
     {
         public string ConnectionString = "server=localhost;port=5432;user id=postgres;password=1234;database=tractopartesdb;";
-        public     ObservableCollection<T> LoadDataObservable<T>(string sql)
+        public    ObservableCollection<T> LoadDataObservable<T>(string sql)
         {
             ObservableCollection<T> ObservableCollection=new ObservableCollection<T>();
             using (IDbConnection connection = new NpgsqlConnection(ConnectionString))

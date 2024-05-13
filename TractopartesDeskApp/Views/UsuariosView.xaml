@@ -6,11 +6,7 @@
         xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
         MinWidth="650" WindowStyle="none" WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" Background="Transparent">
-    <Window.DataContext>
-        <viewModel:UserByViewModel>
-            
-        </viewModel:UserByViewModel>
-    </Window.DataContext>
+
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
     </WindowChrome.WindowChrome>
@@ -35,13 +31,13 @@
                     </Grid.RowDefinitions>
 
                     <Border  CornerRadius="0 0 0 5" >
-                        <Grid VerticalAlignment="Center" Margin="22,0,17,0" Height="680">
+                        <Grid  VerticalAlignment="Center" Margin="22,0,17,0" Height="680">
                             <Border CornerRadius="7" Background="#ffffff" Margin="0,-54,0,-60" >
                                 <Border.Effect>
                                     <DropShadowEffect BlurRadius="30" ShadowDepth="5"
                                               Direction="-130" Opacity="0.1"/>
                                 </Border.Effect>
-                                <Grid>
+                                <Grid >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
@@ -97,9 +93,7 @@
                                     <!--Botones-->
                                     <Button Grid.Column="1" Grid.Row="9" Content="Guardar" Margin="0,104,13,17"
             HorizontalAlignment="Right" Style="{StaticResource mainbutton}"
-            Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}" Click="Button_Click_1"
-
-            >
+            Command="{Binding AddUserCommand, UpdateSourceTrigger=PropertyChanged}" Click="Button_Click_1">
                                         <Button.Effect>
                                             <DropShadowEffect BlurRadius="10" ShadowDepth="5" Color="#4880ff"
                               Opacity="0.3" Direction="-120"/>

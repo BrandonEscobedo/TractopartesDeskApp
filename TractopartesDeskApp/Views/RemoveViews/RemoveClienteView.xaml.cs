@@ -23,7 +23,6 @@ namespace TractopartesDeskApp.Views.RemoveViews
         public RemoveClienteView()
         {
             InitializeComponent();
-            UserByViewModel viewModel = new();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

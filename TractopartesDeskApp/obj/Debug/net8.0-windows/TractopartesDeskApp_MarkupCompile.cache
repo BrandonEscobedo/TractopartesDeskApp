@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\App.xaml
-181677715108
+181626328150
 
-50-1332929928
+55-1778504847
 241-1460260387
-Styles\ButtonStyles.xaml;Styles\UIColors.xaml;Views\Dashboard.xaml;Views\Page1.xaml;Views\Pages\CategoriasPage.xaml;Views\Pages\ClientesPage.xaml;Views\Pages\ProductosPage.xaml;Views\Pages\ProveedoresPage.xaml;Views\Productos.xaml;Views\ProductosView.xaml;Views\Proveedores.xaml;Views\ProveedoresView.xaml;Views\RemoveViews\RemoveClienteView.xaml;Views\UserControls\BtnAddUser.xaml;Views\UserControls\MyTexBox.xaml;Views\UserControls\TablaUsuarios.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
+Styles\ButtonStyles.xaml;Styles\UIColors.xaml;Views\Dashboard.xaml;Views\Page1.xaml;Views\Pages\CategoriasPage.xaml;Views\Pages\ClientesPage.xaml;Views\Pages\ProductosPage.xaml;Views\Pages\ProveedoresPage.xaml;Views\Productos.xaml;Views\ProductoView.xaml;Views\Proveedores.xaml;Views\ProveedoresView.xaml;Views\RemoveViews\RemoveClienteView.xaml;Views\UserControls\BtnAddUser.xaml;Views\UserControls\MyTexBox.xaml;Views\UserControls\TablaUsuarios.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
 
 False
 

@@ -29,7 +29,7 @@ namespace TractopartesDeskApp.Repository
         }
       
 
-        public   async Task< ObservableCollection<UserModel>> GetAllUser()
+        public   ObservableCollection<UserModel> GetAllUser()
         {
            
                

@@ -1,39 +1,57 @@
-﻿using System.Collections.ObjectModel;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Collections.ObjectModel;
 using System.Windows.Forms;
 using System.Windows.Input;
 using TractopartesDeskApp.Models;
+using TractopartesDeskApp.Repository;
+using TractopartesDeskApp.Stores;
 using TractopartesDeskApp.Views;
 using TractopartesDeskApp.Views.RemoveViews;
 namespace TractopartesDeskApp.VIewModel
 {
-    public class UserByViewModel
+    public class UserByViewModel:ViewModelBase
     {
         public ICommand ShowWindowCommand { get; }
         public ICommand RemoveWindowCommand { get; }
         public ICommand UpdateByUserCommand { get; }
-        public ObservableCollection<UserModel> userModels { get; set; }
-        public UserByViewModel()
+        public ObservableCollection<UserModel> _userModels;
+        private readonly UsuariosStore _usuariosStore;
+        private readonly IUserRepository userRepository;
+        private ObservableCollection<UserModel> Users;
+        public ObservableCollection<UserModel> _users
         {
-            userModels = Usermanager.GetUsers();
+            get => Users;
+            set
+            {
+                if (Users != value)
+                {
+                    Users = value;
+                    OnPropertyChanged(nameof(_users));
+                }
+            }
+        }
+        public   UserByViewModel(UsuariosStore usuariosStore)
+        {
+            userRepository = new UserRepository();
+            Users = userRepository.GetAllUser();
             ShowWindowCommand = new ViewModelCommand(ExecuteUserCommand, CanExecuteUserCommand);
             RemoveWindowCommand = new ViewModelCommand(RemoveUserCommand, CanExecuteUserCommand);
             UpdateByUserCommand = new ViewModelCommand(UpdateUserCommand, CanExecuteUserCommand);
+            _usuariosStore = usuariosStore;
+            _usuariosStore.UserCreated += OnProductCreated;
+        }
+
+        private  void OnProductCreated(UserModel model)
+        {
+           
+            var users= userRepository.GetAllUser();
+             _users.Add( users.Last());
         }
         private void RemoveUserCommand(object obj)
         {
             UserModel user = (UserModel)obj;
             RemoveClienteView removeClienteView = new();
-            removeClienteView.DataContext = new AddUserByViewModel()
-            {
-                P_apellidomaterno = user.apellidomaterno,
-                P_apellidopaterno = user.apellidopaterno,
-                P_nombres = user.nombres,
-                Telefono1 = user.telefono1,
-                Telefono2 = user.telefono2,
-                P_genero = user.genero,
-                Email = user.email,
-                P_idclientedp=user.idclientedp
-            };
+          
             removeClienteView.Show();
 
         }
@@ -41,24 +59,16 @@ namespace TractopartesDeskApp.VIewModel
         {
             UserModel user = (UserModel)obj;
             UsuariosView usuarios = new UsuariosView();
-            usuarios.DataContext = new AddUserByViewModel()
-            {
-                P_apellidomaterno = user.apellidopaterno,
-                P_idclientedp = user.idclientedp,
-                P_genero = user.genero,
-                P_nombres = user.nombres,
-                P_apellidopaterno = user.apellidopaterno,
-                Telefono1 = user.telefono1,
-                Telefono2 = user.telefono2,
-                Email = user.email,
-            };
-
             usuarios.Show();
         }
+
         private void ExecuteUserCommand(object obj)
         {
-            UsuariosView usuarios = new UsuariosView();
-            usuarios.DataContext = new AddUserByViewModel();
+            AddUserByViewModel data = (AddUserByViewModel)obj;
+            UsuariosView usuarios = new UsuariosView()
+            {
+                DataContext = data
+            };
             usuarios.Show();
         }
         private bool CanExecuteUserCommand(object obj)

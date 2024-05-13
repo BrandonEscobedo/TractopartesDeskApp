@@ -7,6 +7,7 @@ using TractopartesDeskApp.Views.UserControls;
 using TractopartesDeskApp.VIewModel;
 using System.Windows.Navigation;
 using TractopartesDeskApp.Views.Pages;
+using TractopartesDeskApp.Stores;
 namespace TractopartesDeskApp.Views
 {
     /// <summary>
@@ -28,8 +29,8 @@ namespace TractopartesDeskApp.Views
                 return (string)GetValue(DataProperty);
             }
             set { SetValue(DataProperty, value); }
-
         }
+
         public static readonly DependencyProperty DataProperty =
             DependencyProperty.Register("DataSource", typeof(string), typeof(MyTexBox));
 
@@ -74,9 +75,6 @@ namespace TractopartesDeskApp.Views
 
         private void btnEnviar_Click(object sender, RoutedEventArgs e)
         {
-
-
-
         }
         private void ProveedorChecked(object sender, RoutedEventArgs e)
         {
@@ -86,7 +84,9 @@ namespace TractopartesDeskApp.Views
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
             txtitulo.Text = "Clientes";
-            MainContainerPage.NavigationService.Navigate(new ClientesPage());
+           
+
+            MainContainerPage.Navigate(new ClientesPage()); 
             
         }
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)

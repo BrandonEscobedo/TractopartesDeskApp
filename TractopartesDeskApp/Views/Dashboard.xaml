@@ -14,10 +14,7 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
-    <Window.DataContext>
-        <viewModel:UserByViewModel>
-        </viewModel:UserByViewModel>
-    </Window.DataContext>
+ 
     <Border CornerRadius="20" Padding="20" Background="#f7f6f4">
         <Grid >
             <Grid.ColumnDefinitions>

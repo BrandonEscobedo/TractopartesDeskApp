@@ -7,7 +7,7 @@ namespace TractopartesDeskApp.VIewModel
     public class UserViewModelPropertys : ViewModelBase
     {
         public UserModel _userModel;
-     
+
 
         public UserViewModelPropertys()
         {
@@ -28,27 +28,34 @@ namespace TractopartesDeskApp.VIewModel
         public ICollectionView _ClientesCollection;
         public ICollectionView ClientesCollection
         {
-            get { return _ClientesCollection;}
+            get { return _ClientesCollection; }
             set
             {
-                _ClientesCollection=value;
+                _ClientesCollection = value;
             }
         }
+
         public string P_nombresBuscar
         {
 
             get => P_nombres;
             set
             {
-                if(P_nombres != value)
+                if (P_nombres != value)
                 {
                     _userModel.nombres = value;
-
-                    ClientesCollection.Filter += Filter;
                 }
             }
         }
-   
+        public int P_idclientedp
+        {
+            get { return _userModel.idclientedp; }
+            set
+            {
+                _userModel.idclientedp = value;
+                OnPropertyChanged(nameof(P_idclientedp));
+            }
+            }
         public string P_nombres
         {
             get { return _userModel.nombres; }
@@ -56,26 +63,27 @@ namespace TractopartesDeskApp.VIewModel
             {
                 _userModel.nombres = value;
                 OnPropertyChanged(nameof(P_nombres));
-              
-            }
-        }
-        private bool Filter(Object obj)
-        {
-            UserModel data = obj as UserModel;
-            if(!string.IsNullOrEmpty(P_nombres) && !string.IsNullOrEmpty(P_apellidomaterno))
-            {
-                return data.nombres.Contains(P_nombres);
 
             }
-            else if(string.IsNullOrEmpty(P_nombres))
-            {
-                return data.nombres.Contains(P_nombres);
-            }
-            else
-            {
-                return data.nombres.Contains(P_nombres);
-            }
         }
+        //private bool Filter(Object obj)
+        //{
+        //    UserModel data = obj as UserModel;
+        //    if(!string.IsNullOrEmpty(P_nombres) && !string.IsNullOrEmpty(P_apellidomaterno))
+        //    {
+        //        return data.nombres.Contains(P_nombres);
+
+        //    }
+        //    else if(string.IsNullOrEmpty(P_nombres))
+        //    {
+        //        return data.nombres.Contains(P_nombres);
+        //    }
+        //    else
+        //    {
+        //        return data.nombres.Contains(P_nombres);
+        //    }
+        //}
+
 
         public string P_apellidomaterno
         {

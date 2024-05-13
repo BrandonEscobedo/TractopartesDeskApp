@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
 using TractopartesDeskApp.Models;
 using TractopartesDeskApp.Repository;
 
@@ -7,23 +8,37 @@ namespace TractopartesDeskApp.VIewModel
     public class AddUserByViewModel : UserViewModelPropertys
     {
         public ICommand AddUserCommand { get; }
-        public ICommand UpdateUserCommand { get; }
+        public ICommand DeleteUserCommand { get; }
         private IUserRepository _userRepository;
         public UserModel userModel { get; set; } = new UserModel();
-        public ICommand ClearFieldsCommand { get; }
 
         public AddUserByViewModel()
         {
             _userRepository = new UserRepository();
-            ClearFieldsCommand = new ViewModelCommand(ExecuteClearFieldsCommand);
             AddUserCommand = new ViewModelCommand(ExecuteAddUserCommand, CanExecuteUserCommand);
-            UpdateUserCommand = new ViewModelCommand(ExecuteUpdateUserCommand, CanExecuteUserCommand);
+            DeleteUserCommand = new ViewModelCommand(ExecuteDeleteUserCommand);
+            
         }
-        private void ExecuteUpdateUserCommand(object obj)
+        private void ExecuteDeleteUserCommand(object obj)
         {
-            throw new NotImplementedException();
+            if (P_idclientedp != 0)
+                _userRepository.RemoveUser(P_idclientedp);
+            Usermanager.RemoveUserList(P_idclientedp);
+            CloseWindow();
         }
-        private void ExecuteClearFieldsCommand(object obj)
+        private void CloseWindow()
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.DataContext == this)
+                {
+                    window.Close();
+                    break;
+                }
+            }
+        }
+
+        private void ExecuteClearFieldsCommand( )
         {
             P_nombres = string.Empty;
             P_genero = string.Empty;
@@ -33,24 +48,41 @@ namespace TractopartesDeskApp.VIewModel
             P_apellidopaterno = string.Empty;
             Email = string.Empty;
         }
-        private void ExecuteAddUserCommand(object obj)
+        private async void ExecuteAddUserCommand(object obj)
         {
-            if (userModel.idclientedp == 0)
+            try
+            {
+                userModel.email = Email;
+                userModel.nombres = P_nombres;
+                userModel.apellidomaterno = P_apellidomaterno;
+                userModel.apellidopaterno = P_apellidopaterno;
+                userModel.genero = P_genero;
+                userModel.telefono1 = Telefono1;
+                userModel.telefono2 = Telefono2;
+                userModel.idclientedp = P_idclientedp;
+                if (userModel.idclientedp == 0)
+                {
+                    var result = await _userRepository.AddUser(userModel);
+                    userModel.idclientedp = result;
+                    Usermanager.AddUsers(userModel);
+                }
+                else
+                {
+                    _userRepository.UpdateUser(userModel);
+                    Usermanager.UpdateUserList(userModel);
+                }
+                ExecuteClearFieldsCommand();
+            }
+            catch (Exception)
             {
 
+                throw;
             }
-            userModel.email = Email;
-            userModel.nombres = P_nombres;
-            userModel.apellidomaterno = P_apellidomaterno;
-            userModel.apellidopaterno = P_apellidopaterno;
-            userModel.genero = P_genero;
-            userModel.telefono1 = Telefono1;
-            userModel.telefono2 = Telefono2;
-            _userRepository.AddUser(userModel);
-            Usermanager.AddUsers(userModel);
-            ExecuteClearFieldsCommand(null);
+
+
+
         }
-        e
+
         private bool CanExecuteUserCommand(object obj)
         {
             bool validData;

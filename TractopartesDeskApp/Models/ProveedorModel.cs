@@ -4,7 +4,7 @@ namespace TractopartesDeskApp.Models
 {
     public class ProveedorModel
     {
-
+        public int idproveedor { get; set; }
         [PgName("nombreempresa")]
         public string nombreempresa { get; set; } = "";
         [PgName("razonsocial")]
@@ -15,7 +15,5 @@ namespace TractopartesDeskApp.Models
         public string correo { get; set; } = "";
         [PgName("direccion")]
         public string direccion { get; set; } = "";
-        
-
     }
 }

@@ -10,7 +10,13 @@
     <Compile Update="Views\Page1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\CategoriasPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\ClientesPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\ProductosPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\ProveedoresPage.xaml.cs">
@@ -19,13 +25,16 @@
     <Compile Update="Views\Productos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ProductosView.xaml.cs">
+    <Compile Update="Views\ProductoView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Proveedores.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RemoveViews\RemoveClienteView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\BtnAddUser.xaml.cs">
@@ -51,16 +60,25 @@
     <Page Update="Views\Page1.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Pages\CategoriasPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\ClientesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\ProductosPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\ProveedoresPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\ProductosView.xaml">
+    <Page Update="Views\Dashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Dashboard.xaml">
+    <Page Update="Views\ProductoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RemoveViews\RemoveClienteView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\BtnAddUser.xaml">

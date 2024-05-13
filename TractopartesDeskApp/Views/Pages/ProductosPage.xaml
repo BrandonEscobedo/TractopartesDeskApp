@@ -1,0 +1,127 @@
+﻿<Page x:Class="TractopartesDeskApp.Views.Pages.ProductosPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TractopartesDeskApp.Views.Pages"
+      xmlns:viewmodel="clr-namespace:TractopartesDeskApp.VIewModel"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="750"
+      Title="ProductosPage">
+    <Page.DataContext>
+        <viewmodel:ProductosManagerViewModel>
+            
+        </viewmodel:ProductosManagerViewModel>
+    </Page.DataContext>
+    <Grid Background="#ffffff" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="1">
+                        <TextBox  x:Name="txtbuscar"
+                               
+/>
+
+                    </Border>
+                </Grid>
+
+                <Border Grid.Column="2">
+
+                    <Button  HorizontalAlignment="Center" Command="{Binding ShowWindowCommand}" VerticalAlignment="Center" Content="Agregar cliente" 
+ Style="{StaticResource AgregarButton}"
+>
+
+                    </Button>
+                </Border>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Margin="10 10 10 10" CornerRadius="100" >
+
+            <DataGrid  ItemsSource="{Binding Productos}" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
+                       RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
+                       ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding p_codigopieza}"/>
+                    <DataGridTextColumn Binding="{Binding p_descripcion}"/>
+
+                    <DataGridTextColumn Binding="{Binding p_categoria.categoria}"/>
+                    <DataGridTextColumn Binding="{Binding p_proveedor.razonsocial}"/>
+                                       <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+
+                                    <Button Command="{Binding  DataContext.UpdateByUserCommand,   RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}"  Style="{StaticResource GridEditButton}">
+                                        <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                    <Button Command="{Binding  DataContext.RemoveWindowCommand,   RelativeSource={RelativeSource AncestorType={x:Type Page}}}"
+                                                              CommandParameter="{Binding }" Style="{StaticResource GridRemoveButton}">
+                                        <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Border>
+        <Border Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+
+                <Border  Grid.Column="1"  HorizontalAlignment="Center" BorderBrush="#dee4ec" BorderThickness="1" CornerRadius="5" 
+                         Padding="5" Background="White"
+                        >
+                    <StackPanel Orientation="Horizontal">
+                        <Button>
+                            <Icon:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource pagingButtonIcon}"/>
+                        </Button>
+
+                        <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
+
+                        <Button Style="{StaticResource pagingButton}" Content="1"/>
+                        <Button Style="{StaticResource pagingButton}" Content="2"/>
+                        <Button Style="{StaticResource pagingButton}" Content="3"/>
+                        <Button Style="{StaticResource pagingButton}" Content="..."/>
+
+
+                        <Button Style="{StaticResource pagingButton}" Content="7"/>
+                        <Button Style="{StaticResource pagingButton}" Content="8"/>
+                        <Button Style="{StaticResource pagingButton}" Content="9"/>
+
+                        <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
+
+
+                        <Button>
+                            <Icon:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource pagingButtonIcon}"/>
+                        </Button>
+
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+        </Border>
+    </Grid>
+</Page>

@@ -10,20 +10,41 @@ namespace TractopartesDeskApp.Models
 {
   public  static class Usermanager
     {
-        public static ObservableCollection<UserModel> Users = new ObservableCollection<UserModel>();
-
+        public static ObservableCollection<UserModel> Users = new();
+      static  IUserRepository _userRepository;
          static Usermanager()
         {
-            IUserRepository _userRepository = new UserRepository();
-            Users = _userRepository.GetAllUser();
+             _userRepository = new UserRepository();
+             SetUsers();
+            
         }
         public static ObservableCollection<UserModel> GetUsers()
         {
             return Users;
         }
-   
+        public static async void SetUsers()
+        {
+            Users.Clear();
+            Users=await _userRepository.GetAllUser();
+        }
+        public static void UpdateUserList(UserModel user)
+        {
+            var cliente = Users.Where(x => x.idclientedp == user.idclientedp).FirstOrDefault();
+            if (cliente != null)
+                Users.Remove(cliente);
+            Users.Add(user);
+        }
+        public static  void RemoveUserList(int idcliente)
+        {
+           var user = Users.Where(x=>x.idclientedp==idcliente).FirstOrDefault();
+            if (user != null)
+            {
+                Users.Remove(user);
+            }
+        }
         public static void AddUsers(UserModel userModel)
         {
+            var newUsers = _userRepository.GetAllUser();
             Users.Add(userModel);
         }
     }

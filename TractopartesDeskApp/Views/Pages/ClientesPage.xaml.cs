@@ -32,8 +32,8 @@ namespace TractopartesDeskApp.Views.Pages
         }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            
-          
+
+           
         }
 
         private void txtbuscar_TextChanged(object sender, TextChangedEventArgs e)
@@ -41,12 +41,14 @@ namespace TractopartesDeskApp.Views.Pages
             MembersDataGrid.Items.Filter = OnFilter;
         }
 
+
         private bool OnFilter(object obj)
         {
             var cliente = (UserModel)obj;
-           return  cliente.nombres.Contains(txtbuscar.Text);
-            
-
+           return  cliente.nombres.Contains(txtbuscar.Text);           
         }
+
+
+
     }
 }

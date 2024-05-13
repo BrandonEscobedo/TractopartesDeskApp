@@ -7,6 +7,7 @@
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
         xmlns:uc="clr-namespace:TractopartesDeskApp.Views.UserControls"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1500"
         WindowStartupLocation="CenterScreen"
@@ -49,7 +50,7 @@
                                     <DropShadowEffect BlurRadius="10" Opacity="0.3"
                                                       />
                                 </Border.Effect>
-                                <Image Width="60" Height="60" Source="C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\logo2.png" />                                    
+                                <Image Width="60" Height="60" Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\logo2.png" />                                    
                             </Border>
                             
                         </Grid>
@@ -63,7 +64,7 @@
                     </StackPanel>
                   
                     <RadioButton x:Name="ProveedoresPanel" Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color1}">
+                             Tag="{StaticResource color1}" Checked="ProveedoresPanel_Checked">
 
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
@@ -99,8 +100,8 @@
                         </StackPanel>
                     </RadioButton>
 
-                    <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color9}">
+                    <RadioButton x:Name="rbproductos" Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color9}"  Checked="rbproductos_Checked">
 
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Building" Style="{StaticResource menuButtonIcon}"/>
@@ -113,6 +114,14 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Store" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Generar venta" Style="{StaticResource menuButtonText}" Foreground="White"/>
+                        </StackPanel>
+                    </RadioButton>     
+                    <RadioButton Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color16}" Checked="RadioButton_Checked_1">
+
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Adjust" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Categorias" Style="{StaticResource menuButtonText}" Foreground="White"/>
                         </StackPanel>
                     </RadioButton>
 
@@ -210,9 +219,63 @@
                                 <StackPanel Grid.Column="2" Margin="5 5 5 5" >
                                     <ContentControl  x:Name="BtnContentContainer"   />
                                 </StackPanel>
+                                <Grid Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="600"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="200"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <lvc:CartesianChart  Margin="5 40  0 60" Grid.Row="1" ScrollBarFill="Transparent" 
+                                                             Grid.Column="0" LegendLocation="None" >
+                                            <lvc:CartesianChart.DataTooltip>
+                                                <lvc:DefaultTooltip Background="red"/> 
+                                            </lvc:CartesianChart.DataTooltip>
+                                            <lvc:CartesianChart.AxisX>
+                                                <lvc:Axis ShowLabels="True" Foreground="#90a3b2">
+                                                    
+                                                </lvc:Axis>
+                                            </lvc:CartesianChart.AxisX>
+                                            <lvc:CartesianChart.Series>
+                                                <lvc:LineSeries Values="50,120,160,15,180">
+                                                    <lvc:LineSeries.Stroke>
+                                                        <LinearGradientBrush>
+                                                            <GradientStop Color="#ffffff"/>
+                                                            <GradientStop Color="Red"/>
+                                                            <GradientStop Color="AliceBlue"/>
+                                                        </LinearGradientBrush>
+                                                    </lvc:LineSeries.Stroke>
+                                                </lvc:LineSeries>
+                                                <lvc:LineSeries Values="120,56,80,100,60">
+                                                    <lvc:LineSeries.Stroke>
+                                                        <LinearGradientBrush>
+                                                            <GradientStop Color="Purple"/>
+                                                            <GradientStop Color="Bisque"/>
+                                                            <GradientStop Color="DarkBlue"/>
+                                                        </LinearGradientBrush>
+                                                    </lvc:LineSeries.Stroke>
+                                                </lvc:LineSeries>
+                                                <lvc:LineSeries Values="310,20,80,100,240">
+                                                    <lvc:LineSeries.Stroke>
+                                                        <LinearGradientBrush>
+                                                            <GradientStop Color="Red"/>
+                                                            <GradientStop Color="Green"/>
+                                                            <GradientStop Color="Red"/>
+                                                        </LinearGradientBrush>
+                                                    </lvc:LineSeries.Stroke>
+                                                </lvc:LineSeries>
+                                            </lvc:CartesianChart.Series>
+                                            
+                                        </lvc:CartesianChart>
+
+                                    </Grid>
+                                </Grid>
+                                
+
                             </Grid>
-                            <Frame x:Name="MainContainerPage" Grid.Row="1" NavigationUIVisibility="Hidden"
-      />
+                            <Frame x:Name="MainContainerPage" Grid.Row="1" NavigationUIVisibility="Hidden"/>
                         </Grid>
                     </Grid>
                 </Grid>

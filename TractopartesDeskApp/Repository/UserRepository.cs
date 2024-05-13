@@ -1,4 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using Dapper;
+using Npgsql;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Windows;
 using TractopartesDeskApp.Data;
 using TractopartesDeskApp.Models;
 
@@ -6,10 +10,11 @@ namespace TractopartesDeskApp.Repository
 {
     public class UserRepository : SqlDataAccess, IUserRepository
     {
+    
 
-        public async void AddUser(UserModel userModel )
+        public async Task<int> AddUser(UserModel userModel )
         {
-            var parmetrs = new 
+            var parmetrs = new
             {
                 apellidomaterno = userModel.apellidopaterno,
                 apellidopaterno = userModel.apellidopaterno,
@@ -19,24 +24,45 @@ namespace TractopartesDeskApp.Repository
                 telefono1 = userModel.telefono1,
                 telefono2 = userModel.telefono2,
             };
-            await ExecuteGeneric ("crearclientedatospersonales", parmetrs);
+           return await ExecuteGenericWithDynamicParameters("crearclientedatospersonales", parmetrs);
+          
         }
-        public    ObservableCollection<UserModel> GetAllUser()
+      
+
+        public   async Task< ObservableCollection<UserModel>> GetAllUser()
         {
-        var users = LoadDataObservable<UserModel>("select * from clientedatospersonales");
+           
+               
+           
+            var users = LoadDataObservable<UserModel>("select * from clientedatospersonales");
             return users;
 
         }
 
-        public void RemoveUser(UserModel userModel)
+        public async void RemoveUser(int idCliente)
         {
-            throw new NotImplementedException();
+            await ExecuteGeneric("SP_RemoveUser", new { idcliente =idCliente} );
         }
+
+    
 
         public async void UpdateUser(UserModel userModel)
         {
 
-            await ExecuteGeneric("updatecliente",userModel);
+            var parameters = new
+            {
+                p_nombres = userModel.nombres,
+                p_idcliente=userModel.idclientedp,
+                p_apellidomaterno=userModel.apellidomaterno,
+                p_apellidopaterno = userModel.apellidopaterno,
+                p_genero=userModel.genero,
+                p_telefono1=userModel.telefono1,
+                p_telefono2=userModel.telefono2,
+                p_email=userModel.email,
+            };
+
+            await ExecuteGeneric("updatecliente", parameters);
+
         }
     }
 }

@@ -99,6 +99,18 @@ namespace TractopartesDeskApp.Views
 
         }
 
-   
+        private void ProveedoresPanel_Checked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            MainContainerPage.NavigationService.Navigate(new CategoriasPage());
+        }
+
+        private void rbproductos_Checked(object sender, RoutedEventArgs e)
+        {
+            MainContainerPage.NavigationService.Navigate(new ProductosPage());
+        }
     }
 }

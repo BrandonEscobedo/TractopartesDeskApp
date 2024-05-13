@@ -34,11 +34,10 @@
                         <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="1">
-                        <StackPanel>
-                            
-                            <TextBox  x:Name="txtbuscar" Text="{Binding P_nombresBuscar,UpdateSourceTrigger=PropertyChanged}" TextChanged="txtbuscar_TextChanged    "/>
-
-                        </StackPanel>
+                        <TextBox  x:Name="txtbuscar"
+                                  TextChanged="txtbuscar_TextChanged"
+/>
+                    
                     </Border>
                 </Grid>
 
@@ -60,13 +59,12 @@ Click="btnAdd_Click">
 
                 <DataGrid.Columns>
                     <DataGridTextColumn  Header="Apellido Nombres" Binding="{Binding nombres}"/>
-                    <DataGridTextColumn  Header="Apellido Materno" Binding="{Binding apellidomaterno}"/>
                     <DataGridTextColumn  Header="Apellido Paterno" Binding="{Binding apellidopaterno}"/>
+                    <DataGridTextColumn  Header="Apellido Materno" Binding="{Binding apellidomaterno}"/>
                     <DataGridTextColumn  Header="Genero" Binding="{Binding genero}" />
                     <DataGridTextColumn  Header="Telefono 1 " Binding="{Binding telefono1}"/>
                     <DataGridTextColumn  Header="Telefono 2 " Binding="{Binding telefono2}"/>
                     <DataGridTextColumn  Header="Correo" Binding="{Binding email}"/>
-
                     <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>
@@ -75,7 +73,8 @@ Click="btnAdd_Click">
                                     <Button Command="{Binding  DataContext.UpdateByUserCommand,   RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}"  Style="{StaticResource GridEditButton}">
                                         <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
-                                    <Button Style="{StaticResource GridRemoveButton}">
+                                    <Button Command="{Binding  DataContext.RemoveWindowCommand,   RelativeSource={RelativeSource AncestorType={x:Type Page}}}"
+                                                              CommandParameter="{Binding }" Style="{StaticResource GridRemoveButton}">
                                         <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                 </StackPanel>

@@ -37,22 +37,16 @@
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="1">
                         <StackPanel>
-                            <TextBox  x:Name="txtbuscar" Text="{Binding P_nombresBuscar,UpdateSourceTrigger=PropertyChanged}" TextChanged="txtbuscar_TextChanged    "/>
+                            <TextBox  x:Name="txtbuscar" TextChanged="txtbuscar_TextChanged    "/>
 
                         </StackPanel>
                     </Border>
                 </Grid>
-
                 <Border Grid.Column="2">
-
                     <Button  HorizontalAlignment="Center" Command="{Binding ShowWindowCommand}" VerticalAlignment="Center" Content="Agregar Proveedor" 
  Style="{StaticResource AgregarButton}"
 >
-
                     </Button>
-
-
-
                 </Border>
             </Grid>
         </Border>

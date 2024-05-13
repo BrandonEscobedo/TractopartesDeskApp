@@ -10,9 +10,10 @@ namespace TractopartesDeskApp.Repository
 {
     public interface IUserRepository
     {
-        void AddUser(UserModel userModel);
+        Task<int> AddUser(UserModel userModel);
+        void RemoveUser(int idCliente);
+
         void UpdateUser(UserModel userModel);
-        void RemoveUser(UserModel userModel);
-      ObservableCollection<UserModel> GetAllUser();
+          Task<ObservableCollection<UserModel>> GetAllUser();
     }
 }

@@ -34,16 +34,21 @@
                         <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="1">
-                        <TextBox  x:Name="txtbuscar"
-                               
-/>
+                        <StackPanel Margin="10">
 
+                            <TextBlock Margin="13 0 " x:Name="txttexto" VerticalAlignment="Center" Foreground="#868686"
+   IsHitTestVisible="False" Panel.ZIndex="1" FontSize="14"
+      Text="buscar "
+  />
+                            <TextBox  x:Name="txtbuscar" TextChanged="txtbuscar_TextChanged"/>
+
+                        </StackPanel>
                     </Border>
                 </Grid>
 
                 <Border Grid.Column="2">
 
-                    <Button  HorizontalAlignment="Center" Command="{Binding ShowWindowCommand}" VerticalAlignment="Center" Content="Agregar cliente" 
+                    <Button  HorizontalAlignment="Center" Command="{Binding ShowAddProductoCommand}" VerticalAlignment="Center" Content="Agregar cliente" 
  Style="{StaticResource AgregarButton}"
 >
 
@@ -58,11 +63,18 @@
                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding p_codigopieza}"/>
-                    <DataGridTextColumn Binding="{Binding p_descripcion}"/>
-
-                    <DataGridTextColumn Binding="{Binding p_categoria.categoria}"/>
-                    <DataGridTextColumn Binding="{Binding p_proveedor.razonsocial}"/>
+                    <DataGridTextColumn Header="Producto" Binding="{Binding p_productonombre}"/>
+                    <DataGridTextColumn Header="Codigo de Pieza" Binding="{Binding p_codigopieza}"/>
+                    <DataGridTextColumn Header="Categoria" Binding="{Binding p_categoria.categoria}"/>
+                    <DataGridTextColumn Header="Empresa" Binding="{Binding p_proveedor.razonsocial}"/>
+                   
+                    <DataGridTemplateColumn Header="Imagen" IsReadOnly="True" Width="auto"  >
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate>
+                                <Image Source="{Binding p_ImagenURL}" Width="50" Height="50"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>

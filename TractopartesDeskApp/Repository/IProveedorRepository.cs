@@ -5,7 +5,7 @@ namespace TractopartesDeskApp.Repository
 {
     public interface IProveedorRepository
     {
-        public void AddProveedor(ProveedorModel proveedor);
+        public Task<int> AddProveedor(ProveedorModel proveedor);
         public ObservableCollection<ProveedorModel> GetProveedores();
     }
 }

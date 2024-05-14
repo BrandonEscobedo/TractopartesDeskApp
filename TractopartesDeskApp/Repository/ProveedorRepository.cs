@@ -7,9 +7,18 @@ namespace TractopartesDeskApp.Repository
     public class ProveedorRepository :SqlDataAccess, IProveedorRepository
     {
 
-        public async void AddProveedor(ProveedorModel proveedor)
+        public async Task<int> AddProveedor(ProveedorModel proveedor)
         {
-              await  ExecuteGeneric("CrearProveedor", proveedor);
+            var parameters = new
+            {
+                proveedor.correo,
+                proveedor.direccion,
+                proveedor.razonsocial,
+                proveedor.nombreempresa,
+                proveedor.telefono
+            };
+
+           return await  ExecuteGenericWithDynamicParameters("CrearProveedor", parameters, "p_new_producto");
       }
 
       public  ObservableCollection<ProveedorModel> GetProveedores()

@@ -14,7 +14,7 @@ namespace TractopartesDeskApp.VIewModel
     public class ProductosManagerViewModel
     {
        
-        ICommand ShowAddProductoCommand;
+     public ICommand ShowAddProductoCommand { get; }
         public ObservableCollection<ProductoModel> Productos { get; set; }
         public ProductoModel ProductoModel { get; set; } = new();
         public event EventHandler ProductoInsertado;
@@ -22,6 +22,7 @@ namespace TractopartesDeskApp.VIewModel
         {
             Productos = ProductoManager.GetProductos();
             ShowAddProductoCommand = new ViewModelCommand(ExecuteAddCommand);
+           
         }
 
         private void ExecuteAddCommand(object obj)

@@ -16,27 +16,30 @@ namespace TractopartesDeskApp.Repository
         public  async Task<ObservableCollection<ProductoModel>> GetProductos()
         {
             var sql = @"
-    SELECT pr.codigopieza AS p_codigopieza,
-           pr.descripcion AS p_descripcion,
-           cat.categoria AS categoria,
-           prv.nombreempresa AS nombreempresa,
-           prv.razonsocial AS razonsocial,
-           prv.telefono AS telefono
-    FROM productos AS pr
-    INNER JOIN categorias AS cat ON pr.idcategoria = cat.idcategoria
-    INNER JOIN public.proveedores AS prv ON pr.idprovedor = prv.idproveedor";
-
+               SELECT pr.codigopieza AS p_codigopieza,
+          pr.nombreproducto AS p_productonombre,
+		  pr.imagen as P_ImagenURL,
+          cat.categoria AS categoria,
+          prv.nombreempresa AS nombreempresa,
+          prv.razonsocial AS razonsocial,
+          prv.telefono AS telefono
+   FROM productos AS pr
+   INNER JOIN categorias AS cat ON pr.idcategoria = cat.idcategoria
+   INNER JOIN public.proveedores AS prv ON pr.idprovedor = prv.idproveedor
+";
             var producto = await LoadDataWithRelations<ProductoModel, CategoriaModel, ProveedorModel>(sql,
                 (producto, categoria, proveedor) =>
                 {
+                  
                     producto.p_categoria = categoria;
                     producto.p_proveedor = proveedor;
                     return producto;
                 },
                 "categoria,razonsocial");
             return producto;
+
         }
-        public  async Task AddProducto(ProductoModel productoModel)
+        public  async Task<int> AddProducto(ProductoModel productoModel)
         {
             var parameters = new
             {
@@ -51,7 +54,7 @@ namespace TractopartesDeskApp.Repository
                 p_idcategoria=productoModel.p_categoria.idcategoria
             };
 
-            await ExecuteGeneric("sp_createproducto", parameters);
+           return await ExecuteGenericWithDynamicParameters("sp_createproducto", parameters, "p_new_producto");
         }
     }
 }

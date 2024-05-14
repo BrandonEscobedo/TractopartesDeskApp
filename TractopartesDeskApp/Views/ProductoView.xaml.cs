@@ -25,6 +25,8 @@ namespace TractopartesDeskApp.Views
         public ProductoView()
         {
             InitializeComponent();
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+
             this.DataContext = new ProductosViewModel();
             CategoriaViewModel categoriaViewModel = new CategoriaViewModel();
             combocategorias.ItemsSource = categoriaViewModel.CategoriasList;

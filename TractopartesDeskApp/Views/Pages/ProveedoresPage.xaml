@@ -37,7 +37,15 @@
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="1">
                         <StackPanel>
-                            <TextBox  x:Name="txtbuscar" TextChanged="txtbuscar_TextChanged    "/>
+                            <StackPanel Margin="10">
+
+                                <TextBlock Margin="13 0 " x:Name="txttexto" VerticalAlignment="Center" Foreground="#868686"
+   IsHitTestVisible="False" Panel.ZIndex="1" FontSize="14"
+      Text="buscar "
+  />
+                                <TextBox  x:Name="txtbuscar" TextChanged="txtbuscar_TextChanged"/>
+
+                            </StackPanel>
 
                         </StackPanel>
                     </Border>

@@ -40,7 +40,7 @@ namespace TractopartesDeskApp.Data
                 try
                 {
                     connection.Open();
-             var    results = await connection.QueryAsync(sql, mapFunction, splitOn: splitOn);
+             var    results =  connection.Query(sql, mapFunction, splitOn: splitOn);
 
                     if (results.Any())
                     {
@@ -80,18 +80,18 @@ namespace TractopartesDeskApp.Data
                 }
             }
         }
-        public async Task<int> ExecuteGenericWithDynamicParameters<T>(string sql, T parameters)
+        public async Task<int> ExecuteGenericWithDynamicParameters<T>(string sql, T parameters, string parameterOut)
         {
             using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
             {
                 try
                 {
                     var parameterss = new DynamicParameters(parameters);
-                    parameterss.Add("@p_new_user", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    parameterss.Add(parameterOut, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                    await connection.ExecuteAsync("crearclientedatospersonales", parameterss, commandType: CommandType.StoredProcedure);
+                    await connection.ExecuteAsync(sql, parameterss, commandType: CommandType.StoredProcedure);
 
-                    var newUserId = parameterss.Get<int>("@p_new_user");
+                    var newUserId = parameterss.Get<int>(parameterOut);
                     return newUserId;
                 }
                 catch (Exception)

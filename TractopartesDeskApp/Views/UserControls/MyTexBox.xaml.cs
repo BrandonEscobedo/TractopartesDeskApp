@@ -46,7 +46,14 @@ namespace TractopartesDeskApp.Views.UserControls
             set { SetValue(DbProperty, value); }
 
         }
+        public double TextBoxHeight
+        {
+            get { return (double)GetValue(TextBoxHeightProperty); }
+            set { SetValue(TextBoxHeightProperty, value); }
+        }
 
+        public static readonly DependencyProperty TextBoxHeightProperty =
+            DependencyProperty.Register("TextBoxHeight", typeof(double), typeof(MyTexBox), new PropertyMetadata(double.NaN));
     }
 }
 

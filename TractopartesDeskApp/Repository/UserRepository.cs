@@ -24,7 +24,7 @@ namespace TractopartesDeskApp.Repository
                 telefono1 = userModel.telefono1,
                 telefono2 = userModel.telefono2,
             };
-           return await ExecuteGenericWithDynamicParameters("crearclientedatospersonales", parmetrs);
+           return await ExecuteGenericWithDynamicParameters("crearclientedatospersonales", parmetrs, "@p_new_user");
           
         }
       

@@ -6,14 +6,16 @@
       xmlns:local="clr-namespace:TractopartesDeskApp.Views.Pages"
       xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:cd="clr-namespace:TractopartesDeskApp.Views.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Clientes">
     <Page.DataContext>
         <viewModel:UserByViewModel>
-            
+
         </viewModel:UserByViewModel>
     </Page.DataContext>
+    
     <Grid Background="#ffffff" >
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -34,10 +36,17 @@
                         <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="1">
-                        <TextBox  x:Name="txtbuscar"
-                                  TextChanged="txtbuscar_TextChanged"
-/>
-                    
+                        <StackPanel Margin="10">
+
+                                <TextBlock Margin="13 0 " x:Name="txttexto" VerticalAlignment="Center" Foreground="#868686"
+                          IsHitTestVisible="False" Panel.ZIndex="1" FontSize="14"
+                             Text="buscar "
+                         />
+                            <TextBox  x:Name="txtbuscar" TextChanged="txtbuscar_TextChanged"/>
+
+                        </StackPanel>
+
+
                     </Border>
                 </Grid>
 

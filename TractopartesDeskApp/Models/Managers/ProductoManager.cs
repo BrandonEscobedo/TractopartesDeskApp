@@ -11,19 +11,24 @@ namespace TractopartesDeskApp.Models.Managers
     public  static class ProductoManager
     {
         public static ObservableCollection<ProductoModel> productos = new ObservableCollection<ProductoModel>();
-        private static IProductoRepository _productoRepository;
+         static IProductoRepository _productoRepository;
          static ProductoManager()
         {
             _productoRepository= new ProductoRepository();
             GetProductosRepository();
-
         }
         public static  ObservableCollection<ProductoModel> GetProductos()
         {
             return productos;
         }
-        private static async void GetProductosRepository()
+        public static void AddProducto(ProductoModel productoModel)
         {
+            productos.Add(productoModel);
+
+        }
+        public static async void GetProductosRepository()
+        {
+            productos.Clear();
             productos = await _productoRepository.GetProductos();
         }
 

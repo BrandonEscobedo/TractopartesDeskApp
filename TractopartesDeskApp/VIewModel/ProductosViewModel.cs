@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TractopartesDeskApp.Models;
+using TractopartesDeskApp.Models.Managers;
 using TractopartesDeskApp.Repository;
 using TractopartesDeskApp.VIewModel.Propertys;
 
@@ -20,6 +21,7 @@ namespace TractopartesDeskApp.VIewModel
         public ProductosViewModel()
         {
             _productoRepository = new ProductoRepository();
+
             AddProductoCommand = new ViewModelCommand(ExecuteAddProductoCommand, CanExecuteCommand);
             UpdateProductoCommand = new ViewModelCommand(ExecuteUpdateProductoCommand, CanExecuteCommand);
             RemoveProductoCommand = new ViewModelCommand(ExecuteRemoveProductoCommand);
@@ -47,7 +49,12 @@ namespace TractopartesDeskApp.VIewModel
             productoModel.p_categoria.idcategoria = P_CategoriaNombre.idcategoria;
             productoModel.p_proveedor.idproveedor = P_ProveedorRazonSocial.idproveedor;
             productoModel.p_cantidad = P_cantidad;
-            await _productoRepository.AddProducto(productoModel);
+         var iduser=   await _productoRepository.AddProducto(productoModel);
+            if (iduser != 0)
+            {
+                productoModel.p_idproducto=iduser;
+                ProductoManager.AddProducto(productoModel);
+            }
         }
 
         private bool CanExecuteCommand(object obj)

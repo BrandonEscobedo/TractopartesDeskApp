@@ -7,35 +7,35 @@
         xmlns:viewmodel ="clr-namespace:TractopartesDeskApp.VIewModel"
         xmlns:cd="clr-namespace:TractopartesDeskApp.Views.UserControls"
         WindowStyle="None"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="ProductoView" Height="850" Width="800">
+        Title="ProductoView" Height="680" Width="1100">
     <Window.DataContext>
         <viewmodel:ProductosViewModel>
 
         </viewmodel:ProductosViewModel>
     </Window.DataContext>
-    <Border CornerRadius="5" Background="White" >
+    <Border CornerRadius="10" Background="#ffffff">
 
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="232*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Border Grid.Row="1" Grid.RowSpan="2" >
 
-                <Grid VerticalAlignment="Center" Margin="10 10 10 10">
+                <Grid  >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
                     <Border  CornerRadius="0 0 0 5" >
-                        <Grid VerticalAlignment="Center" Margin="22,0,17,0" Height="680">
-                            <Border CornerRadius="7" Background="#ffffff" Margin="0,-54,0,-60" >
+                        <Grid VerticalAlignment="Center" Margin="22,0,17,0" >
+                            <Border CornerRadius="7" Background="#ffffff">
                                 <Border.Effect>
                                     <DropShadowEffect BlurRadius="30" ShadowDepth="5"
                                            Direction="-130" Opacity="0.1"/>
@@ -43,14 +43,13 @@
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="100"/>
+                                        <RowDefinition Height="145"/>
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
-
-                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="80"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
@@ -65,14 +64,14 @@
                                         <TextBlock Text="Agregar Producto" FontSize="18" Margin="15 0 0 3"
                 VerticalAlignment="Center"/>
                                     </StackPanel>
-                                    <!--inputs-->
+                                  
 
                                     <cd:MyTexBox x:Name="txtnombres" Grid.Column="0" Grid.Row="1"  Caption="Nombre del producto" Hint="Ingresa el nombre del producto"  ValueDb="{Binding P_NombreProducto, Mode=TwoWay}"/>
-                                    <cd:MyTexBox x:Name="txtDescripcion"  Grid.Column="1" Grid.Row="1" Caption="Descripcion" Hint="Descripcion del producto" ValueDb="{Binding P_descripcion, Mode=TwoWay}" />
-                                    <cd:MyTexBox x:Name="txtcodigoPieza"  Grid.Column="0" Grid.Row="2" Caption="Codigo de pieza" Hint="Codigo de pieza" ValueDb="{Binding P_CodigoPieza, Mode=TwoWay}" />
-                                    <cd:MyTexBoxInt  x:Name="txtCantidad" Grid.Column="1" Grid.Row="2" Caption="Cantidad"  ValueDb="{Binding P_cantidad, Mode=TwoWay}" />
-                                    
-                                    <StackPanel   Grid.Column="0" Grid.Row="3" Margin="20 10">
+                                    <cd:MyTexBox x:Name="txtDescripcion" TextBoxHeight="70"  Grid.Column="1" Grid.Row="1" Caption="Descripcion" Hint="Descripcion del producto" ValueDb="{Binding P_descripcion, Mode=TwoWay}" />
+                                    <cd:MyTexBox x:Name="txtcodigoPieza"  Grid.Column="2" Grid.Row="1" Caption="Codigo de pieza" Hint="Codigo de pieza" ValueDb="{Binding P_CodigoPieza, Mode=TwoWay}" />
+                                    <cd:MyTexBoxInt HorizontalAlignment="Left" Width="200" x:Name="txtCantidad" Grid.Column="0" Grid.Row="2" Caption="Stock actual"  ValueDb="{Binding P_cantidad, Mode=TwoWay}" />
+
+                                    <StackPanel   HorizontalAlignment="Left" Width="250"  Grid.Column="1" Grid.Row="2" Margin="20 10">
                                         <TextBlock Text="Precio de Compra" Foreground="#97a5b4" FontSize="13" Margin="0 0 0 8"/>
                                         <Grid>
 
@@ -80,7 +79,7 @@
                                                      />
                                         </Grid>
                                     </StackPanel>
-                                    <StackPanel   Grid.Column="1" Grid.Row="3" Margin="20 10">
+                                    <StackPanel  HorizontalAlignment="Left" Width="250"  Grid.Column="2" Grid.Row="2" Margin="20 10">
                                         <TextBlock Text="Precio de Venta" Foreground="#97a5b4" FontSize="13" Margin="0 0 0 8"/>
                                         <Grid>
 
@@ -88,44 +87,54 @@
                      />
                                         </Grid>
                                     </StackPanel>
-                                    <StackPanel Grid.Column="0" Grid.Row="4" Margin="20 30">
-                                        <TextBlock Text="Categoria" Foreground="#97a5b4" FontSize="13" Margin="0 0 0 8"/>
-                                        <Grid/>
-                                        <ComboBox  SelectedItem="{Binding P_CategoriaNombre}" Name="combocategorias" Grid.Row="4">
-                                            <ComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock  Text="{Binding categoria}">
+                                    <Grid  Grid.Column="0" Grid.Row="3">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="120"/>
+                                            <RowDefinition Height="120"/>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Row="0" Margin="20 30">
+                                            <TextBlock Text="Categoria" Foreground="#97a5b4" FontSize="13" Margin="0 0 0 8"/>
+                                            <Grid/>
+                                            <ComboBox FontSize="16" Height="35" SelectedItem="{Binding P_CategoriaNombre}" Name="combocategorias" Grid.Row="4">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock  Text="{Binding categoria}">
 
-                                                    </TextBlock>
-                                                </DataTemplate>
-                                            </ComboBox.ItemTemplate>
-                                        </ComboBox>
-                                    </StackPanel>    <StackPanel Grid.Column="1" Grid.Row="4" Margin="20 30">
-                                        <TextBlock Text="Proveedor" Foreground="#97a5b4" FontSize="13" Margin="0 0 0 8"/>
-                                        <Grid/>
-                                        <ComboBox  SelectedItem="{Binding P_ProveedorRazonSocial}" Name="comboProveedor" Grid.Row="4">
-                                            <ComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock  Text="{Binding razonsocial }">
+                                                        </TextBlock>
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+                                        </StackPanel>
+                                        <StackPanel  Grid.Row="1" Margin="20 30">
+                                            <TextBlock Text="Proveedor" Foreground="#97a5b4" FontSize="13" Margin="0 0 0 8"/>
+                                            <Grid/>
+                                            <ComboBox FontSize="16" Height="35" SelectedItem="{Binding P_ProveedorRazonSocial}" Name="comboProveedor" Grid.Row="4">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock  Text="{Binding razonsocial }">
 
-                                                    </TextBlock>
-                                                </DataTemplate>
-                                            </ComboBox.ItemTemplate>
-                                        </ComboBox>
-                                    </StackPanel>
-                                    <Border Margin="10" Grid.Column="1" Grid.RowSpan="1" Grid.Row="4">
-                                        <Grid  Height="270" >
+                                                        </TextBlock>
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+                                        </StackPanel>
+                                    </Grid>
+                                   
+                                    <Border Margin="10" Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="3">
+                                        <Grid  Height="250" Width="400" HorizontalAlignment="Right" >
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="*"/>
-                                                <RowDefinition Height="70"/>
+                                                <RowDefinition Height="60"/>
                                             </Grid.RowDefinitions>
-                                            <StackPanel Grid.Row="0" >
-                                                <Image Source="{Binding P_ImagenURL, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Name="imgProducto"/>
+                                            <Border  Width="320" Height="140" CornerRadius="5" BorderBrush="#636363" BorderThickness="0.8">
+                                                  <StackPanel  Width="320" Height="140" Grid.Row="0" Margin="0 15 0 15"  >
+                                                <Image   Margin="7"  Width="320" Height="140" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="{Binding P_ImagenURL, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Name="imgProducto"/>
                                             </StackPanel>
-                                            <Button Background="Green" Foreground="White" Grid.Row="1" Content="Agregar imagen"
-HorizontalAlignment="Center" Style="{StaticResource SendButton}"
- Click="Button_Click_1" 
-
+                                            </Border>
+                                          
+                                            <Button  Grid.Row="1" Content="Agregar imagen"
+                                                HorizontalAlignment="Center" Style="{StaticResource ImagenButton}"
+                                                Click="Button_Click_1"
 >
 
                                             </Button>
@@ -133,22 +142,23 @@ HorizontalAlignment="Center" Style="{StaticResource SendButton}"
                                     </Border>
 
 
-                                    <Border Grid.Row="5" Grid.ColumnSpan="2" Height="80"
+                                    <Border Grid.Row="5" Grid.ColumnSpan="3" 
          Background="#f6f6f6" CornerRadius="0 0 10 10"
-         Margin="0,81,0,0" Grid.RowSpan="2"
-         />
+        />
                                     <!--Botones-->
-                                    <Button Grid.Column="1" Grid.Row="9" Content="Guardar" Margin="0,104,13,17"
+                                    <Button Grid.Column="3" Margin="0 0 0 10" Grid.Row="4" VerticalAlignment="Center"  Content="Guardar"
          HorizontalAlignment="Right" Style="{StaticResource mainbutton}"
          Command="{Binding AddProductoCommand, UpdateSourceTrigger=PropertyChanged}" 
 
          >
                                         <Button.Effect>
                                             <DropShadowEffect BlurRadius="10" ShadowDepth="5" Color="#4880ff"
-                           Opacity="0.3" Direction="-120"/>
+                           Opacity="0.3"/>
                                         </Button.Effect>
                                     </Button>
-                                    <Button Content="Salir" Grid.Row="9" HorizontalAlignment="Left" Margin="21,101,0,20" Width="150" Style="{StaticResource SendButton}" Click="Button_Click"/>
+                                    <Button Margin="0 0 0 10" Grid.Column="1" Content="Salir" Grid.Row="5" HorizontalAlignment="Right"  Width="150"
+                                          VerticalAlignment="Center"  Style="{StaticResource SendButton}" Click="Button_Click"/>
+
                                 </Grid>
                             </Border>
                         </Grid>

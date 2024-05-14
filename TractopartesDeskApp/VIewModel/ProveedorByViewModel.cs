@@ -26,7 +26,7 @@ namespace TractopartesDeskApp.VIewModel
             Correo = string.Empty;
             direccion = string.Empty;
         }
-        private void ExecuteProveedorCommand(object obj)
+        private async void ExecuteProveedorCommand(object obj)
         {
             ProveedorModel proveedor = new()
             {
@@ -36,8 +36,13 @@ namespace TractopartesDeskApp.VIewModel
                 razonsocial = RazonSocial,
                 direccion=direccion
             };
-            _proveedorRepository.AddProveedor(proveedor);
-            ProveedoresManager.AddPrveedor(proveedor);
+         var idproveedor=  await _proveedorRepository.AddProveedor(proveedor);
+            if (idproveedor != 0)
+            {
+                proveedor.idproveedor = idproveedor;
+                ProveedoresManager.AddPrveedor(proveedor);
+            }
+           
             ExecuteClearFieldsCommand(obj);
         }
 

@@ -5,7 +5,7 @@ namespace TractopartesDeskApp.Repository
 {
     public interface IProductoRepository
     {
-        Task AddProducto(ProductoModel productoModel);
+        Task<int> AddProducto(ProductoModel productoModel);
         Task< ObservableCollection<ProductoModel>> GetProductos();
     }
 }

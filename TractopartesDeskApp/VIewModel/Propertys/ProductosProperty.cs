@@ -4,10 +4,11 @@ namespace TractopartesDeskApp.VIewModel.Propertys
 {
     public class ProductosProperty:ViewModelBase
     {
-        public ProductoModel ProductoModel;
+        public ProductoModel ProductoModel { get; set; }
         public ProductosProperty( )
         {
             ProductoModel = new();
+          
         }
         public int P_idProducto
         {
@@ -45,24 +46,25 @@ namespace TractopartesDeskApp.VIewModel.Propertys
                 OnPropertyChanged(nameof(P_descripcion));
             }
         }
-        public string P_ProveedorNombreEmpresa
+        public ProveedorModel P_ProveedorRazonSocial
         {
-            get { return ProductoModel.p_proveedor.nombreempresa; }
+            get { return ProductoModel.p_proveedor; }
             set
             {
-                ProductoModel.p_proveedor.nombreempresa = value;
-                OnPropertyChanged(nameof(P_ProveedorNombreEmpresa));
+                ProductoModel.p_proveedor = value;
+                OnPropertyChanged(nameof(P_ProveedorRazonSocial));
             }
         }
-        public string P_CategoriaNombre
+        public CategoriaModel P_CategoriaNombre
         {
-            get { return ProductoModel.p_categoria.categoria; }
+            get { return ProductoModel.p_categoria; }
             set
             {
-                ProductoModel.p_categoria.categoria = value;
-                OnPropertyChanged(nameof(P_ProveedorNombreEmpresa));
+                ProductoModel.p_categoria = value;
+                OnPropertyChanged(nameof(P_CategoriaNombre));
             }
         }
+
         public int P_cantidad
         {
             get { return ProductoModel.p_cantidad; }
@@ -72,7 +74,7 @@ namespace TractopartesDeskApp.VIewModel.Propertys
                 OnPropertyChanged(nameof(P_cantidad));
             }
         }
-        public float P_precioVenta
+        public decimal P_precioVenta
         {
             get { return ProductoModel.p_precioventa; }
             set
@@ -81,7 +83,7 @@ namespace TractopartesDeskApp.VIewModel.Propertys
                 OnPropertyChanged(nameof(P_precioVenta));
             }
         }
-        public float P_precioCompra
+        public decimal P_precioCompra
         {
             get { return ProductoModel.p_preciocompra; }
             set
@@ -93,11 +95,11 @@ namespace TractopartesDeskApp.VIewModel.Propertys
    
         public string P_ImagenURL
         {
-            get { return ProductoModel.p_categoria.categoria; }
+            get { return ProductoModel.p_ImagenURL; }
             set
             {
-                ProductoModel.p_categoria.categoria = value;
-                OnPropertyChanged(nameof(P_ProveedorNombreEmpresa));
+                ProductoModel.p_ImagenURL = value;
+                OnPropertyChanged(nameof(P_ImagenURL));
             }
         }
     }

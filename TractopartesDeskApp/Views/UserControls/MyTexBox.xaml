@@ -9,8 +9,9 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="boolToVis"/>
 
-
+ 
     </UserControl.Resources>
+  
     <StackPanel Margin="20 10">
         <TextBlock Text="{Binding ElementName=MyTexBoxs,Path=Caption}" Foreground="#97a5b4" FontSize="13" Margin="0 0 0 8"/>
         <Grid>
@@ -19,7 +20,8 @@
  Text="{Binding  ElementName=MyTexBoxs,Path=Hint}"
                        Visibility="{Binding ElementName=texBox,Path=Text.IsEmpty
                 ,Converter={StaticResource boolToVis}}"/>
-            <TextBox x:Name="texBox" Text="{Binding ValueDb, ElementName=MyTexBoxs, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="texBox" Text="{Binding ValueDb, ElementName=MyTexBoxs, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                     />
 
         </Grid>
     </StackPanel>

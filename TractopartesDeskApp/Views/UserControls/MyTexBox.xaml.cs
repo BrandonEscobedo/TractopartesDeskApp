@@ -21,15 +21,6 @@ namespace TractopartesDeskApp.Views.UserControls
         }
         public static readonly DependencyProperty HintProperty =
             DependencyProperty.Register("Hint", typeof(string), typeof(MyTexBox));  
-        public int HintInt
-        {
-            get
-            {
-                return (int)GetValue(HintIntProperty);
-            }
-            set { SetValue(HintIntProperty, value); }
-
-        }
         public static readonly DependencyProperty HintIntProperty =
             DependencyProperty.Register("HintInt", typeof(int), typeof(MyTexBox));
         public string Caption
@@ -43,7 +34,6 @@ namespace TractopartesDeskApp.Views.UserControls
         }
         public static readonly DependencyProperty CaptionProperty =
             DependencyProperty.Register("Caption", typeof(string), typeof(MyTexBox));
-
 
         public static readonly DependencyProperty DbProperty =
            DependencyProperty.Register("ValueDb", typeof(string), typeof(MyTexBox));

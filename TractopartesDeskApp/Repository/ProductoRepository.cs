@@ -38,7 +38,20 @@ namespace TractopartesDeskApp.Repository
         }
         public  async Task AddProducto(ProductoModel productoModel)
         {
+            var parameters = new
+            {
+                p_productonombre= productoModel.p_productonombre,
+                p_codigopieza= productoModel.p_codigopieza,
+                p_descripcion=   productoModel.p_descripcion,
+                p_imagenurl = productoModel.p_ImagenURL,
+                p_precioventa=  productoModel.p_precioventa ,
+                p_preciocompra= productoModel.p_preciocompra    ,
+                p_cantidad= productoModel.p_cantidad,
+                p_idproveedor=productoModel.p_proveedor.idproveedor,
+                p_idcategoria=productoModel.p_categoria.idcategoria
+            };
 
+            await ExecuteGeneric("sp_createproducto", parameters);
         }
     }
 }

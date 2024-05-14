@@ -63,7 +63,7 @@
 
                     <DataGridTextColumn Binding="{Binding p_categoria.categoria}"/>
                     <DataGridTextColumn Binding="{Binding p_proveedor.razonsocial}"/>
-                                       <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
+                    <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -80,9 +80,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
-
             </DataGrid>
-
         </Border>
         <Border Grid.Row="2">
             <Grid>
@@ -90,7 +88,6 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="250"/>
                 </Grid.ColumnDefinitions>
-
                 <Border  Grid.Column="1"  HorizontalAlignment="Center" BorderBrush="#dee4ec" BorderThickness="1" CornerRadius="5" 
                          Padding="5" Background="White"
                         >
@@ -98,22 +95,15 @@
                         <Button>
                             <Icon:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource pagingButtonIcon}"/>
                         </Button>
-
                         <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
-
                         <Button Style="{StaticResource pagingButton}" Content="1"/>
                         <Button Style="{StaticResource pagingButton}" Content="2"/>
                         <Button Style="{StaticResource pagingButton}" Content="3"/>
                         <Button Style="{StaticResource pagingButton}" Content="..."/>
-
-
                         <Button Style="{StaticResource pagingButton}" Content="7"/>
                         <Button Style="{StaticResource pagingButton}" Content="8"/>
                         <Button Style="{StaticResource pagingButton}" Content="9"/>
-
                         <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
-
-
                         <Button>
                             <Icon:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource pagingButtonIcon}"/>
                         </Button>

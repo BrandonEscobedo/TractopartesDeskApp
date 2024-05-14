@@ -18,7 +18,7 @@ namespace TractopartesDeskApp
             AppHost = Host.CreateDefaultBuilder()
                 .ConfigureServices((hostservices, services) =>
                 {
-                    services.AddSingleton<Dashboard>();
+                    services.AddSingleton<ProductoView>();
                 })
                 .Build();
         }
@@ -26,7 +26,7 @@ namespace TractopartesDeskApp
         {
 
             await AppHost!.StartAsync();
-            var startupform = AppHost.Services.GetRequiredService<Dashboard>();
+            var startupform = AppHost.Services.GetRequiredService<ProductoView>();
             startupform.Show();
             base.OnStartup(e);
         }

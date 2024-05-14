@@ -78,7 +78,7 @@ namespace TractopartesDeskApp.Views.UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TractopartesDeskApp;component/views/usercontrols/mytexbox.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TractopartesDeskApp;V1.0.0.0;component/views/usercontrols/mytexbox.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\UserControls\MyTexBox.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

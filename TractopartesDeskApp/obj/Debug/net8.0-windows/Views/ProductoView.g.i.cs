@@ -128,7 +128,7 @@ namespace TractopartesDeskApp.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TractopartesDeskApp;V1.0.0.0;component/views/productoview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TractopartesDeskApp;component/views/productoview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ProductoView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

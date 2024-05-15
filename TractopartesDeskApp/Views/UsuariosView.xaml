@@ -61,7 +61,7 @@
                                         <Border CornerRadius="50" BorderThickness="1.5" Margin="0 0 0 3" BorderBrush="#efefef">
                                             <Ellipse Width="40" Height="40" >
                                                 <Ellipse.Fill>
-                                                    <ImageBrush ImageSource="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\people.png" />
+                                                    <ImageBrush  />
                                                 </Ellipse.Fill>
                                             </Ellipse>
                                         </Border>

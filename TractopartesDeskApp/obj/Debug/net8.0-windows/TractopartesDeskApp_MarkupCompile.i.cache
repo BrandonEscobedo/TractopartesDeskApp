@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\
 TractopartesDeskApp
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\App.xaml
-20-529377462
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\App.xaml
+21-1550366627
 
-56-119111078
-241-1460260387
-Styles\ButtonStyles.xaml;Styles\UIColors.xaml;Views\Dashboard.xaml;Views\Page1.xaml;Views\Pages\CategoriasPage.xaml;Views\Pages\ClientesPage.xaml;Views\Pages\ProductosPage.xaml;Views\Pages\ProveedoresPage.xaml;Views\Productos.xaml;Views\ProductoView.xaml;Views\Proveedores.xaml;Views\ProveedoresView.xaml;Views\RemoveViews\RemoveClienteView.xaml;Views\UserControls\BtnAddUser.xaml;Views\UserControls\MyTexBox.xaml;Views\UserControls\MyTexBoxInt.xaml;Views\UserControls\MytextBoxDecimal.xaml;Views\UserControls\TablaUsuarios.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
+572045855562
+241-713618533
+Styles\ButtonStyles.xaml;Styles\UIColors.xaml;Views\Dashboard.xaml;Views\Page1.xaml;Views\Pages\CategoriasPage.xaml;Views\Pages\ClientesPage.xaml;Views\Pages\ProductosPage.xaml;Views\Pages\ProveedoresPage.xaml;Views\Pages\VentasPage.xaml;Views\Productos.xaml;Views\ProductoView.xaml;Views\Proveedores.xaml;Views\ProveedoresView.xaml;Views\RemoveViews\RemoveClienteView.xaml;Views\UserControls\BtnAddUser.xaml;Views\UserControls\MyTexBox.xaml;Views\UserControls\MyTexBoxInt.xaml;Views\UserControls\MytextBoxDecimal.xaml;Views\UserControls\TablaUsuarios.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
 
-False
+True
 

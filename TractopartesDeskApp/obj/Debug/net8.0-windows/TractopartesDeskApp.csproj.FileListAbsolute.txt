@@ -62,14 +62,12 @@ C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\ne
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Styles\ButtonStyles.baml
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Styles\UIColors.baml
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Dashboard.g.cs
-C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProductosView.g.cs
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MyTexBox.g.cs
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\TablaUsuarios.g.cs
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UsuarioView.g.cs
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\App.baml
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Dashboard.baml
-C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProductosView.baml
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MyTexBox.baml
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\TablaUsuarios.baml
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UsuarioView.baml
@@ -180,3 +178,19 @@ C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\Tractopartes
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MyTexBoxInt.baml
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MytextBoxDecimal.g.cs
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MytextBoxDecimal.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\LiveCharts.dll
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\CategoriasPage.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\ProductosPage.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\VentasPage.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProductoView.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\RemoveViews\RemoveClienteView.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MyTexBoxInt.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MytextBoxDecimal.g.cs
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\CategoriasPage.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\ProductosPage.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\VentasPage.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProductoView.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\RemoveViews\RemoveClienteView.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MyTexBoxInt.baml
+C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MytextBoxDecimal.baml

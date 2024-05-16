@@ -10,7 +10,7 @@
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="ProductoView" Height="680" Width="1100">
+        Title="ProductoView" Height="680" Width="1100" >
     <Window.DataContext>
         <viewmodel:ProductosViewModel>
 

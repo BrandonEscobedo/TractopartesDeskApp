@@ -2,7 +2,6 @@
 using System.Windows.Input;
 using TractopartesDeskApp.Models;
 using TractopartesDeskApp.Repository;
-
 namespace TractopartesDeskApp.VIewModel
 {
     public class AddUserByViewModel : UserViewModelPropertys

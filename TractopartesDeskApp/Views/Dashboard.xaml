@@ -108,8 +108,8 @@
                             <TextBlock Text="Productos" Style="{StaticResource menuButtonText}" Foreground="White"/>
                         </StackPanel>
                     </RadioButton>    
-                    <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color15}">
+                    <RadioButton x:Name="rbGenerarVenta" Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color15}" Checked="rbGenerarVenta_Checked">
 
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Store" Style="{StaticResource menuButtonIcon}"/>

@@ -16,16 +16,22 @@ namespace TractopartesDeskApp.Repository
         public  async Task<ObservableCollection<ProductoModel>> GetProductos()
         {
             var sql = @"
-               SELECT pr.codigopieza AS p_codigopieza,
-          pr.nombreproducto AS p_productonombre,
-		  pr.imagen as P_ImagenURL,
-          cat.categoria AS categoria,
-          prv.nombreempresa AS nombreempresa,
-          prv.razonsocial AS razonsocial,
-          prv.telefono AS telefono
-   FROM productos AS pr
-   INNER JOIN categorias AS cat ON pr.idcategoria = cat.idcategoria
-   INNER JOIN public.proveedores AS prv ON pr.idprovedor = prv.idproveedor
+                SELECT pr.codigopieza AS p_codigopieza,
+pr.idproducto as p_idproducto,
+pr.cantidad as p_cantidad,
+pr.precioventa as p_precioventa, 
+pr.preciocompra as p_preciocompra,
+pr.nombreproducto AS p_productonombre,
+ pr.imagen as P_ImagenURL,
+       cat.categoria AS categoria,
+	   cat.idcategoria as idcategoria,
+       prv.nombreempresa AS nombreempresa,
+       prv.razonsocial AS razonsocial,
+       prv.telefono AS telefono,
+	   prv.idproveedor as idproveedor
+FROM productos AS pr
+INNER JOIN categorias AS cat ON pr.idcategoria = cat.idcategoria
+INNER JOIN public.proveedores AS prv ON pr.idprovedor = prv.idproveedor
 ";
             var producto = await LoadDataWithRelations<ProductoModel, CategoriaModel, ProveedorModel>(sql,
                 (producto, categoria, proveedor) =>

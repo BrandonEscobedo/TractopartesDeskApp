@@ -28,6 +28,9 @@
     <Compile Update="Views\Productos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ProductosTablaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ProductoView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,7 +46,13 @@
     <Compile Update="Views\UserControls\BtnAddUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControls\Carad.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControls\MyTexBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\ProductosControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\TablaUsuarios.xaml.cs">
@@ -81,6 +90,9 @@
     <Page Update="Views\Pages\VentasPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ProductosTablaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\ProductoView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -90,6 +102,9 @@
     <Page Update="Views\UserControls\BtnAddUser.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\UserControls\Carad.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\UserControls\MytextBoxDecimal.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -97,6 +112,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\MyTexBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\ProductosControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\TablaUsuarios.xaml">

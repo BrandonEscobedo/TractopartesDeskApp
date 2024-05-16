@@ -4,98 +4,127 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TractopartesDeskApp.Views.Pages"
+      xmlns:viewmodel="clr-namespace:TractopartesDeskApp.VIewModel"
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="1500"
+      d:DataContext="{d:DesignInstance Type=viewmodel:VentasViewModel,
+    IsDesignTimeCreatable=False}"
       Title="VentasPage">
+  
+    <Page.Resources>
+        <Style TargetType="TextBoxBase"  >
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="10 8"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate >
+                        <Border x:Name="border" CornerRadius="5" Background="{TemplateBinding Background}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True"    >
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False"
+                              HorizontalScrollBarVisibility="Hidden"
+                              VerticalScrollBarVisibility="Hidden"/>
+
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush"  TargetName="border"  Value="#4880ff"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush"  TargetName="border" Value="#4880ff"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <Grid Background="#ffffff" >
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="110"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <Border Grid.ColumnSpan="2" Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="500"/>
                     <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition Width="100"/>
-                    </Grid.ColumnDefinitions>
-                    <Border Grid.Column="1">
+                <Border   Grid.Column="0">
+                    <Grid >
+
+
                         <StackPanel Margin="10">
 
                             <TextBlock Margin="13 0 " x:Name="txttexto" VerticalAlignment="Center" Foreground="#868686"
                           IsHitTestVisible="False" Panel.ZIndex="1" FontSize="14"
-                             Text="buscar "
+                             Text="Codigo de pieza "
                          />
-                            <TextBox  x:Name="txtbuscar" />
+                            <controls:AutoCompleteBox  Style="{StaticResource controlauto}" x:Name="txtb"
+                                FilterMode="Contains"
+                                ValueMemberPath="p_codigopieza"
+                              
+                                ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}"
+                                        SelectionChanged="txtb_SelectionChanged">
 
+                            </controls:AutoCompleteBox>
+                           
                         </StackPanel>
 
-
-                    </Border>
-                </Grid>
-
-                <Border Grid.Column="2">
-
-                    <Button  HorizontalAlignment="Center" Command="{Binding ShowWindowCommand}" VerticalAlignment="Center" Content="Agregar cliente" 
- Style="{StaticResource AgregarButton}"
->
-
-                    </Button>
+                    </Grid>
                 </Border>
+                <RadioButton  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="rbBusquedaAvanzada" Command="{Binding ShowProductosCommand}" Grid.Column="1"  Margin="5" Style="{StaticResource menuButton2}">
+                    <Border  Style="{StaticResource whiteBorder}" >
+
+                        <StackPanel >
+                            <StackPanel  >
+                                <TextBlock  Style="{StaticResource titleText}" Text="Busqueda Avanzada" />
+                                <Image Height="30" Width="30"
+                             Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\SearchProduct.png"/>
+                                <TextBlock HorizontalAlignment="Center" Margin="5" Style="{StaticResource secondaryText}" Text="F12" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </RadioButton>
             </Grid>
         </Border>
         <Border Grid.Row="1" Margin="10 10 10 10" CornerRadius="100" >
 
-            <DataGrid  ItemsSource="{Binding userModels}" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
+            <DataGrid CanUserSortColumns="False"  ItemsSource="{Binding DetallesVentaList}" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
                        RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyleVentas}">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn  Header=" odigo" Binding="{Binding nombres}"/>
-                    <DataGridTextColumn  Header="Articulo" Binding="{Binding apellidopaterno}"/>
-                    <DataGridTextColumn  Header="Cantidad" Binding="{Binding apellidomaterno}"/>
-                    <DataGridTextColumn  Header="Precio unitario" Binding="{Binding genero}" />
-                    <DataGridTextColumn  Header="Importe" Binding="{Binding telefono1}"/>
-                    <DataGridTextColumn  Header="Telefono 2 " Binding="{Binding telefono2}"/>
-                    <DataGridTextColumn  Header="Correo" Binding="{Binding email}"/>
-                    <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
-                        <DataGridTemplateColumn.CellTemplate >
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
+                    <DataGridTextColumn  Header="codigo" Binding="{Binding  producto.p_codigopieza}"/>
+                    <DataGridTextColumn  Header="Articulo" Binding="{Binding  producto.p_productonombre}"/>
+                    <DataGridTextColumn  Header="Cantidad" Binding="{Binding cantidad}"/>
+                    <DataGridTextColumn  Header="Precio Unitario" Binding="{Binding producto.p_precioventa}"/>
+                    <DataGridTextColumn  Header="Total" Binding="{Binding   precio_unitario}"/>
 
-                                    <Button Command="{Binding  DataContext.UpdateByUserCommand,   RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}"  Style="{StaticResource GridEditButton}">
-                                        <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
-                                    </Button>
-                                    <Button Command="{Binding  DataContext.RemoveWindowCommand,   RelativeSource={RelativeSource AncestorType={x:Type Page}}}"
-                                                              CommandParameter="{Binding }" Style="{StaticResource GridRemoveButton}">
-                                        <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
-                                    </Button>
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+
                 </DataGrid.Columns>
 
             </DataGrid>
 
         </Border>
-        <Border Grid.Row="1" Grid.Column="1">
+        <Border   Grid.Row="1" Grid.Column="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="400"/>
-                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" Margin="20">
                     <StackPanel>
@@ -116,8 +145,29 @@
                 </Border>
             </Grid>
         </Border>
-        <Border Background="#6E6D6D" Grid.Row="2" Grid.ColumnSpan="2">
-            
+        <Border Background="#BEBEBE" Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="350"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel  Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label FontWeight="Bold" Foreground="Blue" Margin="0 20 0 0 " 
+                                FontSize="40"
+                                Grid.Column="1"  Content="$" />
+                        <Label x:Name="lblnombre" FontWeight="Bold" Foreground="Blue" Margin="0 20 0 0 " 
+                                FontSize="40"
+                                Grid.Column="2"   />
+                    </Grid>
+
+                </StackPanel>
+            </Grid>
         </Border>
     </Grid>
 </Page>

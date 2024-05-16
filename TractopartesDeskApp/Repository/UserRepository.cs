@@ -5,13 +5,10 @@ using System.Data;
 using System.Windows;
 using TractopartesDeskApp.Data;
 using TractopartesDeskApp.Models;
-
 namespace TractopartesDeskApp.Repository
 {
     public class UserRepository : SqlDataAccess, IUserRepository
-    {
-    
-
+    {  
         public async Task<int> AddUser(UserModel userModel )
         {
             var parmetrs = new
@@ -24,10 +21,8 @@ namespace TractopartesDeskApp.Repository
                 telefono1 = userModel.telefono1,
                 telefono2 = userModel.telefono2,
             };
-           return await ExecuteGenericWithDynamicParameters("crearclientedatospersonales", parmetrs, "@p_new_user");
-          
+           return await ExecuteGenericWithDynamicParameters("crearclientedatospersonales", parmetrs, "@p_new_user");         
         }
-      
 
         public   async Task< ObservableCollection<UserModel>> GetAllUser()
         {

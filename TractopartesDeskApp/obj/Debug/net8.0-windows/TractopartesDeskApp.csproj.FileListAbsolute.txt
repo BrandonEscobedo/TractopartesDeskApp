@@ -194,3 +194,12 @@ C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\ne
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\RemoveViews\RemoveClienteView.baml
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MyTexBoxInt.baml
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\MytextBoxDecimal.baml
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\VentasPage.g.cs
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\VentasPage.baml
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\DotNetProjects.Input.Toolkit.dll
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProductosTablaView.g.cs
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\Carad.g.cs
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\ProductosControl.g.cs
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\ProductosTablaView.baml
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\Carad.baml
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\UserControls\ProductosControl.baml

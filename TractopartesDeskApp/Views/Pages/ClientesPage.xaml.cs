@@ -17,25 +17,26 @@ using TractopartesDeskApp.VIewModel;
 
 namespace TractopartesDeskApp.Views.Pages
 {
-    /// <summary>
-    /// Lógica de interacción para Test.xaml
-    /// </summary>
+    
     public partial class ClientesPage : Page
     {
-
+        
         public ClientesPage()
         {
             InitializeComponent();
             UserByViewModel viewModel = new UserByViewModel();  
             this.DataContext=viewModel;
-
-        }
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-
            
         }
 
+        private bool OnFilter(string search, object item)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+        }
         private void txtbuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             MembersDataGrid.Items.Filter = OnFilter;
@@ -45,7 +46,7 @@ namespace TractopartesDeskApp.Views.Pages
         private bool OnFilter(object obj)
         {
             var cliente = (UserModel)obj;
-           return  cliente.nombres.Contains(txtbuscar.Text);           
+            return cliente.nombres.Contains(txtbuscar.Text);
         }
 
 

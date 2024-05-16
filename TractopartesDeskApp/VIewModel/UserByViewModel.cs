@@ -9,6 +9,7 @@ namespace TractopartesDeskApp.VIewModel
     public class UserByViewModel
     {
         public ICommand ShowWindowCommand { get; }
+
         public ICommand RemoveWindowCommand { get; }
         public ICommand UpdateByUserCommand { get; }
         public ObservableCollection<UserModel> userModels { get; set; }

@@ -25,7 +25,7 @@ namespace TractopartesDeskApp.Data
                     }                
                     return ObservableCollection;   
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     MessageBox.Show ("Ocurrio un error al generar la consulta de bases de datos");
                     throw;
@@ -73,10 +73,11 @@ namespace TractopartesDeskApp.Data
 
                     return true;
                 }
-                catch (Exception)
+                catch (Exception ex )
                 {
 
-                    throw  ;
+                    MessageBox.Show(ex.Message);
+                    return false ;
                 }
             }
         }
@@ -94,10 +95,11 @@ namespace TractopartesDeskApp.Data
                     var newUserId = parameterss.Get<int>(parameterOut);
                     return newUserId;
                 }
-                catch (Exception)
+                catch (Exception ex) 
                 {
 
-                    throw;
+                    MessageBox.Show(ex.Message);
+                    return 0;
                 }
             }
         }

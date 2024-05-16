@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TractopartesDeskApp.Models
+﻿namespace TractopartesDeskApp.Models
 {
     public class VentaModel
     {
@@ -12,7 +6,12 @@ namespace TractopartesDeskApp.Models
         public DateTime fechanventa { get; set; }
         public int idcliente { get; set; }
         public decimal total { get; set; }
-
-        //crear metodo propio o contructor para set la fecha de venta
+        public List<DetalleVentaModel> detalleVentas { get; set; }
+        public VentaModel()
+        {
+            idventa = Guid.NewGuid();
+            fechanventa = DateTime.Now;
+            detalleVentas=new List<DetalleVentaModel>();
+        }
     }
 }

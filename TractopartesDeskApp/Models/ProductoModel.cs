@@ -19,5 +19,6 @@ namespace TractopartesDeskApp.Models
         public int p_cantidad { get; set; }
         public ProveedorModel p_proveedor { get; set; } = new();
         public CategoriaModel p_categoria { get; set; } = new();
+       
     }
 }

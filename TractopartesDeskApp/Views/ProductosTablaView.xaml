@@ -1,0 +1,27 @@
+﻿<Window x:Class="TractopartesDeskApp.Views.ProductosTablaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TractopartesDeskApp.Views"
+        mc:Ignorable="d"
+        Title="ProductosTablaView" Height="450" Width="600">
+    <Border>
+        <Grid>
+
+            <DataGrid SelectionChanged="MembersDataGrid_SelectionChanged" SelectedItem="{Binding  _productoModel}"  ItemsSource="{Binding Productos}" 
+                      AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}"
+                       RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
+                       ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="*Producto" Binding="{Binding p_productonombre}"/>
+                    <DataGridTextColumn Header="Codigo de Pieza" Binding="{Binding p_codigopieza}"/>
+                    <DataGridTextColumn Header="Categoria" Binding="{Binding cantidad}"/>
+                    <DataGridTextColumn Header="Empresa" Binding="{Binding p_proveedor.razonsocial}"/>
+                 
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Border>
+</Window>

@@ -31,13 +31,18 @@ namespace TractopartesDeskApp.VIewModel.Propertys
                 OnPropertyChanged(nameof(P_FechaVenta));
             }
         }
-        public int P_idCliente
+        private UserModel _clienteModel = new();
+        public UserModel P_Cliente
         {
-            get { return ventaModel.idcliente; }
+            get { return ventaModel.clientemodel; }
             set
             {
-                ventaModel.idcliente = value;
-                OnPropertyChanged(nameof(P_idCliente));
+                if(ventaModel.clientemodel != value)
+                {
+                    ventaModel.clientemodel = value;
+                    OnPropertyChanged(nameof(P_Cliente));
+                }
+               
             }
         }
         public decimal P_Total
@@ -69,7 +74,7 @@ namespace TractopartesDeskApp.VIewModel.Propertys
             }
             set
             {
-                DetalleventaModel.precio_unitario= value;
+                DetalleventaModel.precioNeto = value;
                 OnPropertyChanged(nameof(P_PrecioUnitario));
             }
         }

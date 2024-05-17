@@ -11,30 +11,22 @@ namespace TractopartesDeskApp
 
         public static IHost? AppHost { get; private set; }
 
-        public App()
+   
 
-        {
-            
-            AppHost = Host.CreateDefaultBuilder()
-                .ConfigureServices((hostservices, services) =>
-                {
-                    services.AddSingleton<Dashboard>();
-                })
-                .Build();
-        }
-        protected override async void OnStartup(StartupEventArgs e)
+        protected void Application_Startup(object sender, StartupEventArgs e)
         {
 
-            await AppHost!.StartAsync();
-            var startupform = AppHost.Services.GetRequiredService<Dashboard>();
+            var startupform = new LoginView();
             startupform.Show();
-            base.OnStartup(e);
-        }
-        protected override async void OnExit(ExitEventArgs e)
-        {
-            await AppHost!.StopAsync();
-
-            base.OnExit(e);
+            startupform.IsVisibleChanged += (s, ev) =>
+            {
+                if (startupform.IsVisible == false && startupform.IsLoaded)
+                {
+                    var mainview = new Dashboard();
+                    mainview.Show();
+                    startupform.Close();
+                }
+            };
         }
     }
 

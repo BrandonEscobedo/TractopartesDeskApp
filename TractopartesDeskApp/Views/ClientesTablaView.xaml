@@ -1,0 +1,45 @@
+﻿<Window x:Class="TractopartesDeskApp.Views.ClientesTablaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TractopartesDeskApp.Views"
+        xmlns:viewmodel="clr-namespace:TractopartesDeskApp.VIewModel"
+        mc:Ignorable="d"
+          d:DataContext="{d:DesignInstance Type=viewmodel:VentasViewModel,
+IsDesignTimeCreatable=False}"
+         WindowStartupLocation="CenterScreen"
+ WindowStyle="None"
+        Title="ClientesTablaView" Height="450" Width="800">
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <DataGrid SelectionChanged="MembersDataGrid_SelectionChanged" SelectedItem="{Binding  P_Cliente}"  
+                  AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}"
+                   RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
+                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nombres" Binding="{Binding nombres}"/>
+                    <DataGridTextColumn Header="Apellido Paterno" Binding="{Binding  apellidopaterno}"/>
+                    <DataGridTextColumn Header="Apellido Materno" Binding="{Binding apellidomaterno}"/>
+                    <DataGridTextColumn Header="Correo" Binding="{Binding email}"/>
+                    <DataGridTextColumn Header="Telefono 1 " Binding="{Binding telefono1}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Border Grid.Row="1">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button   Grid.Column="0" Content="Salir" Grid.Row="5" HorizontalAlignment="Right"  Width="150"
+   VerticalAlignment="Center"  Style="{StaticResource Closebutton}" Click="Button_Click" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+
+</Window>

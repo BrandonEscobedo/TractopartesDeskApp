@@ -6,45 +6,20 @@
       xmlns:local="clr-namespace:TractopartesDeskApp.Views.Pages"
       xmlns:viewmodel="clr-namespace:TractopartesDeskApp.VIewModel"
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+
       xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
       mc:Ignorable="d" 
-      d:DesignHeight="1000" d:DesignWidth="1500"
+      d:DesignHeight="1000" d:DesignWidth="1000"
       d:DataContext="{d:DesignInstance Type=viewmodel:VentasViewModel,
     IsDesignTimeCreatable=False}"
       Title="VentasPage">
-  
-    <Page.Resources>
-        <Style TargetType="TextBoxBase"  >
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="Padding" Value="10 8"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate >
-                        <Border x:Name="border" CornerRadius="5" Background="{TemplateBinding Background}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True"    >
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False"
-                              HorizontalScrollBarVisibility="Hidden"
-                              VerticalScrollBarVisibility="Hidden"/>
-
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="BorderBrush"  TargetName="border"  Value="#4880ff"/>
-                            </Trigger>
-                            <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="BorderBrush"  TargetName="border" Value="#4880ff"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
+    <Page.InputBindings>
+        <KeyBinding Key="F5" Command="{Binding ShowProductosCommand}"/>
+        <KeyBinding Key="F4" Command="{Binding ShowClientesCommand}"/>
+        <KeyBinding Key="F12" Command="{Binding GenerarVentaCommand}"/>
+        
+    </Page.InputBindings>
+   
     <Grid Background="#ffffff" >
 
         <Grid.RowDefinitions>
@@ -54,14 +29,13 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="230"/>
         </Grid.ColumnDefinitions>
         <Border Grid.ColumnSpan="2" Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="600"/>
                 </Grid.ColumnDefinitions>
                 <Border   Grid.Column="0">
                     <Grid >
@@ -86,34 +60,82 @@
 
                     </Grid>
                 </Border>
-                <RadioButton  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="rbBusquedaAvanzada" Command="{Binding ShowProductosCommand}" Grid.Column="1"  Margin="5" Style="{StaticResource menuButton2}">
-                    <Border  Style="{StaticResource whiteBorder}" >
+                <Border Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton   HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="rbBusquedaAvanzada" Command="{Binding ShowProductosCommand}" Grid.Column="0"  Margin="5" Style="{StaticResource menuButton2}">
+                            <Border  Style="{StaticResource whiteBorder}" >
 
-                        <StackPanel >
-                            <StackPanel  >
-                                <TextBlock  Style="{StaticResource titleText}" Text="Busqueda Avanzada" />
-                                <Image Height="30" Width="30"
+                                <StackPanel  Width="140" >
+                                    <StackPanel  >
+                                        <TextBlock  Style="{StaticResource titleText}" Text="Busqueda Avanzada" />
+                                        <Image Height="30" Width="30"
                              Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\SearchProduct.png"/>
-                                <TextBlock HorizontalAlignment="Center" Margin="5" Style="{StaticResource secondaryText}" Text="F12" />
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </RadioButton>
+                                        <TextBlock HorizontalAlignment="Center" Margin="5" Style="{StaticResource secondaryText}" Text="F5" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </RadioButton>
+                        <RadioButton     HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="rbCliente" Command="{Binding ShowClientesCommand}" Grid.Column="1"  Margin="5" Style="{StaticResource menuButton2}">
+                            <Border  Style="{StaticResource whiteBorder}" >
+
+                                <StackPanel Width="120" >
+                                    <StackPanel  HorizontalAlignment="Center"  VerticalAlignment="Center" >
+                                        <TextBlock VerticalAlignment="Center"   HorizontalAlignment="Center" Style="{StaticResource titleText}" Text="Agregar  Cliente" />
+                                        <Image Height="30" Width="30"
+Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\PayingMoney.png"/>
+                                        <TextBlock HorizontalAlignment="Center" Margin="5" Style="{StaticResource secondaryText}" Text="F4" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </RadioButton>
+                        <RadioButton     HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="rbCobrar" Command="{Binding GenerarVentaCommand}" Grid.Column="2"  Margin="5" Style="{StaticResource menuButton2}">
+                            <Border  Style="{StaticResource whiteBorder}" >
+
+                                <StackPanel Width="120" >
+                                    <StackPanel  HorizontalAlignment="Center"  VerticalAlignment="Center" >
+                                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center" Style="{StaticResource titleText}" Text="Cobrar" />
+                                        <Image Height="30" Width="30"
+Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\PayingMoney.png"/>
+                                        <TextBlock HorizontalAlignment="Center" Margin="5" Style="{StaticResource secondaryText}" Text="F12" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </RadioButton>
+                    </Grid>
+                </Border>
+               
             </Grid>
         </Border>
         <Border Grid.Row="1" Margin="10 10 10 10" CornerRadius="100" >
 
-            <DataGrid CanUserSortColumns="False"  ItemsSource="{Binding DetallesVentaList}" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
+            <DataGrid SelectionChanged="MembersDataGrid_SelectionChanged" FontSize="17" CanUserSortColumns="False"  ItemsSource="{Binding DetallesVentaList}" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
                        RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyleVentas}">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn  Header="codigo" Binding="{Binding  producto.p_codigopieza}"/>
-                    <DataGridTextColumn  Header="Articulo" Binding="{Binding  producto.p_productonombre}"/>
-                    <DataGridTextColumn  Header="Cantidad" Binding="{Binding cantidad}"/>
-                    <DataGridTextColumn  Header="Precio Unitario" Binding="{Binding producto.p_precioventa}"/>
-                    <DataGridTextColumn  Header="Total" Binding="{Binding   precio_unitario}"/>
+                    <DataGridTextColumn Width="250" Header="codigo" Binding="{Binding  producto.p_codigopieza}"/>
+                    <DataGridTextColumn Width="250" Header="Articulo" Binding="{Binding  producto.p_productonombre}"/>
+                    <DataGridTextColumn Width="100" Header="Cantidad" Binding="{Binding cantidad}"/>
+                    <DataGridTextColumn Width="160" Header="Precio Unitario" Binding="{Binding producto.p_precioventa}"/>
+                    <DataGridTextColumn Width="190" Header="Total" Binding="{Binding   P_precio_Total}"/>
+                    <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
 
+                                    <Button Command="{Binding  DataContext.RemoveProductoCommand,   RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding producto}"  Style="{StaticResource GridEditButton}">
+                                        <Image  Width="10" Height="10" Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\minus.png"/>
+                                    </Button>
+                                   
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
                 </DataGrid.Columns>
 
@@ -123,12 +145,20 @@
         <Border   Grid.Row="1" Grid.Column="1">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="400"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" Margin="20">
                     <StackPanel>
-                        <Image Height="380" Source="C:\Users\brand\OneDrive\Imágenes\logoleslie.png"/>
+                        <Image Name="imgProducto" Margin="10" Width="165" Height="250"/>
+
+                        <TextBlock Margin="13 0 " VerticalAlignment="Center" Foreground="#868686"
+                          IsHitTestVisible="False" Panel.ZIndex="1" FontSize="18"
+                             Text="Producto:"
+                         />
+                        <TextBlock  x:Name="txtNombreProducto" Margin="13 0 " VerticalAlignment="Center"
+                          IsHitTestVisible="False" Panel.ZIndex="1" FontSize="17"
+                           />
                     </StackPanel>
                 </Border>
                 <Border Grid.Row="1">
@@ -138,9 +168,12 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Label Grid.Row="0" FontSize="28" HorizontalAlignment="Center"
-                               VerticalAlignment="Center" Content="Producto"/>
-                        <Label Grid.Row="1" HorizontalAlignment="Center" 
-                                FontSize="25"  Content="$ 0.00"/>
+                               VerticalAlignment="Top" Content="Cliente"/>
+                        <Label Grid.Row="0" FontSize="28" HorizontalAlignment="Center"
+        VerticalAlignment="Center" Content="{Binding P_Cliente.nombres}"/>   
+                        <Label Grid.Row="0" FontSize="28" HorizontalAlignment="Center"
+        VerticalAlignment="Bottom" Content="{Binding P_Cliente.email}"/>
+                        
                     </Grid>
                 </Border>
             </Grid>
@@ -163,7 +196,7 @@
                                 Grid.Column="1"  Content="$" />
                         <Label x:Name="lblnombre" FontWeight="Bold" Foreground="Blue" Margin="0 20 0 0 " 
                                 FontSize="40"
-                                Grid.Column="2"   />
+                                Grid.Column="2"  Content="{Binding P_Total}" />
                     </Grid>
 
                 </StackPanel>

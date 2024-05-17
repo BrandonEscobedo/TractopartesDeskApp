@@ -18,16 +18,17 @@ using TractopartesDeskApp.VIewModel;
 
 namespace TractopartesDeskApp.Views.Pages
 {
-   
+
     public partial class VentasPage : Page
     {
         VentasViewModel ventasViewModel;
         public VentasPage()
         {
             InitializeComponent();
-             ventasViewModel = new VentasViewModel();
-            this.DataContext=ventasViewModel;
-            MembersDataGrid.ItemsSource = ventasViewModel.DetallesVentaList;  
+            ventasViewModel = new VentasViewModel();
+            this.DataContext = ventasViewModel;
+            MembersDataGrid.ItemsSource = ventasViewModel.DetallesVentaList;
+            MembersDataGrid.DataContext = ventasViewModel.DetallesVentaList;
             txtb.FilterMode = AutoCompleteFilterMode.Contains;
             txtb.ItemsSource = ProductoManager.productos;
         }
@@ -37,8 +38,26 @@ namespace TractopartesDeskApp.Views.Pages
             if (selectedItem != null)
             {
 
-               ventasViewModel._productoModel = selectedItem;
-            }         
+                ventasViewModel._productoModel = selectedItem;
+            }
+        }
+
+        private void MembersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (MembersDataGrid.SelectedItems.Count > 0)
+            {
+                foreach (var item in MembersDataGrid.SelectedItems)
+                {
+                    var obj = (DetalleVentaModel)item;
+                    if (obj != null)
+                    {
+                        
+                      
+                    }
+                }
+            }
+
+
         }
     }
 }

@@ -7,53 +7,53 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using TractopartesDeskApp.Models;
+using TractopartesDeskApp.Repository;
 using TractopartesDeskApp.VIewModel.Propertys;
 using TractopartesDeskApp.Views;
 
 namespace TractopartesDeskApp.VIewModel
 {
-    public class VentasViewModel:VentasProperty
+    public class VentasViewModel : VentasProperty
     {
-        ICommand GenerarVentaCommand { get; set; }
-        public  ICommand ShowProductosCommand { get; set; }  
+        public ICommand GenerarVentaCommand { get; }
+        public ICommand ShowClientesCommand { get; }
+        public ICommand RemoveProductoCommand { get; }
+        public ICommand ShowProductosCommand { get;  }
+        private IVentaRepository ventaRepository { get; set; }
         private ProductoModel _productoSeleccionado = new();
         public ProductoModel _productoModel
         {
+
             get { return _productoSeleccionado; }
             set
-            {
+            {                    
                 var detalleExistente = DetallesVentaList.FirstOrDefault(x => x.producto.p_idproducto == value.p_idproducto);
-              
-                if (detalleExistente==null)
+
+                if (detalleExistente == null)
                 {
 
                     DetalleVentaModel detalleVenta = new(P_idventaP)
                     {
-                        
-                        producto=value,
-                        cantidad=1,
-                        precio_unitario=value.p_precioventa
+
+                        producto = value,
+                        cantidad = 1,
+                        precioNeto = value.p_precioventa
                     };
-                  
+                    P_Total += detalleVenta.precioNeto;
                     DetallesVentaList.Add(detalleVenta);
-                  
+
                 }
                 else
                 {
 
-                    DetallesVentaList.Remove(detalleExistente);
-
                     detalleExistente.cantidad += 1;
-                    detalleExistente.precio_unitario = detalleExistente.producto.p_precioventa *
+                    detalleExistente.P_precio_Total = detalleExistente.producto.p_precioventa *
                     detalleExistente.cantidad;
-                    DetallesVentaList.Add(detalleExistente);
+                    P_Total += detalleExistente.producto.p_precioventa;
                 }
-                DetalleventaModel.producto = value;
-                
 
-                OnPropertyChanged(nameof(DetallesVentaList.CollectionChanged));
                 OnPropertyChanged(nameof(DetallesVentaList));
-
+                OnPropertyChanged(nameof(P_Total));
 
             }
         }
@@ -63,7 +63,7 @@ namespace TractopartesDeskApp.VIewModel
             get => _detallesVentaList;
             set
             {
-                if(_detallesVentaList != null)
+                if (_detallesVentaList != null)
                 {
                     _detallesVentaList = value;
                     OnPropertyChanged(nameof(DetallesVentaList));
@@ -72,16 +72,81 @@ namespace TractopartesDeskApp.VIewModel
         }
         public VentasViewModel()
         {
+            ventaRepository = new VentasRepository();
+            ShowClientesCommand = new ViewModelCommand(ExecuteShowClientesCommand);
+            RemoveProductoCommand = new ViewModelCommand(ExecuteRemoveCommand);
             ShowProductosCommand = new ViewModelCommand(ExecuteShowWindowCommand);
             GenerarVentaCommand = new ViewModelCommand(ExecuteCommand, CanExecuteCommand);
         }
 
-        private void ExecuteCommand(object obj)
+     
+        private void ExecuteRemoveCommand(object obj)
+        {
+            ProductoModel producto = (ProductoModel)obj;
+            if (producto != null)
+            {
+                var detalleProducto= DetallesVentaList.FirstOrDefault(x => x.producto.p_idproducto==producto.p_idproducto);
+                if (detalleProducto != null)
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        detalleProducto.cantidad -= 1;
+                        detalleProducto.P_precio_Total = detalleProducto.P_precio_Total - detalleProducto.producto.p_precioventa;
+                        P_Total -= detalleProducto.producto.p_precioventa;
+                    });
+                    if (detalleProducto.cantidad == 0)
+                    {
+                        DetallesVentaList.Remove(detalleProducto);
+                    }
+                }              
+            }
+        }
+
+
+        private async void ExecuteCommand(object obj)
         {
             ventaModel.detalleVentas = DetallesVentaList.ToList();
 
-            throw new NotImplementedException();
+            await ventaRepository.GenerarVenta(ventaModel);
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                ventaModel = new();
+                DetallesVentaList.Clear();
+                P_Total = 0;
+                P_Cliente = new();
+                
+            });
+       }
+        private void ExecuteShowClientesCommand(object obj)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window is ClientesTablaView clientesView)
+                {
+                    if (window.WindowState == WindowState.Minimized)
+                    {
+                        // Restaurar la ventana si está minimizada
+                        window.WindowState = WindowState.Normal;
+                    }
+
+                    // Enfocar la ventana si no tiene el enfoque
+                    if (!window.IsActive)
+                    {
+                        window.Activate();
+                    }
+
+                    return;
+                }
+            }
+            //agregar txt para buscar en clientes y productos
+            // Si no se encuentra una instancia existente, crear una nueva y mostrarla
+            ClientesTablaView clientesTablaView = new ClientesTablaView()
+            {
+                DataContext = this
+            };
+            clientesTablaView.Show();
         }
+
         private void ExecuteShowWindowCommand(object obj)
         {
             foreach (Window window in Application.Current.Windows)
@@ -104,9 +169,9 @@ namespace TractopartesDeskApp.VIewModel
         private bool CanExecuteCommand(object obj)
         {
             bool resultData;
-            if (P_Total <=0 )
+            if (P_Total <= 0)
                 resultData = false;
-            else 
+            else
                 resultData = true;
             return resultData;
         }

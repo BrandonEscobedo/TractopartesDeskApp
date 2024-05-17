@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\ClientesTablaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Page1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +58,9 @@
     <Compile Update="Views\UserControls\MyTexBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControls\PassWordControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControls\ProductosControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +76,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ClientesTablaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Page1.xaml">
@@ -112,6 +127,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\MyTexBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\PassWordControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\ProductosControl.xaml">

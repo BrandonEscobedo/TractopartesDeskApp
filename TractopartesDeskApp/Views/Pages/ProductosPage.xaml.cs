@@ -22,11 +22,16 @@ namespace TractopartesDeskApp.Views.Pages
     /// </summary>
     public partial class ProductosPage : Page
     {
+        private string filtroSeleccionado;
+
         public ProductosPage()
         {
             InitializeComponent();
             ProductosManagerViewModel productosManagerViewModel = new();
-            this.DataContext=productosManagerViewModel;
+            this.DataContext = productosManagerViewModel;
+            filtroSeleccionado = "Nombre";
+            comboSelectedBuscar.SelectedIndex=0;
+            MembersDataGrid.Items.Filter = OnFilter;
         }
 
         private void txtbuscar_TextChanged(object sender, TextChangedEventArgs e)
@@ -35,8 +40,33 @@ namespace TractopartesDeskApp.Views.Pages
         }
         private bool OnFilter(object obj)
         {
+
             var nombreProducto = (ProductoModel)obj;
-            return nombreProducto.p_productonombre.Contains(txtbuscar.Text);
+            switch (filtroSeleccionado.ToString())
+            {
+                case "Nombre":
+                    return nombreProducto.p_productonombre.Contains(txtbuscar.Text);
+                case "Categoria":
+                    return nombreProducto.p_categoria.categoria.Contains(txtbuscar.Text);
+                case "Codigo de Pieza":
+                    return nombreProducto.p_codigopieza.Contains(txtbuscar.Text);
+                case "Proveedor Razon Social":
+                    return nombreProducto.p_proveedor.razonsocial.Contains(txtbuscar.Text);
+
+                default:
+                    return false;
+
+            }
+
+        }
+
+
+
+        private void comboSelectedBuscar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem itemseleccionado = (ComboBoxItem)comboSelectedBuscar.SelectedItem;
+             filtroSeleccionado=itemseleccionado.Content.ToString();
+            MembersDataGrid.Items.Filter = OnFilter;
         }
     }
 }

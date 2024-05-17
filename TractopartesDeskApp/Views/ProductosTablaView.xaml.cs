@@ -25,6 +25,7 @@ namespace TractopartesDeskApp.Views
         {
             InitializeComponent();
             MembersDataGrid.ItemsSource = ProductoManager.productos;
+            MembersDataGrid.SelectedItem = null;
             MembersDataGrid.UnselectAllCells();
             
         }
@@ -32,6 +33,11 @@ namespace TractopartesDeskApp.Views
         private void MembersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Close();  
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

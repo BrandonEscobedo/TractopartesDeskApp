@@ -1,6 +1,8 @@
 ﻿
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\App.xaml;;
+FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\ClientesTablaView.xaml;;
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\Dashboard.xaml;;
+FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\LoginView.xaml;;
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\Page1.xaml;;
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\Pages\CategoriasPage.xaml;;
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\Pages\ClientesPage.xaml;;
@@ -18,6 +20,7 @@ FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\Tractoparte
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\UserControls\MyTexBox.xaml;;
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\UserControls\MyTexBoxInt.xaml;;
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\UserControls\MytextBoxDecimal.xaml;;
+FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\UserControls\PassWordControl.xaml;;
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\UserControls\ProductosControl.xaml;;
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\UserControls\TablaUsuarios.xaml;;
 FC:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Views\UsuariosView.xaml;;

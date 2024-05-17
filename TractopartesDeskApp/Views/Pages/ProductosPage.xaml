@@ -33,22 +33,46 @@
                         <ColumnDefinition Width="300"/>
                         <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="1">
-                        <StackPanel Margin="10">
+                    <Border Grid.Column="0" Grid.ColumnSpan="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="1" Margin="10">
 
-                            <TextBlock Margin="13 0 " x:Name="txttexto" VerticalAlignment="Center" Foreground="#868686"
-   IsHitTestVisible="False" Panel.ZIndex="1" FontSize="14"
-      Text="buscar "
-  />
-                            <TextBox  x:Name="txtbuscar" TextChanged="txtbuscar_TextChanged"/>
 
-                        </StackPanel>
+                                <TextBlock Margin="13 0 " x:Name="t" VerticalAlignment="Center" Foreground="#868686"
+ IsHitTestVisible="False" Panel.ZIndex="1" FontSize="14"
+    Text="buscar "
+/>
+  <TextBox  x:Name="txtbuscar" TextChanged="txtbuscar_TextChanged"/>
+                               
+                            </StackPanel>
+                            <StackPanel Grid.Column="0" Margin="10">
+
+                                <TextBlock Margin="13 0 " x:Name="txttexto" VerticalAlignment="Center" Foreground="#868686"
+ IsHitTestVisible="False" Panel.ZIndex="1" FontSize="14"
+    Text="buscar "
+/>
+                                <ComboBox FontSize="14" SelectionChanged="comboSelectedBuscar_SelectionChanged"  x:Name="comboSelectedBuscar" Height="30" Grid.Column="0">
+                                    <ComboBoxItem>Nombre</ComboBoxItem>
+                                    <ComboBoxItem>Codigo de Pieza</ComboBoxItem>
+                                    <ComboBoxItem>Categoria</ComboBoxItem>
+                                    <ComboBoxItem>Proveedor Razon Social</ComboBoxItem>
+                                </ComboBox>
+
+
+                            </StackPanel>
+                           
+                        </Grid>
+                   
                     </Border>
                 </Grid>
 
                 <Border Grid.Column="2">
 
-                    <Button  HorizontalAlignment="Center" Command="{Binding ShowAddProductoCommand}" VerticalAlignment="Center" Content="Agregar cliente" 
+                    <Button  HorizontalAlignment="Center" Command="{Binding ShowAddProductoCommand}" VerticalAlignment="Center" Content="Agregar Producto" 
  Style="{StaticResource AgregarButton}"
 >
 
@@ -80,10 +104,10 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
 
-                                    <Button Command="{Binding  DataContext.UpdateByUserCommand,   RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}"  Style="{StaticResource GridEditButton}">
+                                    <Button Command="{Binding  RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}"  Style="{StaticResource GridEditButton}">
                                         <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
-                                    <Button Command="{Binding  DataContext.RemoveWindowCommand,   RelativeSource={RelativeSource AncestorType={x:Type Page}}}"
+                                    <Button Command="{Binding    RelativeSource={RelativeSource AncestorType={x:Type Page}}}"
                                                               CommandParameter="{Binding }" Style="{StaticResource GridRemoveButton}">
                                         <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>

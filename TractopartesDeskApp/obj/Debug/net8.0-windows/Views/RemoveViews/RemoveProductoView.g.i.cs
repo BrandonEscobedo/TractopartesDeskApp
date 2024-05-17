@@ -63,7 +63,8 @@ namespace TractopartesDeskApp.Views.RemoveViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TractopartesDeskApp;component/views/removeviews/removeproductoview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TractopartesDeskApp;V1.0.0.0;component/views/removeviews/removeproductoview.xaml" +
+                    "", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\RemoveViews\RemoveProductoView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

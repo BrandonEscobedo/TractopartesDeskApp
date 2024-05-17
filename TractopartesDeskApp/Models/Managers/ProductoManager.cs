@@ -26,6 +26,23 @@ namespace TractopartesDeskApp.Models.Managers
             productos.Add(productoModel);
 
         }
+        public static void RemoveProducto(int idproducto)
+        {
+            var producto = productos.FirstOrDefault(x => x.p_idproducto == idproducto);
+            if (producto != null)
+            {
+                productos.Remove(producto);
+            }
+        }
+        public static void UpdateProducto(ProductoModel productoModel)
+        {
+            var producto= productos.FirstOrDefault(x=>x.p_idproducto==productoModel.p_idproducto);  
+            if(producto != null)
+            {
+                productos.Remove(producto);
+                productos.Add(producto);
+            }
+        }
         public static async void GetProductosRepository()
         {
             productos.Clear();

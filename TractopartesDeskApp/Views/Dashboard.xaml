@@ -8,10 +8,11 @@
         xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
         xmlns:uc="clr-namespace:TractopartesDeskApp.Views.UserControls"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-        mc:Ignorable="d"
+      
         Title="MainWindow" Height="800" Width="1500"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
+        
         Background="Transparent"
         AllowsTransparency="True">
     <Window.DataContext>
@@ -135,14 +136,10 @@
 
                 <Grid>
                     <Grid.RowDefinitions>
-                        <!--control bar-->
                         <RowDefinition Height="40"/>
-                        <!--Header/caption-->
                         <RowDefinition Height="35"/>
-                        <!--content section/child views-->
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <!--control bar-->
                     <StackPanel  x:Name="pnlControlBAR1"
                     Grid.Row="0"
                     Orientation="Horizontal"
@@ -272,8 +269,40 @@
 
                                     </Grid>
                                 </Grid>
-                                
 
+                                <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Margin="10 0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"/>
+                                        <RowDefinition Height="100"/>
+                                        <RowDefinition Height="100"/>
+
+                                    </Grid.RowDefinitions>
+
+                                    <!--Card-->
+
+                                </Grid>
+                                <Border BorderBrush="AntiqueWhite" Grid.ColumnSpan="2" Grid.Row="0"  Grid.RowSpan="3">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="200"/>
+
+                                        </Grid.RowDefinitions>
+
+                                        <uc:InfoCard Grid.Row="0" Title="Ventas" SubTitle="Ventas generadas el ultimo mes" Image="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\payment-method.png" Grid.Column="0" Amount="10" />
+                                        <uc:InfoCard Title="Ganancias" SubTitle="Ganancias totales de la ultima semana" Amount="2" Image="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\money.png"  Width="Auto" Grid.Column="1" Margin="0,0,0,-39"/>
+                                        <uc:InfoCard Title="Inventario" SubTitle="Productos con mas Stock" Amount="5" Image="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\packages.png"  Width="Auto" Grid.Column="2" Margin="0,0,0,-39" />
+                                    </Grid>
+                                </Border>
                             </Grid>
                             <Frame x:Name="MainContainerPage" Grid.Row="1" NavigationUIVisibility="Hidden"/>
                         </Grid>

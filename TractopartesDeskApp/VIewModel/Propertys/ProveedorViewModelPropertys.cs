@@ -29,6 +29,15 @@ namespace TractopartesDeskApp.VIewModel.Propertys
         //        }
         //    }
         //}
+        public int P_idProveedor
+        {
+            get { return _proveedorModel.idproveedor; }
+            set
+            {
+                _proveedorModel.idproveedor=value;
+                OnPropertyChanged(nameof(P_idProveedor));
+            }
+        }
         public string NombreEmpresa
         {
             get { return _proveedorModel.nombreempresa; }

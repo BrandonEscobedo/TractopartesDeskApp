@@ -9,6 +9,7 @@ namespace TractopartesDeskApp.VIewModel
     public class ProveedorByViewModel:ProveedorViewModelPropertys
     {
         public ICommand AddProveedorCommand { get; }
+        public ICommand RemoveProveedorCommand { get; }
         public ICommand ClearFieldsCommand { get; }
 
         public IProveedorRepository _proveedorRepository;
@@ -16,8 +17,21 @@ namespace TractopartesDeskApp.VIewModel
         {
             _proveedorRepository = new ProveedorRepository();
             ClearFieldsCommand = new ViewModelCommand(ExecuteClearFieldsCommand);
+            RemoveProveedorCommand = new ViewModelCommand(ExecuteRemoveProveedor);
             AddProveedorCommand = new ViewModelCommand(ExecuteProveedorCommand, CanExecuteProveedorCommand);
         }
+
+   
+
+        private void ExecuteRemoveProveedor(object obj)
+        {
+            if (P_idProveedor != 0)
+            {
+                _proveedorRepository.RemoveProveedor(P_idProveedor);
+
+            }
+        }
+
         private void ExecuteClearFieldsCommand(object obj)
         {
             NombreEmpresa = string.Empty;
@@ -28,20 +42,31 @@ namespace TractopartesDeskApp.VIewModel
         }
         private async void ExecuteProveedorCommand(object obj)
         {
+            
             ProveedorModel proveedor = new()
             {
+
                 correo = Correo,
                 nombreempresa = NombreEmpresa,
                 telefono = Telefono,
                 razonsocial = RazonSocial,
                 direccion=direccion
             };
-         var idproveedor=  await _proveedorRepository.AddProveedor(proveedor);
-            if (idproveedor != 0)
+            if(P_idProveedor == 0)
             {
-                proveedor.idproveedor = idproveedor;
-                ProveedoresManager.AddPrveedor(proveedor);
+                var idproveedor = await _proveedorRepository.AddProveedor(proveedor);
+                if (idproveedor != 0)
+                {
+                    proveedor.idproveedor = idproveedor;
+                    ProveedoresManager.AddPrveedor(proveedor);
+                }
             }
+            else
+            {
+            proveedor.idproveedor = P_idProveedor;
+            await  _proveedorRepository.UpdateProveedor(proveedor);
+            }
+      
            
             ExecuteClearFieldsCommand(obj);
         }

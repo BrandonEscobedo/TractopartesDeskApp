@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,6 +62,31 @@ INNER JOIN public.proveedores AS prv ON pr.idprovedor = prv.idproveedor
             };
 
            return await ExecuteGenericWithDynamicParameters("sp_createproducto", parameters, "p_new_producto");
+        }
+
+        public async Task RemoveProducto(int idproducto)
+        {
+
+            await ExecuteGenericScalar("delete  from productos where idproducto=@IdProducto", new { IdProducto = idproducto });
+        }
+
+        public async Task<bool> UpdateProducto(ProductoModel productoModel)
+        {
+            var parameters = new
+            {
+                p_idproducto=productoModel.p_idproducto,
+                p_codigopieza=productoModel.p_codigopieza,
+                p_descripcion=productoModel.p_descripcion,
+                p_idproveedor=productoModel.p_proveedor.idproveedor,
+                p_idcategoria=productoModel.p_categoria.idcategoria,
+                p_precioventa=productoModel.p_precioventa,
+                p_preciocompra=productoModel.p_preciocompra,
+                p_cantidad=productoModel.p_cantidad,
+                p_imagenurl=productoModel.p_ImagenURL,
+                p_nombreproducto=productoModel.p_productonombre
+            };
+           var response= await ExecuteGeneric("SP_UpdateProducto", parameters);
+            return response;
         }
     }
 }

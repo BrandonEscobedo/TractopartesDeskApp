@@ -11,29 +11,14 @@ namespace TractopartesDeskApp.Repository
     {
         public async Task<bool> AuthenticateUser(NetworkCredential credential)
         {;
-         
 
-            using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
-                {
-                    try
-                    {
-                        connection.Open();
-                    var result=    await connection.ExecuteScalarAsync<bool>("select * from usuarios where nombreusuario=@nombreusuario  and password=@Password", new
-                        {
-                            nombreusuario = credential.UserName,
-                            Password
+            bool response = await ExecuteGenericScalar("select * from usuarios where nombreusuario=@nombreusuario  and password=@Password", new
+            {
+                nombreusuario = credential.UserName,
+                Password
                 = credential.Password
-                        });
-
-                        return result;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        return false;
-                    }
-                }
-            
+            });
+            return response;       
         }
     }
 }

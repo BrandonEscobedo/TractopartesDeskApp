@@ -89,6 +89,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Producto" Binding="{Binding p_productonombre}"/>
                     <DataGridTextColumn Header="Codigo de Pieza" Binding="{Binding p_codigopieza}"/>
+                    <DataGridTextColumn Header="Cantidad" Binding="{Binding p_cantidad}"/>
                     <DataGridTextColumn Header="Categoria" Binding="{Binding p_categoria.categoria}"/>
                     <DataGridTextColumn Header="Empresa" Binding="{Binding p_proveedor.razonsocial}"/>
                    
@@ -104,10 +105,10 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
 
-                                    <Button Command="{Binding  RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}"  Style="{StaticResource GridEditButton}">
+                                    <Button Command="{Binding DataContext.ShowUpdateCommand, RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}"  Style="{StaticResource GridEditButton}">
                                         <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
-                                    <Button Command="{Binding    RelativeSource={RelativeSource AncestorType={x:Type Page}}}"
+                                    <Button Command="{Binding  DataContext.ShowRemoveCommand,  RelativeSource={RelativeSource AncestorType={x:Type Page}}}"
                                                               CommandParameter="{Binding }" Style="{StaticResource GridRemoveButton}">
                                         <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>

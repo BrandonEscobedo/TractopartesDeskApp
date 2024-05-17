@@ -49,10 +49,19 @@
     <Compile Update="Views\RemoveViews\RemoveClienteView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\RemoveViews\RemoveProductoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RemoveViews\RemoveProveedorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControls\BtnAddUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\Carad.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\InfoCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\MyTexBox.xaml.cs">
@@ -114,10 +123,19 @@
     <Page Update="Views\RemoveViews\RemoveClienteView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\RemoveViews\RemoveProductoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RemoveViews\RemoveProveedorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\UserControls\BtnAddUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\Carad.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\InfoCard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\MytextBoxDecimal.xaml">

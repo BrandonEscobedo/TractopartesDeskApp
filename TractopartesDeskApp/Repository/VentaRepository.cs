@@ -29,8 +29,8 @@ namespace TractopartesDeskApp.Repository
                     var parametersDetalleVenta = new
                     {
                         idventa = item.idventa,
-                        idproducto = item.producto.p_idproducto,
-                        cantidad = item.cantidad,
+                        p_idproducto = item.producto.p_idproducto,
+                        p_cantidad = item.cantidad,
                         precio_unitario = item.producto.p_precioventa
                     };
                     await ExecuteGeneric("DetalleVenta", parametersDetalleVenta);

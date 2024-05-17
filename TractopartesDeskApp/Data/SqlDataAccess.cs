@@ -67,7 +67,7 @@ namespace TractopartesDeskApp.Data
             using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
             {
                 try
-                {
+               {
                     connection.Open();
                     await connection.ExecuteAsync(sql, parameters, commandType: CommandType.StoredProcedure);
 
@@ -78,6 +78,25 @@ namespace TractopartesDeskApp.Data
 
                     MessageBox.Show(ex.Message);
                     return false;
+                }
+            }
+        }
+        public async Task<bool> ExecuteGenericScalar<T>(string sql, T parameters)
+        {
+            using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                  var result=  await connection.ExecuteScalarAsync<bool>(sql, parameters);
+
+                    return result;
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                    return false ;
                 }
             }
         }

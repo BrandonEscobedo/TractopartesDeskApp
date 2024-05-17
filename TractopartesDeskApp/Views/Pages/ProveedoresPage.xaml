@@ -74,10 +74,10 @@
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Command="{Binding apellidomaterno}"  Style="{StaticResource GridEditButton}">
+                                    <Button Command="{Binding DataContext.ShowWindowUpdateCommand,    RelativeSource={RelativeSource AncestorType={x:Type Page}}}"  CommandParameter="{Binding}" Style="{StaticResource GridEditButton}">
                                         <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
-                                    <Button Style="{StaticResource GridRemoveButton}">
+                                    <Button  Command="{Binding DataContext.ShowWindowRemoveCommand,    RelativeSource={RelativeSource AncestorType={x:Type Page}}}" CommandParameter="{Binding}"  Style="{StaticResource GridRemoveButton}">
                                         <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                 </StackPanel>

@@ -32,14 +32,21 @@ namespace TractopartesDeskApp.VIewModel
             throw new NotImplementedException();
         }
 
-        private void ExecuteRemoveProductoCommand(object obj)
+        private async void ExecuteRemoveProductoCommand(object obj)
         {
-            throw new NotImplementedException();
+            if (P_idProducto != 0)
+            {
+              await  _productoRepository.RemoveProducto(P_idProducto);
+                ProductoManager.RemoveProducto(P_idProducto);
+
+            }
+
         }
 
         private async void ExecuteAddProductoCommand(object obj)
 
         {
+            productoModel.p_idproducto = P_idProducto;
             productoModel.p_productonombre = P_NombreProducto;
             productoModel.p_codigopieza = P_CodigoPieza;
             productoModel.p_descripcion = P_descripcion;
@@ -49,12 +56,37 @@ namespace TractopartesDeskApp.VIewModel
             productoModel.p_categoria.idcategoria = P_CategoriaNombre.idcategoria;
             productoModel.p_proveedor.idproveedor = P_ProveedorRazonSocial.idproveedor;
             productoModel.p_cantidad = P_cantidad;
-         var iduser=   await _productoRepository.AddProducto(productoModel);
-            if (iduser != 0)
+            if (P_idProducto == 0)
             {
-                productoModel.p_idproducto=iduser;
-                ProductoManager.AddProducto(productoModel);
+                var iduser = await _productoRepository.AddProducto(productoModel);
+                if (iduser != 0)
+                {
+                    productoModel.p_idproducto = iduser;
+                    ProductoManager.AddProducto(productoModel);
+                }
             }
+            else
+            {
+                await _productoRepository.UpdateProducto(productoModel);
+                ProductoManager.UpdateProducto(productoModel);
+            }
+            CleanPropertys();
+
+
+        }
+        private void CleanPropertys()
+        {
+            P_idProducto = 0;
+            P_NombreProducto = "";
+            P_NombreProducto = "";
+           P_CodigoPieza="";
+            P_descripcion = "";
+            P_ImagenURL = "";
+            P_precioVenta = 0;
+            P_precioCompra = 0;
+            P_CategoriaNombre = new();
+            P_ProveedorRazonSocial=new() ;
+         P_cantidad = 0;
         }
 
         private bool CanExecuteCommand(object obj)

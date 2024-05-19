@@ -17,7 +17,7 @@ namespace TractopartesDeskApp.Repository
         public  async Task<ObservableCollection<ProductoModel>> GetProductos()
         {
             var sql = @"
-                SELECT pr.codigopieza AS p_codigopieza,
+                    SELECT pr.codigopieza AS p_codigopieza,
 pr.idproducto as p_idproducto,
 pr.cantidad as p_cantidad,
 pr.precioventa as p_precioventa, 
@@ -33,6 +33,7 @@ pr.nombreproducto AS p_productonombre,
 FROM productos AS pr
 INNER JOIN categorias AS cat ON pr.idcategoria = cat.idcategoria
 INNER JOIN public.proveedores AS prv ON pr.idprovedor = prv.idproveedor
+where estado=true;
 ";
             var producto = await LoadDataWithRelations<ProductoModel, CategoriaModel, ProveedorModel>(sql,
                 (producto, categoria, proveedor) =>
@@ -61,7 +62,8 @@ INNER JOIN public.proveedores AS prv ON pr.idprovedor = prv.idproveedor
                 p_idcategoria=productoModel.p_categoria.idcategoria
             };
 
-           return await ExecuteGenericWithDynamicParameters("sp_createproducto", parameters, "p_new_producto");
+        var result=    await ExecuteGenericWithDynamicParameters("sp_createproducto", parameters, "p_new_producto");
+            return result;
         }
 
         public async Task RemoveProducto(int idproducto)

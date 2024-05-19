@@ -21,7 +21,6 @@ namespace TractopartesDeskApp.VIewModel
         public ProductosViewModel()
         {
             _productoRepository = new ProductoRepository();
-
             AddProductoCommand = new ViewModelCommand(ExecuteAddProductoCommand, CanExecuteCommand);
             UpdateProductoCommand = new ViewModelCommand(ExecuteUpdateProductoCommand, CanExecuteCommand);
             RemoveProductoCommand = new ViewModelCommand(ExecuteRemoveProductoCommand);
@@ -42,7 +41,6 @@ namespace TractopartesDeskApp.VIewModel
             }
 
         }
-
         private async void ExecuteAddProductoCommand(object obj)
 
         {
@@ -63,14 +61,21 @@ namespace TractopartesDeskApp.VIewModel
                 {
                     productoModel.p_idproducto = iduser;
                     ProductoManager.AddProducto(productoModel);
+                    CleanPropertys();
+
                 }
             }
             else
             {
-                await _productoRepository.UpdateProducto(productoModel);
-                ProductoManager.UpdateProducto(productoModel);
+               var result= await _productoRepository.UpdateProducto(productoModel);
+                if (result)
+                {
+                    CleanPropertys();
+
+                    ProductoManager.UpdateProducto(productoModel);
+                }
+                   
             }
-            CleanPropertys();
 
 
         }

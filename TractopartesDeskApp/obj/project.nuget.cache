@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "z0KosT4b+nKuJ3eG+wmMYPBHSFN2/kGUxDvJt/P/zMtlozBOlN+A0utfwQJ92w9YoAhec7L6iLgGGj04j52ceg==",
+  "dgSpecHash": "kRtcKB4zCKYmL3Qvsq04D7CH3F4NgwZf7pltOiwLxpcYc3K2RJGdr2ZDD72MIGoMGBo8OPyosxnZ3Gc7+x+TDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\programas c#\\TractopartesDeskApp\\TractopartesDeskApp\\TractopartesDeskApp.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\8.0.0\\microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\npgsql\\8.0.2\\npgsql.8.0.2.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\questpdf\\2024.3.6\\questpdf.2024.3.6.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",

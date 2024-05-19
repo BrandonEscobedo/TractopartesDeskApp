@@ -21,10 +21,12 @@ namespace TractopartesDeskApp.Repository
                 total =  ventaModel.total,
                 idcliente=   ventaModel.clientemodel?.idclientedp
             };
+
+
            var result = await ExecuteGeneric("generarVenta", parameters);
             if (result)
             {
-                foreach(var item in ventaModel.detalleVentas)
+               foreach (var item in ventaModel.detalleVentas)
                 {
                     var parametersDetalleVenta = new
                     {
@@ -33,9 +35,11 @@ namespace TractopartesDeskApp.Repository
                         p_cantidad = item.cantidad,
                         precio_unitario = item.producto.p_precioventa
                     };
-                    await ExecuteGeneric("DetalleVenta", parametersDetalleVenta);
+                  var resultProcedure=  await ExecuteGeneric("DetalleVenta", parametersDetalleVenta);
                 }
             }
+            else
+                return false;
             return true;
         }
     }

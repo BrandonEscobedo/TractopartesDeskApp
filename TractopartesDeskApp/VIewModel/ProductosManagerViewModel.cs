@@ -20,10 +20,9 @@ namespace TractopartesDeskApp.VIewModel
      public ICommand ShowUpdateCommand { get; }
         public ObservableCollection<ProductoModel> Productos { get; set; }
         public ProductoModel ProductoModel { get; set; } = new();
-        public event EventHandler ProductoInsertado;
         public ProductosManagerViewModel()
         {
-            Productos = ProductoManager.GetProductos();
+            Productos =  ProductoManager.productos;
             ShowAddProductoCommand = new ViewModelCommand(ExecuteAddCommand);
             ShowRemoveCommand = new ViewModelCommand(ExecuteRemoveCommand);
             ShowUpdateCommand = new ViewModelCommand(ExecuteUpdateCommand);
@@ -37,6 +36,7 @@ namespace TractopartesDeskApp.VIewModel
             {
                 P_idProducto = producto.p_idproducto,
                 P_cantidad= producto.p_cantidad,
+                P_descripcion= producto.p_descripcion,
                 P_CategoriaNombre= producto.p_categoria,
                 P_CodigoPieza= producto.p_codigopieza,
                 P_NombreProducto= producto.p_productonombre,

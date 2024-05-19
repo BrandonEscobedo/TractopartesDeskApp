@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using TractopartesDeskApp.Models;
+using TractopartesDeskApp.Models.Managers;
 using TractopartesDeskApp.Repository;
 using TractopartesDeskApp.VIewModel.Propertys;
 using TractopartesDeskApp.Views;
@@ -18,7 +19,7 @@ namespace TractopartesDeskApp.VIewModel
         public ICommand GenerarVentaCommand { get; }
         public ICommand ShowClientesCommand { get; }
         public ICommand RemoveProductoCommand { get; }
-        public ICommand ShowProductosCommand { get;  }
+        public ICommand ShowProductosCommand { get; }
         private IVentaRepository ventaRepository { get; set; }
         private ProductoModel _productoSeleccionado = new();
         public ProductoModel _productoModel
@@ -26,7 +27,7 @@ namespace TractopartesDeskApp.VIewModel
 
             get { return _productoSeleccionado; }
             set
-            {                    
+            {
                 var detalleExistente = DetallesVentaList.FirstOrDefault(x => x.producto.p_idproducto == value.p_idproducto);
 
                 if (detalleExistente == null)
@@ -57,6 +58,19 @@ namespace TractopartesDeskApp.VIewModel
 
             }
         }
+        private ObservableCollection<ProductoModel> _productos = new();
+        public ObservableCollection<ProductoModel> Productos
+        {
+            get => _productos;
+            set
+            {
+                if (_productos != value)
+                {
+                    _productos = value;
+                    OnPropertyChanged(nameof(Productos));
+                }
+            }
+        }
         private ObservableCollection<DetalleVentaModel> _detallesVentaList = new();
         public ObservableCollection<DetalleVentaModel> DetallesVentaList
         {
@@ -73,19 +87,20 @@ namespace TractopartesDeskApp.VIewModel
         public VentasViewModel()
         {
             ventaRepository = new VentasRepository();
+            _productos = ProductoManager.productos;
             ShowClientesCommand = new ViewModelCommand(ExecuteShowClientesCommand);
             RemoveProductoCommand = new ViewModelCommand(ExecuteRemoveCommand);
             ShowProductosCommand = new ViewModelCommand(ExecuteShowWindowCommand);
             GenerarVentaCommand = new ViewModelCommand(ExecuteCommand, CanExecuteCommand);
         }
 
-     
+
         private void ExecuteRemoveCommand(object obj)
         {
             ProductoModel producto = (ProductoModel)obj;
             if (producto != null)
             {
-                var detalleProducto= DetallesVentaList.FirstOrDefault(x => x.producto.p_idproducto==producto.p_idproducto);
+                var detalleProducto = DetallesVentaList.FirstOrDefault(x => x.producto.p_idproducto == producto.p_idproducto);
                 if (detalleProducto != null)
                 {
                     Application.Current.Dispatcher.Invoke(() =>
@@ -98,25 +113,29 @@ namespace TractopartesDeskApp.VIewModel
                     {
                         DetallesVentaList.Remove(detalleProducto);
                     }
-                }              
+                }
             }
         }
-
-
         private async void ExecuteCommand(object obj)
         {
             ventaModel.detalleVentas = DetallesVentaList.ToList();
 
-            await ventaRepository.GenerarVenta(ventaModel);
-            Application.Current.Dispatcher.Invoke(() =>
+            var result = await ventaRepository.GenerarVenta(ventaModel);
+            if (result)
             {
-                ventaModel = new();
-                DetallesVentaList.Clear();
-                P_Total = 0;
-                P_Cliente = new();
-                
-            });
-       }
+
+                await ProductoManager.GetProductosRepositoryAsync();
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                  
+                    ventaModel = new();
+                    DetallesVentaList.Clear();
+                    P_Total = 0;
+                    P_Cliente = new();
+
+                });
+            }
+        }
         private void ExecuteShowClientesCommand(object obj)
         {
             foreach (Window window in Application.Current.Windows)

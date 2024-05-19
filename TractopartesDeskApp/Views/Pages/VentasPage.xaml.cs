@@ -30,7 +30,8 @@ namespace TractopartesDeskApp.Views.Pages
             MembersDataGrid.ItemsSource = ventasViewModel.DetallesVentaList;
             MembersDataGrid.DataContext = ventasViewModel.DetallesVentaList;
             txtb.FilterMode = AutoCompleteFilterMode.Contains;
-            txtb.ItemsSource = ProductoManager.productos;
+            txtb.ItemsSource = ventasViewModel.Productos;
+            txtb.DataContext = ventasViewModel;
         }
         private void txtb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

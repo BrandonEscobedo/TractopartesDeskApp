@@ -14,6 +14,9 @@
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
+    <Window.InputBindings>
+        <KeyBinding Key="Return" Command="{Binding LoginCommand}"/>
+    </Window.InputBindings>
     <Window.DataContext>
         <viewmodel:LoginViewModel/>
     </Window.DataContext>

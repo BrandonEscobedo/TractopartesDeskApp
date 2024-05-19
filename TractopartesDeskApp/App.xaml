@@ -30,6 +30,11 @@ xmlns:control="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Inp
             FontStyle="Italic"
                           FontSize="13"
             Foreground="Black" />
+                    <Label
+Content="{Binding p_cantidad}"
+FontStyle="Italic"
+              FontSize="13"
+Foreground="Black" />
                     <Image Width="50" Height="50" Source="{Binding p_ImagenURL}"/>
                 </StackPanel>
             </DataTemplate>

@@ -10,7 +10,7 @@
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="ProductoView" Height="680" Width="1100" >
+        Title="ProductoView" Height="650" Width="900" >
     <Window.DataContext>
         <viewmodel:ProductosViewModel>
 
@@ -49,7 +49,7 @@
                                         <RowDefinition Height="80"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
@@ -69,7 +69,7 @@
                                     <cd:MyTexBox x:Name="txtnombres" Grid.Column="0" Grid.Row="1"  Caption="Nombre del producto" Hint="Ingresa el nombre del producto"  ValueDb="{Binding P_NombreProducto, Mode=TwoWay}"/>
                                     <cd:MyTexBox x:Name="txtDescripcion" TextBoxHeight="70"  Grid.Column="1" Grid.Row="1" Caption="Descripcion" Hint="Descripcion del producto" ValueDb="{Binding P_descripcion, Mode=TwoWay}" />
                                     <cd:MyTexBox x:Name="txtcodigoPieza"  Grid.Column="2" Grid.Row="1" Caption="Codigo de pieza" Hint="Codigo de pieza" ValueDb="{Binding P_CodigoPieza, Mode=TwoWay}" />
-                                    <cd:MyTexBoxInt HorizontalAlignment="Left" Width="200" x:Name="txtCantidad" Grid.Column="0" Grid.Row="2" Caption="Stock actual"  ValueDb="{Binding P_cantidad, Mode=TwoWay}" />
+                                    <cd:MyTexBoxInt HorizontalAlignment="Left" Width="200"  x:Name="txtCantidad" Grid.Column="0" Grid.Row="2" Caption="Stock actual"  ValueDb="{Binding P_cantidad, Mode=TwoWay}" />
 
                                     <StackPanel   HorizontalAlignment="Left" Width="250"  Grid.Column="1" Grid.Row="2" Margin="20 10">
                                         <TextBlock Text="Precio de Compra" Foreground="#97a5b4" FontSize="13" Margin="0 0 0 8"/>
@@ -120,8 +120,8 @@
                                         </StackPanel>
                                     </Grid>
                                    
-                                    <Border Margin="10" Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="3">
-                                        <Grid  Height="250" Width="400" HorizontalAlignment="Right" >
+                                    <Border Margin="10" Grid.Column="1" Grid.ColumnSpan="2"  Grid.Row="3">
+                                        <Grid  Height="250" Width="400" HorizontalAlignment="Left" >
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="*"/>
                                                 <RowDefinition Height="60"/>

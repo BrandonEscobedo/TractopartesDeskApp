@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace TractopartesDeskApp.Models
 {
     public class UserModel
-    {   
-        public int idclientedp { get; set; }
+    {
+        public int idclientedp { get; set; } = 1;
         [PgName("nombres")]
         [Column(TypeName = "nombres")]       
         public string nombres { get; set; } = "";

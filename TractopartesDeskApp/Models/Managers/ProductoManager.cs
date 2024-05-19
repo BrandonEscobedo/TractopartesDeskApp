@@ -12,13 +12,14 @@ namespace TractopartesDeskApp.Models.Managers
     {
         public static ObservableCollection<ProductoModel> productos = new ObservableCollection<ProductoModel>();
          static IProductoRepository _productoRepository;
-         static ProductoManager()
+          static ProductoManager()
         {
             _productoRepository= new ProductoRepository();
             GetProductosRepository();
         }
-        public static  ObservableCollection<ProductoModel> GetProductos()
+        public static  async Task<ObservableCollection<ProductoModel>> GetProductos()
         {
+         await GetProductosRepositoryAsync();
             return productos;
         }
         public static void AddProducto(ProductoModel productoModel)
@@ -43,9 +44,14 @@ namespace TractopartesDeskApp.Models.Managers
                 productos.Add(producto);
             }
         }
+        public static async Task GetProductosRepositoryAsync()
+        {
+           
+            productos = await _productoRepository.GetProductos();
+        }
         public static async void GetProductosRepository()
         {
-            productos.Clear();
+
             productos = await _productoRepository.GetProductos();
         }
 

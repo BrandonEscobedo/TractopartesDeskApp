@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TractopartesDeskApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+998c896e5a10bd8eabaa709d4c74d184b3a520b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d4fad8e829efd1065a7342fe5f8982a1d8f0526")]
 [assembly: System.Reflection.AssemblyProductAttribute("TractopartesDeskApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TractopartesDeskApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

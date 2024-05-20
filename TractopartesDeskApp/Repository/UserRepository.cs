@@ -20,6 +20,8 @@ namespace TractopartesDeskApp.Repository
                 email = userModel.email,
                 telefono1 = userModel.telefono1,
                 telefono2 = userModel.telefono2,
+                rfc = userModel.rfc,
+                direccion = userModel.direccion,
             };
            return await ExecuteGenericWithDynamicParameters("crearclientedatospersonales", parmetrs, "@p_new_user");         
         }
@@ -54,6 +56,8 @@ namespace TractopartesDeskApp.Repository
                 p_telefono1=userModel.telefono1,
                 p_telefono2=userModel.telefono2,
                 p_email=userModel.email,
+                p_rfc = userModel.rfc,
+                p_direccion = userModel.direccion,
             };
 
             await ExecuteGeneric("updatecliente", parameters);

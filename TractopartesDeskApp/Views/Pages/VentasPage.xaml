@@ -118,10 +118,10 @@ Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\Trac
                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyleVentas}">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="250" Header="codigo" Binding="{Binding  producto.p_codigopieza}"/>
-                    <DataGridTextColumn Width="250" Header="Articulo" Binding="{Binding  producto.p_productonombre}"/>
+                    <DataGridTextColumn Width="250" Header="codigo" Binding="{Binding  producto.P_codigopieza}"/>
+                    <DataGridTextColumn Width="250" Header="Articulo" Binding="{Binding  producto.P_productonombre}"/>
                     <DataGridTextColumn Width="100" Header="Cantidad" Binding="{Binding cantidad}"/>
-                    <DataGridTextColumn Width="160" Header="Precio Unitario" Binding="{Binding producto.p_precioventa}"/>
+                    <DataGridTextColumn Width="160" Header="Precio Unitario" Binding="{Binding producto.P_precioventa}"/>
                     <DataGridTextColumn Width="190" Header="Total" Binding="{Binding   P_precio_Total}"/>
                     <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
                         <DataGridTemplateColumn.CellTemplate >

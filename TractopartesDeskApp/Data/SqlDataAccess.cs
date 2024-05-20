@@ -32,7 +32,7 @@ namespace TractopartesDeskApp.Data
                 }
             }
         }
-        public async Task<ObservableCollection<T>> LoadDataWithRelations<T, TCategoria, TProveedor>(string sql, Func<T, TCategoria, TProveedor, T> mapFunction, string splitOn)
+        public ObservableCollection<T> LoadDataWithRelations<T, TCategoria, TProveedor>(string sql, Func<T, TCategoria, TProveedor, T> mapFunction, string splitOn)
         {
             ObservableCollection<T> ObservableCollection = new ObservableCollection<T>();
             using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
@@ -100,6 +100,34 @@ namespace TractopartesDeskApp.Data
                 }
             }
         }
+        //public async Task<int> ExecuteGenericWithDynamicParameters<T>(string sql, T parameters, string parameterOut)
+        //{
+        //    try
+        //    {
+        //        using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
+        //        {
+        //            var parameterss = new DynamicParameters(parameters);
+        //            parameterss.Add(parameterOut, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+        //            await connection.ExecuteAsync(sql, parameterss, commandType: CommandType.StoredProcedure);
+
+        //            var newUserId = parameterss.Get<string>(parameterOut);
+        //            if (!string.IsNullOrEmpty(newUserId) && newUserId.StartsWith("Error "))
+        //            {
+        //                MessageBox.Show(newUserId);
+        //                return 0;
+
+        //            }
+        //            return int.TryParse(newUserId, out var newproductId) ? newproductId : 0;
+        //        }
+        //    }
+        //    catch (NpgsqlException ex)
+        //    {
+
+        //        MessageBox.Show(ex.Message);
+        //        return 0;
+        //    }
+        //}
         public async Task<int> ExecuteGenericWithDynamicParameters<T>(string sql, T parameters, string parameterOut)
         {
             try
@@ -111,14 +139,8 @@ namespace TractopartesDeskApp.Data
 
                     await connection.ExecuteAsync(sql, parameterss, commandType: CommandType.StoredProcedure);
 
-                    var newUserId = parameterss.Get<string>(parameterOut);
-                    if (!string.IsNullOrEmpty(newUserId) && newUserId.StartsWith("Error "))
-                    {
-                        MessageBox.Show(newUserId);
-                        return 0;
-                   
-                    }
-                    return int.TryParse(newUserId, out var newproductId) ? newproductId : 0;
+                    var newUserId = parameterss.Get<int>(parameterOut);
+                    return newUserId;
                 }
             }
             catch (NpgsqlException ex)

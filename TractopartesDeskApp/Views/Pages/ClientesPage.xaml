@@ -76,6 +76,8 @@ Click="btnAdd_Click">
                     <DataGridTextColumn  Header="Telefono 1 " Binding="{Binding telefono1}"/>
                     <DataGridTextColumn  Header="Telefono 2 " Binding="{Binding telefono2}"/>
                     <DataGridTextColumn  Header="Correo" Binding="{Binding email}"/>
+                    <DataGridTextColumn  Header="Direccion" Binding="{Binding direccion}"/>
+                    <DataGridTextColumn  Header="RFC" Binding="{Binding rfc}"/>
                     <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>

@@ -8,6 +8,7 @@ namespace TractopartesDeskApp.Repository
         Task RemoveProducto(int idproducto);
         Task<bool> UpdateProducto(ProductoModel productoModel);
         Task<int> AddProducto(ProductoModel productoModel);
-        Task< ObservableCollection<ProductoModel>> GetProductos();
+        public  Task<ObservableCollection<ProductoModel>> GetAllProductos();
+         ObservableCollection<ProductoModel> GetProductos();
     }
 }

@@ -55,7 +55,7 @@ namespace TractopartesDeskApp.VIewModel
                 _userModel.idclientedp = value;
                 OnPropertyChanged(nameof(P_idclientedp));
             }
-            }
+        }
         public string P_nombres
         {
             get { return _userModel.nombres; }
@@ -114,7 +114,31 @@ namespace TractopartesDeskApp.VIewModel
                 OnPropertyChanged(nameof(P_genero));
             }
         }
+        public string RFC
+        {
+            get { return _userModel.rfc; }
+            set
+            {
+                if (_userModel.rfc != value)
+                {
+                    _userModel.rfc = value;
+                    OnPropertyChanged(nameof(RFC));
+                }
+            }
+        }
+        public string Direccion
+        {
+            get { return _userModel.direccion; }
+            set
+            {
 
+                if (_userModel.direccion != value)
+                {
+                    _userModel.direccion = value;
+                    OnPropertyChanged(nameof(Direccion));
+                }
+            }
+        }
         public string Email
         {
             get { return _userModel.email; }

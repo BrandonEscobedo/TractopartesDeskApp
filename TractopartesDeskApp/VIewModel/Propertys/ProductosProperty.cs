@@ -12,93 +12,93 @@ namespace TractopartesDeskApp.VIewModel.Propertys
         }
         public int P_idProducto
         {
-            get { return ProductoModel.p_idproducto; }
+            get { return ProductoModel.P_idproducto; }
             set
             {
-              ProductoModel.p_idproducto = value;
+              ProductoModel.P_idproducto = value;
               OnPropertyChanged(nameof(P_idProducto));
             }
         }
         public string P_CodigoPieza
         {
-            get { return ProductoModel.p_codigopieza; }
+            get { return ProductoModel.P_codigopieza; }
             set
             {
-                ProductoModel.p_codigopieza = value;
+                ProductoModel.P_codigopieza = value;
                 OnPropertyChanged(nameof(P_CodigoPieza));
             }
         }
         public string P_NombreProducto
         {
-            get { return ProductoModel.p_productonombre; }
+            get { return ProductoModel.P_productonombre; }
             set
             {
-                ProductoModel.p_productonombre = value;
+                ProductoModel.P_productonombre = value;
                 OnPropertyChanged(nameof(P_NombreProducto));
             }
         }
         public string P_descripcion
         {
-            get { return ProductoModel.p_descripcion; }
+            get { return ProductoModel.P_descripcion; }
             set
             {
-                ProductoModel.p_descripcion = value;
+                ProductoModel.P_descripcion = value;
                 OnPropertyChanged(nameof(P_descripcion));
             }
         }
         public ProveedorModel P_ProveedorRazonSocial
         {
-            get { return ProductoModel.p_proveedor; }
+            get { return ProductoModel.P_proveedor; }
             set
             {
-                ProductoModel.p_proveedor = value;
+                ProductoModel.P_proveedor = value;
                 OnPropertyChanged(nameof(P_ProveedorRazonSocial));
             }
         }
         public CategoriaModel P_CategoriaNombre
         {
-            get { return ProductoModel.p_categoria; }
+            get { return ProductoModel.P_categoria; }
             set
             {
-                ProductoModel.p_categoria = value;
+                ProductoModel.P_categoria = value;
                 OnPropertyChanged(nameof(P_CategoriaNombre));
             }
         }
 
         public int P_cantidad
         {
-            get { return ProductoModel.p_cantidad; }
+            get { return ProductoModel._P_cantidad; }
             set
             {
-                ProductoModel.p_cantidad = value;
+                ProductoModel._P_cantidad = value;
                 OnPropertyChanged(nameof(P_cantidad));
             }
         }
         public decimal P_precioVenta
         {
-            get { return ProductoModel.p_precioventa; }
+            get { return ProductoModel.P_precioventa; }
             set
             {
-                ProductoModel.p_precioventa = value;
+                ProductoModel.P_precioventa = value;
                 OnPropertyChanged(nameof(P_precioVenta));
             }
         }
         public decimal P_precioCompra
         {
-            get { return ProductoModel.p_preciocompra; }
+            get { return ProductoModel.P_preciocompra; }
             set
             {
-                ProductoModel.p_preciocompra = value;
+                ProductoModel.P_preciocompra = value;
                 OnPropertyChanged(nameof(P_precioCompra));
             }
         }
    
         public string P_ImagenURL
         {
-            get { return ProductoModel.p_ImagenURL; }
+            get { return ProductoModel.P_ImagenURL; }
             set
             {
-                ProductoModel.p_ImagenURL = value;
+                ProductoModel.P_ImagenURL = value;
                 OnPropertyChanged(nameof(P_ImagenURL));
             }
         }

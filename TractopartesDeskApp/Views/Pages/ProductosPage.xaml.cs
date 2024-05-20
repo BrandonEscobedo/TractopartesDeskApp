@@ -45,13 +45,13 @@ namespace TractopartesDeskApp.Views.Pages
             switch (filtroSeleccionado.ToString())
             {
                 case "Nombre":
-                    return nombreProducto.p_productonombre.Contains(txtbuscar.Text);
+                    return nombreProducto.P_productonombre.Contains(txtbuscar.Text);
                 case "Categoria":
-                    return nombreProducto.p_categoria.categoria.Contains(txtbuscar.Text);
+                    return nombreProducto.P_categoria.categoria.Contains(txtbuscar.Text);
                 case "Codigo de Pieza":
-                    return nombreProducto.p_codigopieza.Contains(txtbuscar.Text);
+                    return nombreProducto.P_codigopieza.Contains(txtbuscar.Text);
                 case "Proveedor Razon Social":
-                    return nombreProducto.p_proveedor.razonsocial.Contains(txtbuscar.Text);
+                    return nombreProducto.P_proveedor.razonsocial.Contains(txtbuscar.Text);
 
                 default:
                     return false;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using TractopartesDeskApp.Models;
 using TractopartesDeskApp.Models.Managers;
@@ -44,22 +45,22 @@ namespace TractopartesDeskApp.VIewModel
         private async void ExecuteAddProductoCommand(object obj)
 
         {
-            productoModel.p_idproducto = P_idProducto;
-            productoModel.p_productonombre = P_NombreProducto;
-            productoModel.p_codigopieza = P_CodigoPieza;
-            productoModel.p_descripcion = P_descripcion;
-            productoModel.p_ImagenURL = P_ImagenURL;
-            productoModel.p_precioventa = P_precioVenta;
-            productoModel.p_preciocompra = P_precioCompra;
-            productoModel.p_categoria.idcategoria = P_CategoriaNombre.idcategoria;
-            productoModel.p_proveedor.idproveedor = P_ProveedorRazonSocial.idproveedor;
-            productoModel.p_cantidad = P_cantidad;
+            productoModel.P_idproducto = P_idProducto;
+            productoModel.P_productonombre = P_NombreProducto;
+            productoModel.P_codigopieza = P_CodigoPieza;
+            productoModel.P_descripcion = P_descripcion;
+            productoModel.P_ImagenURL = P_ImagenURL;
+            productoModel.P_precioventa = P_precioVenta;
+            productoModel.P_preciocompra = P_precioCompra;
+            productoModel.P_categoria.idcategoria = P_CategoriaNombre.idcategoria;
+            productoModel.P_proveedor.idproveedor = P_ProveedorRazonSocial.idproveedor;
+            productoModel._P_cantidad = P_cantidad;
             if (P_idProducto == 0)
             {
                 var iduser = await _productoRepository.AddProducto(productoModel);
                 if (iduser != 0)
-                {
-                    productoModel.p_idproducto = iduser;
+                {                
+                    productoModel.P_idproducto = iduser;
                     ProductoManager.AddProducto(productoModel);
                     CleanPropertys();
 
@@ -67,7 +68,13 @@ namespace TractopartesDeskApp.VIewModel
             }
             else
             {
-               var result= await _productoRepository.UpdateProducto(productoModel);
+                if (productoModel.Estado == false && productoModel._P_cantidad > 0)
+                {
+                    MessageBoxResult msg = MessageBox.Show("Este producto esta inactivo, ¿deseas activarlo para hacer ventas con el?", "Error", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                    if (msg == MessageBoxResult.Yes)
+                        productoModel.Estado = true;
+                }
+                var result= await _productoRepository.UpdateProducto(productoModel);
                 if (result)
                 {
                     CleanPropertys();

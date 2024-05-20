@@ -17,6 +17,7 @@ namespace TractopartesDeskApp
             {
                 if (startupform.IsVisible == false && startupform.IsLoaded)
                 {
+                    
                     var mainview = new Dashboard();
                     mainview.Show();
                     startupform.Close();

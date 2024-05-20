@@ -70,9 +70,9 @@
                                     </StackPanel>
                                     <!--inputs-->
 
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="1"  Caption="Nombre de la empresa" Hint="Ingresa el nombre completo de la empresa"  ValueDb="{Binding NombreEmpresa, Mode=TwoWay}"/>
-                                    <cd:MyTexBox  Grid.Column="1" Grid.Row="1" Caption="Razón social" Hint="" ValueDb="{Binding RazonSocial, Mode=TwoWay}" />
-                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="2" Caption="Direccion" Hint="Av mexico calle 31, No. #413, Guadalupe N.L" ValueDb="{Binding direccion, Mode=TwoWay}" />
+                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="1"  Caption="Nombre de la empresa" Hint="Opcional"  ValueDb="{Binding NombreEmpresa, Mode=TwoWay}"/>
+                                    <cd:MyTexBox  Grid.Column="1" Grid.Row="1" Caption="Razón social" Hint="Opcional" ValueDb="{Binding RazonSocial, Mode=TwoWay}" />
+                                    <cd:MyTexBox  Grid.Column="0" Grid.Row="2" Caption="Direccion" Hint="Opcional" ValueDb="{Binding direccion, Mode=TwoWay}" />
                                     <cd:MyTexBox  Grid.Column="1" Grid.Row="2" Caption="Correo"  ValueDb="{Binding Correo, Mode=TwoWay}"/>
                                     <cd:MyTexBox  Grid.Column="0" Grid.Row="3" Caption="Telefono 1"  ValueDb="{Binding Telefono, Mode=TwoWay}"/>
                                     <Border Grid.Row="3" Grid.ColumnSpan="2" Height="80"

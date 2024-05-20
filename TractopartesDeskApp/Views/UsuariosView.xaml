@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:cd="clr-namespace:TractopartesDeskApp.Views.UserControls"
-        Height="850" Width="750" MinHeight="850"
+        Height="600" Width="750" MinHeight="600"
         xmlns:viewModel="clr-namespace:TractopartesDeskApp.VIewModel"
         MinWidth="650" WindowStyle="none" WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" Background="Transparent">
@@ -35,8 +35,8 @@
                     </Grid.RowDefinitions>
 
                     <Border  CornerRadius="0 0 0 5" >
-                        <Grid VerticalAlignment="Center" Margin="22,0,17,0" Height="680">
-                            <Border CornerRadius="7" Background="#ffffff" Margin="0,-54,0,-60" >
+                        <Grid VerticalAlignment="Center" Margin="22,0,17,0" >
+                            <Border CornerRadius="7" Background="#ffffff"  >
                                 <Border.Effect>
                                     <DropShadowEffect BlurRadius="30" ShadowDepth="5"
                                               Direction="-130" Opacity="0.1"/>
@@ -47,9 +47,8 @@
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
+                                       
+                                        
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
                                     </Grid.RowDefinitions>
@@ -61,7 +60,7 @@
                                         <Border CornerRadius="50" BorderThickness="1.5" Margin="0 0 0 3" BorderBrush="#efefef">
                                             <Ellipse Width="40" Height="40" >
                                                 <Ellipse.Fill>
-                                                    <ImageBrush  />
+                                                    <ImageBrush ImageSource="\Data\Imagenes\people.png"/>
                                                 </Ellipse.Fill>
                                             </Ellipse>
                                         </Border>
@@ -78,18 +77,8 @@
                                     <cd:MyTexBox x:Name="txtelefono2" Grid.Column="1" Grid.Row="3" Caption="Telefono 2"  ValueDb="{Binding Telefono2, Mode=TwoWay}"/>
                                     <cd:MyTexBox x:Name="email" Grid.Column="0" Grid.Row="4" Caption="Email" Hint="user@example.com" ValueDb="{Binding Email, Mode=TwoWay}"/>
 
-                                    <cd:MyTexBox x:Name="textBoxCalle"  Grid.Column="0" Grid.Row="5" Caption="Calle"/>
-                                    <cd:MyTexBox x:Name="textBoxNumeroInterior" Grid.Column="1" Grid.Row="5" Caption="Número interior" />
-                                    <cd:MyTexBox x:Name="textBoxNumeroExterior" Grid.Column="0" Grid.Row="6" Caption="Número exterior" />
-                                    <cd:MyTexBox x:Name="textBoxColonia" Grid.Column="1" Grid.Row="6" Caption="Colonia" Hint="" />
-                                    <cd:MyTexBox x:Name="textBoxCodigoPostal" Grid.Column="0" Grid.Row="7" Caption="Codigo Postal" />
-                                    <cd:MyTexBox x:Name="textBoxEstado" Grid.Column="1" Grid.Row="7" Caption="Estado"  />
-                                    <cd:MyTexBox x:Name="textBoxCiudad" Grid.Column="0" Grid.Row="8" Caption="Ciudad" />
-
-                                    <Label Content="Ocoltar datos fiscales" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left"
-                                           VerticalAlignment="Bottom" Margin="148,0,0,80" Grid.RowSpan="2"/>
-                                    <CheckBox x:Name="cbox" Padding="50 0 0 0" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right"
-                                              VerticalAlignment="Bottom" Margin="0,0,6,6" Checked="CheckBox_Checked"/>
+                                    <cd:MyTexBox x:Name="textBoxCalle"  Grid.Column="0" Grid.Row="5" Caption="Direccion" ValueDb="{Binding Direccion,Mode= TwoWay}"/>
+                                    <cd:MyTexBox x:Name="textBoxNumeroInterior" Grid.Column="1" Grid.Row="5" Caption="RFC"  ValueDb="{Binding RFC,Mode=TwoWay}"/>
                                     <Border Grid.Row="8" Grid.ColumnSpan="2" Height="80"
             Background="#f6f6f6" CornerRadius="0 0 10 10"
             Margin="0,81,0,0" Grid.RowSpan="2"

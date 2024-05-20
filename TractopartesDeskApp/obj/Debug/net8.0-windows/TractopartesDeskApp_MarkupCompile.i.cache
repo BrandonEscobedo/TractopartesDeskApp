@@ -11,10 +11,10 @@ false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\App.xaml
 301823522802
-
-76342350921
+1-1998649015
+78798074554
 243914409367
 Styles\ButtonStyles.xaml;Styles\UIColors.xaml;Views\ClientesTablaView.xaml;Views\Dashboard.xaml;Views\LoginView.xaml;Views\Page1.xaml;Views\Pages\CategoriasPage.xaml;Views\Pages\ClientesPage.xaml;Views\Pages\ProductosPage.xaml;Views\Pages\ProveedoresPage.xaml;Views\Pages\VentasPage.xaml;Views\Productos.xaml;Views\ProductosTablaView.xaml;Views\ProductoView.xaml;Views\Proveedores.xaml;Views\ProveedoresView.xaml;Views\RemoveViews\RemoveClienteView.xaml;Views\RemoveViews\RemoveProductoView.xaml;Views\RemoveViews\RemoveProveedorView.xaml;Views\UserControls\BtnAddUser.xaml;Views\UserControls\Carad.xaml;Views\UserControls\InfoCard.xaml;Views\UserControls\MyTexBox.xaml;Views\UserControls\MyTexBoxInt.xaml;Views\UserControls\MytextBoxDecimal.xaml;Views\UserControls\PassWordControl.xaml;Views\UserControls\ProductosControl.xaml;Views\UserControls\TablaUsuarios.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
 
-False
+True
 

@@ -59,11 +59,14 @@ namespace TractopartesDeskApp.VIewModel
                 userModel.telefono1 = Telefono1;
                 userModel.telefono2 = Telefono2;
                 userModel.idclientedp = P_idclientedp;
+                userModel.direccion = Direccion;
+                userModel.rfc = RFC;
                 if (userModel.idclientedp == 0)
                 {
                     var result = await _userRepository.AddUser(userModel);
                     userModel.idclientedp = result;
                     Usermanager.AddUsers(userModel);
+                    
                 }
                 else
                 {
@@ -86,7 +89,9 @@ namespace TractopartesDeskApp.VIewModel
         {
             bool validData;
             if (string.IsNullOrWhiteSpace(P_nombres) || string.IsNullOrWhiteSpace(P_apellidomaterno) || string.IsNullOrWhiteSpace(P_apellidopaterno) ||
-               string.IsNullOrWhiteSpace(P_genero) || Telefono1 <= 0 || Telefono2 <= 0 || string.IsNullOrEmpty(Email) || !Email.Contains("@"))
+               string.IsNullOrWhiteSpace(P_genero) || Telefono1 <= 0 || Telefono2 <= 0 || string.IsNullOrEmpty(Email) || !Email.Contains("@")
+               || string.IsNullOrEmpty(RFC) || RFC.Length<12  || RFC.Length>13 || string.IsNullOrEmpty(Direccion)
+               )
                 validData = false;
             else
                 validData = true;

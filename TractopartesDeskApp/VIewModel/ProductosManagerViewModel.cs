@@ -12,17 +12,32 @@ using TractopartesDeskApp.Views.RemoveViews;
 
 namespace TractopartesDeskApp.VIewModel
 {
-    public class ProductosManagerViewModel
+    public class ProductosManagerViewModel:ViewModelBase
     {
        
      public ICommand ShowAddProductoCommand { get; }
      public ICommand ShowRemoveCommand { get; }
      public ICommand ShowUpdateCommand { get; }
-        public ObservableCollection<ProductoModel> Productos { get; set; }
+       
+    private ObservableCollection<ProductoModel> _products=new();
+
+        public ObservableCollection<ProductoModel> Productos
+        {
+            get => _products;
+            set
+            {
+                if (_products != value)
+                {
+                    _products = value;
+                    OnPropertyChanged(nameof(Productos));
+                }
+            }
+        }
+
         public ProductoModel ProductoModel { get; set; } = new();
         public ProductosManagerViewModel()
         {
-            Productos =  ProductoManager.productos;
+            _products =  ProductoManager.productos;
             ShowAddProductoCommand = new ViewModelCommand(ExecuteAddCommand);
             ShowRemoveCommand = new ViewModelCommand(ExecuteRemoveCommand);
             ShowUpdateCommand = new ViewModelCommand(ExecuteUpdateCommand);
@@ -34,16 +49,16 @@ namespace TractopartesDeskApp.VIewModel
             ProductoView Updateproducto = new();
             Updateproducto.DataContext = new ProductosViewModel
             {
-                P_idProducto = producto.p_idproducto,
-                P_cantidad= producto.p_cantidad,
-                P_descripcion= producto.p_descripcion,
-                P_CategoriaNombre= producto.p_categoria,
-                P_CodigoPieza= producto.p_codigopieza,
-                P_NombreProducto= producto.p_productonombre,
-                P_ProveedorRazonSocial= producto.p_proveedor,
-                P_precioVenta= producto.p_precioventa,
-                P_precioCompra=producto.p_preciocompra,
-                P_ImagenURL=producto.p_ImagenURL,
+                P_idProducto = producto.P_idproducto,
+                P_cantidad= producto._P_cantidad,
+                P_descripcion= producto.P_descripcion,
+                P_CategoriaNombre= producto.P_categoria,
+                P_CodigoPieza= producto.P_codigopieza,
+                P_NombreProducto= producto.P_productonombre,
+                P_ProveedorRazonSocial= producto.P_proveedor,
+                P_precioVenta= producto.P_precioventa,
+                P_precioCompra=producto.P_preciocompra,
+                P_ImagenURL=producto.P_ImagenURL,
         };
             Updateproducto.Show();
         }
@@ -54,13 +69,13 @@ namespace TractopartesDeskApp.VIewModel
             RemoveProductoView removeProductoView = new();
             removeProductoView.DataContext = new ProductosViewModel
             {
-                P_idProducto = producto.p_idproducto,
-                P_cantidad = producto.p_cantidad,
-                P_CategoriaNombre = producto.p_categoria,
-                P_CodigoPieza = producto.p_codigopieza,
-                P_NombreProducto = producto.p_productonombre,
-                P_ProveedorRazonSocial = producto.p_proveedor,
-                P_precioVenta = producto.p_precioventa,
+                P_idProducto = producto.P_idproducto,
+                P_cantidad = producto._P_cantidad,
+                P_CategoriaNombre = producto.P_categoria,
+                P_CodigoPieza = producto.P_codigopieza,
+                P_NombreProducto = producto.P_productonombre,
+                P_ProveedorRazonSocial = producto.P_proveedor,
+                P_precioVenta = producto.P_precioventa,
             };
             removeProductoView.Show();
         }

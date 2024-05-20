@@ -21,6 +21,7 @@ namespace TractopartesDeskApp.VIewModel
         public ICommand RemoveProductoCommand { get; }
         public ICommand ShowProductosCommand { get; }
         private IVentaRepository ventaRepository { get; set; }
+        private IProductoRepository productoRepository { get; set; }
         private ProductoModel _productoSeleccionado = new();
         public ProductoModel _productoModel
         {
@@ -28,7 +29,7 @@ namespace TractopartesDeskApp.VIewModel
             get { return _productoSeleccionado; }
             set
             {
-                var detalleExistente = DetallesVentaList.FirstOrDefault(x => x.producto.p_idproducto == value.p_idproducto);
+                var detalleExistente = DetallesVentaList.FirstOrDefault(x => x.producto.P_idproducto == value.P_idproducto);
 
                 if (detalleExistente == null)
                 {
@@ -38,7 +39,7 @@ namespace TractopartesDeskApp.VIewModel
 
                         producto = value,
                         cantidad = 1,
-                        precioNeto = value.p_precioventa
+                        precioNeto = value.P_precioventa
                     };
                     P_Total += detalleVenta.precioNeto;
                     DetallesVentaList.Add(detalleVenta);
@@ -46,11 +47,10 @@ namespace TractopartesDeskApp.VIewModel
                 }
                 else
                 {
-
                     detalleExistente.cantidad += 1;
-                    detalleExistente.P_precio_Total = detalleExistente.producto.p_precioventa *
+                    detalleExistente.P_precio_Total = detalleExistente.producto.P_precioventa *
                     detalleExistente.cantidad;
-                    P_Total += detalleExistente.producto.p_precioventa;
+                    P_Total += detalleExistente.producto.P_precioventa;
                 }
 
                 OnPropertyChanged(nameof(DetallesVentaList));
@@ -87,7 +87,8 @@ namespace TractopartesDeskApp.VIewModel
         public VentasViewModel()
         {
             ventaRepository = new VentasRepository();
-            _productos = ProductoManager.productos;
+            productoRepository = new ProductoRepository();
+            _productos = productoRepository.GetProductos();
             ShowClientesCommand = new ViewModelCommand(ExecuteShowClientesCommand);
             RemoveProductoCommand = new ViewModelCommand(ExecuteRemoveCommand);
             ShowProductosCommand = new ViewModelCommand(ExecuteShowWindowCommand);
@@ -100,14 +101,14 @@ namespace TractopartesDeskApp.VIewModel
             ProductoModel producto = (ProductoModel)obj;
             if (producto != null)
             {
-                var detalleProducto = DetallesVentaList.FirstOrDefault(x => x.producto.p_idproducto == producto.p_idproducto);
+                var detalleProducto = DetallesVentaList.FirstOrDefault(x => x.producto.P_idproducto == producto.P_idproducto);
                 if (detalleProducto != null)
                 {
                     Application.Current.Dispatcher.Invoke(() =>
                     {
                         detalleProducto.cantidad -= 1;
-                        detalleProducto.P_precio_Total = detalleProducto.P_precio_Total - detalleProducto.producto.p_precioventa;
-                        P_Total -= detalleProducto.producto.p_precioventa;
+                        detalleProducto.P_precio_Total = detalleProducto.P_precio_Total - detalleProducto.producto.P_precioventa;
+                        P_Total -= detalleProducto.producto.P_precioventa;
                     });
                     if (detalleProducto.cantidad == 0)
                     {
@@ -123,15 +124,16 @@ namespace TractopartesDeskApp.VIewModel
             var result = await ventaRepository.GenerarVenta(ventaModel);
             if (result)
             {
+                _productos = productoRepository.GetProductos();
 
-                await ProductoManager.GetProductosRepositoryAsync();
+              
                 Application.Current.Dispatcher.Invoke(() =>
                 {
-                  
-                    ventaModel = new();
+                 
                     DetallesVentaList.Clear();
                     P_Total = 0;
                     P_Cliente = new();
+                    ventaModel = new();
 
                 });
             }

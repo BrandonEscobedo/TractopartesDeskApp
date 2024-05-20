@@ -29,30 +29,40 @@ namespace TractopartesDeskApp.Models.Managers
         }
         public static void RemoveProducto(int idproducto)
         {
-            var producto = productos.FirstOrDefault(x => x.p_idproducto == idproducto);
+            var producto = productos.FirstOrDefault(x => x.P_idproducto == idproducto);
             if (producto != null)
             {
                 productos.Remove(producto);
             }
         }
-        public static void UpdateProducto(ProductoModel productoModel)
+        public static void UpdateProducto(ProductoModel productoModel )
         {
-            var producto= productos.FirstOrDefault(x=>x.p_idproducto==productoModel.p_idproducto);  
-            if(producto != null)
+            var item = productos.FirstOrDefault(x => x.P_idproducto == productoModel.P_idproducto);
+            if(item != null)
             {
-                productos.Remove(producto);
-                productos.Add(producto);
+                item._P_cantidad = productoModel._P_cantidad;
+                item.P_precioventa = productoModel.P_precioventa;
+                item.P_preciocompra = productoModel.P_preciocompra;
+                item.P_proveedor = productoModel.P_proveedor;
+                item.Estado = productoModel.Estado;
+                item.P_categoria = productoModel.P_categoria;
+                item.P_productonombre = productoModel.P_productonombre;
+                item.P_descripcion = productoModel.P_descripcion;
+                item.P_ImagenURL = productoModel.P_ImagenURL;
+                item. P_codigopieza= productoModel.P_codigopieza;
             }
+
+          
         }
         public static async Task GetProductosRepositoryAsync()
         {
            
-            productos = await _productoRepository.GetProductos();
+            productos = await _productoRepository.GetAllProductos();
         }
         public static async void GetProductosRepository()
         {
 
-            productos = await _productoRepository.GetProductos();
+            productos = await _productoRepository.GetAllProductos();
         }
 
     }

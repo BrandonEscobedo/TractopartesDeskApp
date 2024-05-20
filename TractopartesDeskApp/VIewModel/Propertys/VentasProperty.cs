@@ -70,7 +70,7 @@ namespace TractopartesDeskApp.VIewModel.Propertys
         {
             get
             {
-                return productoModel.p_precioventa;
+                return productoModel.P_precioventa;
             }
             set
             {

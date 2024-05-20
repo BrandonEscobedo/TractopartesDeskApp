@@ -67,8 +67,9 @@ Click="btnAdd_Click">
                     <DataGridTextColumn  Header="Apellido Paterno" Binding="{Binding apellidopaterno}"/>
                     <DataGridTextColumn  Header="Genero" Binding="{Binding genero}" />
                     <DataGridTextColumn  Header="Telefono 1 " Binding="{Binding telefono1}"/>
-                    <DataGridTextColumn  Header="Telefono 2 " Binding="{Binding telefono2}"/>
                     <DataGridTextColumn  Header="Correo" Binding="{Binding email}"/>
+                    <DataGridTextColumn  Header="Correo" Binding="{Binding direccion}"/>
+                    <DataGridTextColumn  Header="Correo" Binding="{Binding rfc}"/>
 
                     <DataGridTemplateColumn Header="#" IsReadOnly="True" Width="auto"  >
                         <DataGridTemplateColumn.CellTemplate >

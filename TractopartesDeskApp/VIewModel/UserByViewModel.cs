@@ -52,6 +52,8 @@ namespace TractopartesDeskApp.VIewModel
                 Telefono1 = user.telefono1,
                 Telefono2 = user.telefono2,
                 Email = user.email,
+                Direccion = user.direccion,
+                RFC = user.rfc,
             };
 
             usuarios.Show();

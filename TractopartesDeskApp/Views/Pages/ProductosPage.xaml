@@ -87,16 +87,19 @@
                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Producto" Binding="{Binding p_productonombre}"/>
-                    <DataGridTextColumn Header="Codigo de Pieza" Binding="{Binding p_codigopieza}"/>
-                    <DataGridTextColumn Header="Cantidad" Binding="{Binding p_cantidad}"/>
-                    <DataGridTextColumn Header="Categoria" Binding="{Binding p_categoria.categoria}"/>
-                    <DataGridTextColumn Header="Empresa" Binding="{Binding p_proveedor.razonsocial}"/>
+                    <DataGridTextColumn Header="Producto" Binding="{Binding P_productonombre}"/>
+                    <DataGridTextColumn Header="Codigo de Pieza" Binding="{Binding P_codigopieza}"/>
+                    <DataGridTextColumn Header="Cantidad" Binding="{Binding _P_cantidad}"/>
+                    <DataGridTextColumn Header="Precio de venta" Binding="{Binding P_precioventa}"/>
+                    <DataGridTextColumn Header="Precio de compra" Binding="{Binding P_preciocompra}"/>
+                    <DataGridTextColumn Header="Categoria" Binding="{Binding P_categoria.categoria}"/>
+                    <DataGridTextColumn Header="Empresa" Binding="{Binding P_proveedor.razonsocial}"/>
+                    <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"/>
                    
                     <DataGridTemplateColumn Header="Imagen" IsReadOnly="True" Width="auto"  >
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>
-                                <Image Source="{Binding p_ImagenURL}" Width="50" Height="50"/>
+                                <Image Source="{Binding P_ImagenURL}" Width="50" Height="50"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

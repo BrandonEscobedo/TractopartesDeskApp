@@ -10,7 +10,7 @@
 IsDesignTimeCreatable=False}"
          WindowStartupLocation="CenterScreen"
  WindowStyle="None"
-        Title="ClientesTablaView" Height="450" Width="800">
+        Title="ClientesTablaView" Height="450" Width="1200">
     <Border>
         <Grid>
             <Grid.RowDefinitions>
@@ -27,6 +27,8 @@ IsDesignTimeCreatable=False}"
                     <DataGridTextColumn Header="Apellido Materno" Binding="{Binding apellidomaterno}"/>
                     <DataGridTextColumn Header="Correo" Binding="{Binding email}"/>
                     <DataGridTextColumn Header="Telefono 1 " Binding="{Binding telefono1}"/>
+                    <DataGridTextColumn Header="Direccion" Binding="{Binding direccion}"/>
+                    <DataGridTextColumn Header="RFC" Binding="{Binding rfc}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Border Grid.Row="1">

@@ -82,12 +82,12 @@
                         </StackPanel>
                     </RadioButton>
 
-                    <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color4}" Checked="RadioButton_Checked_3">
+                    <RadioButton  x:Name="rbVentas" Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color4}" Checked="rbVentas_Checked">
 
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Box" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Stock" Style="{StaticResource menuButtonText}" Foreground="White"/>
+                            <TextBlock Text="Ventas" Style="{StaticResource menuButtonText}" Foreground="White"/>
                         </StackPanel>
                     </RadioButton>
 
@@ -108,7 +108,16 @@
                             <fa:IconImage Icon="Building" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Productos" Style="{StaticResource menuButtonText}" Foreground="White"/>
                         </StackPanel>
-                    </RadioButton>    
+                    </RadioButton>
+                    <RadioButton Style="{StaticResource menuButton}"
+                        Tag="{StaticResource color16}" Checked="RadioButton_Checked_1">
+
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Adjust" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Categorias" Style="{StaticResource menuButtonText}" Foreground="White"/>
+                        </StackPanel>
+                    </RadioButton>
+
                     <RadioButton x:Name="rbGenerarVenta" Style="{StaticResource menuButton}"
                              Tag="{StaticResource color15}" Checked="rbGenerarVenta_Checked">
 
@@ -117,15 +126,7 @@
                             <TextBlock Text="Generar venta" Style="{StaticResource menuButtonText}" Foreground="White"/>
                         </StackPanel>
                     </RadioButton>     
-                    <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color16}" Checked="RadioButton_Checked_1">
-
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Adjust" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Categorias" Style="{StaticResource menuButtonText}" Foreground="White"/>
-                        </StackPanel>
-                    </RadioButton>
-
+     
 
                 </StackPanel>
             </Border>

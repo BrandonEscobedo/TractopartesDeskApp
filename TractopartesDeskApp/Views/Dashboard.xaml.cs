@@ -117,5 +117,10 @@ namespace TractopartesDeskApp.Views
         {
             MainContainerPage.NavigationService.Navigate(new VentasPage());
         }
+
+        private void rbVentas_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

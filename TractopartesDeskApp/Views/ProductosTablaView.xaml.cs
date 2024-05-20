@@ -24,7 +24,6 @@ namespace TractopartesDeskApp.Views
         public ProductosTablaView()
         {
             InitializeComponent();
-            MembersDataGrid.ItemsSource = ProductoManager.productos;
             MembersDataGrid.SelectedItem = null;
             MembersDataGrid.UnselectAllCells();
             

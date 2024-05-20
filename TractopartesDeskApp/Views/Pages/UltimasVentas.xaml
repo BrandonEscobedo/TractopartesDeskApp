@@ -1,0 +1,47 @@
+﻿<Page x:Class="TractopartesDeskApp.Views.Pages.UltimasVentas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TractopartesDeskApp.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      Title="UltimasVentas">
+    
+        <Grid Background="#fff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+               
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" 
+                            VerticalAlignment="Center">
+                    <Label FontSize="20" Content="Ultimas ventas"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1">
+            <Grid>
+                <DataGrid SelectionChanged="MembersDataGrid_SelectionChanged" 
+                          CanUserSortColumns="False"  ItemsSource="{Binding DetallesVentaList}" 
+                          AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" 
+                          CellStyle="{DynamicResource DataGridCellStyle1}"
+                   RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
+                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyleVentas}">
+
+                    <DataGrid.Columns >
+                        <DataGridTextColumn  Header="Total" Binding="{Binding  producto.P_codigopieza}"/>
+                        <DataGridTextColumn  Header="Fecha" Binding="{Binding  producto.P_productonombre}"/>
+                        <DataGridTextColumn  Header="Cantidad" Binding="{Binding cantidad}"/>
+                        <DataGridTextColumn  Header="Precio Unitario" Binding="{Binding producto.P_precioventa}"/>
+                        <DataGridTextColumn  Header="Total" Binding="{Binding   P_precio_Total}"/>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </Grid>
+        </Border>
+        </Grid>
+    
+</Page>

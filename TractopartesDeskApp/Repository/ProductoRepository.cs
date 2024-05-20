@@ -95,7 +95,7 @@ INNER JOIN public.proveedores AS prv ON pr.idprovedor = prv.idproveedor
                 p_idcategoria=productoModel.P_categoria.idcategoria
             };
 
-        var result=    await ExecuteGenericWithDynamicParameters("sp_createproducto", parameters, "p_new_producto");
+        var result=    await ExecuteGenericWithDynamicParametersProductos("sp_createproducto", parameters, "p_new_producto");
             return result;
         }
 

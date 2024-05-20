@@ -29,7 +29,7 @@
                     <Border  BorderBrush="#efefef" Margin="0 0 0 3" CornerRadius="50" BorderThickness="2">
                         <Ellipse Width="40" Height="42">
                             <Ellipse.Fill>
-                                <ImageBrush  ImageSource="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\ProductoCategoria.png"/>
+                                <ImageBrush  ImageSource="  \Data\Imagenes\ProductoCategoria.png"/>
                             </Ellipse.Fill>
                         </Ellipse>
                     </Border>

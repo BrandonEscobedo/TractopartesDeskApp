@@ -51,7 +51,7 @@
                                     <DropShadowEffect BlurRadius="10" Opacity="0.3"
                                                       />
                                 </Border.Effect>
-                                <Image Width="60" Height="60" Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\logo2.png" />                                    
+                                <Image Width="60" Height="60" Source="\Data\Imagenes\logo2.png" />                                    
                             </Border>
                             
                         </Grid>
@@ -299,9 +299,9 @@
 
                                         </Grid.RowDefinitions>
 
-                                        <uc:InfoCard Grid.Row="0" Title="Ventas" SubTitle="Ventas generadas el ultimo mes" Image="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\payment-method.png" Grid.Column="0" Amount="10" />
-                                        <uc:InfoCard Title="Ganancias" SubTitle="Ganancias totales de la ultima semana" Amount="2" Image="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\money.png"  Width="Auto" Grid.Column="1" Margin="0,0,0,-39"/>
-                                        <uc:InfoCard Title="Inventario" SubTitle="Productos con mas Stock" Amount="5" Image="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\packages.png"  Width="Auto" Grid.Column="2" Margin="0,0,0,-39" />
+                                        <uc:InfoCard Grid.Row="0" Title="Ventas" SubTitle="Ventas generadas el ultimo mes" Image="\Data\Imagenes\payment-method.png" Grid.Column="0" Amount="10" />
+                                        <uc:InfoCard Title="Ganancias" SubTitle="Ganancias totales de la ultima semana" Amount="2" Image="\Data\Imagenes\money.png"  Width="Auto" Grid.Column="1" Margin="0,0,0,-39"/>
+                                        <uc:InfoCard Title="Inventario" SubTitle="Productos con mas Stock" Amount="5" Image="\Data\Imagenes\packages.png"  Width="Auto" Grid.Column="2" Margin="0,0,0,-39" />
                                     </Grid>
                                 </Border>
                             </Grid>

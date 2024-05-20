@@ -101,7 +101,7 @@
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
-                        <Image Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\minimizar.png" Height="9" Width="23" RenderTransformOrigin="0.41,-0.394">
+                        <Image Source="\Data\Imagenes\minimizar.png" Height="9" Width="23" RenderTransformOrigin="0.41,-0.394">
                             <Image.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="-1"/>
@@ -144,7 +144,7 @@
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
-                        <Image Source="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\cerrar.png" RenderTransformOrigin="0.506,0.478" Height="12" Width="76"/>
+                        <Image Source="\Data\Imagenes\cerrar.png" RenderTransformOrigin="0.506,0.478" Height="12" Width="76"/>
                     </Button>
 
                 </Grid>
@@ -156,7 +156,7 @@
 
                     <Ellipse Width="120" Height="120">
                         <Ellipse.Fill>
-                            <ImageBrush ImageSource="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\logo2.png"/>
+                            <ImageBrush ImageSource="\Data\Imagenes\logo2.png"/>
                         </Ellipse.Fill>
                     </Ellipse>
 
@@ -199,7 +199,7 @@
                           Padding="20,0,0,0">
 
                         <TextBox.Background>
-                            <ImageBrush ImageSource="C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\Data\Imagenes\user-icon.png"
+                            <ImageBrush ImageSource="\Data\Imagenes\user-icon.png"
                                      Stretch="None"
                                      AlignmentX="Left"/>
                         </TextBox.Background>

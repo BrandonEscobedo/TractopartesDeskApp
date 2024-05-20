@@ -13,7 +13,7 @@ namespace TractopartesDeskApp.PdfGenerator
         public string GenerarPDF(FacturaModel facturaModel)
         {
             QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
-            var outpath = $"C:/Users/jesus/OneDrive/Documentos/pdfs/Factura_{facturaModel.idventa}.pdf";
+            var outpath = $"C:/Users/brand/OneDrive/Documentos/facturasPDF/Factura_{facturaModel.idventa}.pdf";
             Document.Create(document =>
             {
                 document.Page(page =>
@@ -23,7 +23,7 @@ namespace TractopartesDeskApp.PdfGenerator
                     page.MarginBottom(30);
                     page.Header().ShowOnce().Row(row =>
                     {
-                        row.ConstantItem(120).PaddingTop(-10).Height(80).Image("C:/Users/jesus/Downloads/Logo.png")
+                        row.ConstantItem(120).PaddingTop(-10).Height(80).Image("C:/Users/brand/Downloads/logo2.pn")
                         ;
                         row.RelativeItem().Column(column =>
                         {
@@ -116,7 +116,7 @@ namespace TractopartesDeskApp.PdfGenerator
                             {
                                 txt.Span("Garantias:").FontSize(13).SemiBold();
                                 col1.Spacing(5);
-                                txt.Span(Placeholders.LoremIpsum()).FontSize(13);
+                                txt.Span(". Condiciones de la Garantía\r\n\r\nLa garantía es válida solo para el comprador original con el recibo de compra original.\r\nLas piezas deben haber sido instaladas y usadas según las recomendaciones del fabricante y para los fines previstos.\r\nLa garantía no cubre daños causados por uso indebido, instalación incorrecta, negligencia, accidentes, alteraciones, modificaciones, o desgaste normal.").FontSize(13);
                             });
                         });
                         column.Spacing(5);

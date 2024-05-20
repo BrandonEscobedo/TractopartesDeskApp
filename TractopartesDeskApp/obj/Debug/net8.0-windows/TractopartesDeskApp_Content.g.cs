@@ -8,6 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/cerrar.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/key-icon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/logo2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/minimizar.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/payment-method.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/people.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/productocategoria.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/products.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/user-icon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/money.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/imagenes/packages.png")]
 
 

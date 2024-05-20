@@ -100,34 +100,34 @@ namespace TractopartesDeskApp.Data
                 }
             }
         }
-        //public async Task<int> ExecuteGenericWithDynamicParameters<T>(string sql, T parameters, string parameterOut)
-        //{
-        //    try
-        //    {
-        //        using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
-        //        {
-        //            var parameterss = new DynamicParameters(parameters);
-        //            parameterss.Add(parameterOut, dbType: DbType.Int32, direction: ParameterDirection.Output);
+        public async Task<int> ExecuteGenericWithDynamicParametersProductos<T>(string sql, T parameters, string parameterOut)
+        {
+            try
+            {
+                using (IDbConnection connection = new NpgsqlConnection(ConnectionString))
+                {
+                    var parameterss = new DynamicParameters(parameters);
+                    parameterss.Add(parameterOut, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-        //            await connection.ExecuteAsync(sql, parameterss, commandType: CommandType.StoredProcedure);
+                    await connection.ExecuteAsync(sql, parameterss, commandType: CommandType.StoredProcedure);
 
-        //            var newUserId = parameterss.Get<string>(parameterOut);
-        //            if (!string.IsNullOrEmpty(newUserId) && newUserId.StartsWith("Error "))
-        //            {
-        //                MessageBox.Show(newUserId);
-        //                return 0;
+                    var newUserId = parameterss.Get<string>(parameterOut);
+                    if (!string.IsNullOrEmpty(newUserId) && newUserId.StartsWith("Error "))
+                    {
+                        MessageBox.Show(newUserId);
+                        return 0;
 
-        //            }
-        //            return int.TryParse(newUserId, out var newproductId) ? newproductId : 0;
-        //        }
-        //    }
-        //    catch (NpgsqlException ex)
-        //    {
+                    }
+                    return int.TryParse(newUserId, out var newproductId) ? newproductId : 0;
+                }
+            }
+            catch (NpgsqlException ex)
+            {
 
-        //        MessageBox.Show(ex.Message);
-        //        return 0;
-        //    }
-        //}
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+        }
         public async Task<int> ExecuteGenericWithDynamicParameters<T>(string sql, T parameters, string parameterOut)
         {
             try

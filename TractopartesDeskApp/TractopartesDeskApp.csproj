@@ -9,11 +9,57 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\Imagenes\cerrar.png" />
+    <None Remove="Data\Imagenes\key-icon.png" />
+    <None Remove="Data\Imagenes\logo2.png" />
+    <None Remove="Data\Imagenes\minimizar.png" />
+    <None Remove="Data\Imagenes\money.png" />
+    <None Remove="Data\Imagenes\packages.png" />
+    <None Remove="Data\Imagenes\payment-method.png" />
     <None Remove="Data\Imagenes\people.png" />
+    <None Remove="Data\Imagenes\ProductoCategoria.png" />
+    <None Remove="Data\Imagenes\products.png" />
+    <None Remove="Data\Imagenes\user-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Data\Imagenes\cerrar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Imagenes\key-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Imagenes\logo2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Imagenes\minimizar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Imagenes\payment-method.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Imagenes\people.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Imagenes\ProductoCategoria.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Imagenes\products.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Imagenes\user-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\Imagenes\money.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\Imagenes\packages.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

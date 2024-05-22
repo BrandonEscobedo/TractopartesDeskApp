@@ -28,7 +28,7 @@ namespace TractopartesDeskApp.VIewModel
             if (P_idProveedor != 0)
             {
                 _proveedorRepository.RemoveProveedor(P_idProveedor);
-
+                ProveedoresManager.RemoveProveedor(P_idProveedor);
             }
         }
 
@@ -65,6 +65,7 @@ namespace TractopartesDeskApp.VIewModel
             {
             proveedor.idproveedor = P_idProveedor;
             await  _proveedorRepository.UpdateProveedor(proveedor);
+                ProveedoresManager.UpdateProveedor(proveedor);
             }
       
            

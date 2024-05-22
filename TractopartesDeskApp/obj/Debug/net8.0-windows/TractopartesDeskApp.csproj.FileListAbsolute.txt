@@ -302,3 +302,15 @@ C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\ne
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\packages.png
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\ProductoCategoria.png
 C:\Users\brand\source\repos\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\products.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\UltimasVentas.g.cs
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\cerrar.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\key-icon.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\logo2.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\minimizar.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\payment-method.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\ProductoCategoria.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\products.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\user-icon.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\money.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\bin\Debug\net8.0-windows\Data\Imagenes\packages.png
+C:\Users\jesus\OneDrive\Documentos\programas c#\TractopartesDeskApp\TractopartesDeskApp\obj\Debug\net8.0-windows\Views\Pages\UltimasVentas.baml

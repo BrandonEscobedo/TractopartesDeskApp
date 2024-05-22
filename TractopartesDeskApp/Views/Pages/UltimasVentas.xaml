@@ -7,12 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="400"
       Title="UltimasVentas">
-    
-        <Grid Background="#fff">
+    <Grid Background="#fff">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-               
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
             <Grid>
@@ -24,7 +22,7 @@
         </Border>
         <Border Grid.Row="1">
             <Grid>
-                <DataGrid SelectionChanged="MembersDataGrid_SelectionChanged" 
+                <DataGrid 
                           CanUserSortColumns="False"  ItemsSource="{Binding DetallesVentaList}" 
                           AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" 
                           CellStyle="{DynamicResource DataGridCellStyle1}"
@@ -36,12 +34,9 @@
                         <DataGridTextColumn  Header="Fecha" Binding="{Binding  producto.P_productonombre}"/>
                         <DataGridTextColumn  Header="Cantidad" Binding="{Binding cantidad}"/>
                         <DataGridTextColumn  Header="Precio Unitario" Binding="{Binding producto.P_precioventa}"/>
-                        <DataGridTextColumn  Header="Total" Binding="{Binding   P_precio_Total}"/>
                     </DataGrid.Columns>
-
                 </DataGrid>
             </Grid>
         </Border>
-        </Grid>
-    
+    </Grid>
 </Page>

@@ -13,7 +13,7 @@ namespace TractopartesDeskApp.PdfGenerator
         public string GenerarPDF(FacturaModel facturaModel)
         {
             QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
-            var outpath = $"C:/Users/brand/OneDrive/Documentos/facturasPDF/Factura_{facturaModel.idventa}.pdf";
+            var outpath = $"C:/Users/jesus/OneDrive/Documentos/pdfsFactura_{facturaModel.idventa}.pdf";
             Document.Create(document =>
             {
                 document.Page(page =>
@@ -23,7 +23,7 @@ namespace TractopartesDeskApp.PdfGenerator
                     page.MarginBottom(30);
                     page.Header().ShowOnce().Row(row =>
                     {
-                        row.ConstantItem(120).PaddingTop(-10).Height(80).Image("C:/Users/brand/Downloads/logo2.pn")
+                        row.ConstantItem(120).PaddingTop(-10).Height(80).Image("C:/Users/jesus/Downloads/Logo.png")
                         ;
                         row.RelativeItem().Column(column =>
                         {

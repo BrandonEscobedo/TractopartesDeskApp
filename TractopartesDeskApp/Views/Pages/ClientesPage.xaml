@@ -64,7 +64,7 @@ Click="btnAdd_Click">
         </Border>
         <Border Grid.Row="1" Margin="10 10 10 10" CornerRadius="100" >
 
-            <DataGrid  ItemsSource="{Binding userModels}" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
+            <DataGrid ItemsSource="{Binding userModels}"  AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
                        RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
                        ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
 

@@ -63,7 +63,7 @@
         <Border Grid.Column="0"  Margin="5 10 0 0">
             <Grid>
 
-                <DataGrid  ItemsSource="{Binding CategoriasList}" AutoGenerateColumns="true" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
+                <DataGrid ItemsSource="{Binding CategoriasList}"  AutoGenerateColumns="true" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"
                RowStyle="{DynamicResource DataGridRowStyle1}"  x:Name="MembersDataGrid" 
                ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle2}">
 

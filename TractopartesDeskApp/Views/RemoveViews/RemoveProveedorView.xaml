@@ -89,6 +89,7 @@ VerticalAlignment="Center"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
                                             <Button  Grid.Column="1" Content="Aceptar" 
+                                              Click="Button_Click_1"       
 HorizontalAlignment="Right"  Style="{StaticResource RemoveButton}"
 Command="{Binding RemoveProveedorCommand, UpdateSourceTrigger=PropertyChanged}"  
                                                      CommandParameter="{Binding P_idProveedor}">

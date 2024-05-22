@@ -82,14 +82,7 @@
                         </StackPanel>
                     </RadioButton>
 
-                    <RadioButton  x:Name="rbVentas" Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color4}" Checked="rbVentas_Checked">
-
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Box" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Ventas" Style="{StaticResource menuButtonText}" Foreground="White"/>
-                        </StackPanel>
-                    </RadioButton>
+               
 
                     <RadioButton Style="{StaticResource menuButton}"
                              Tag="{StaticResource color6}" Checked="RadioButton_Checked_2">

@@ -18,6 +18,6 @@ QuestPDF
 
  ![Diagrama ](https://github.com/BrandonEscobedo/TractopartesDeskApp/blob/master/Diagrama.png)
 
-#Reportes generados
+# Reportes generados
 
 ![Reporte](https://github.com/BrandonEscobedo/TractopartesDeskApp/blob/master/ReporteQuest.png)

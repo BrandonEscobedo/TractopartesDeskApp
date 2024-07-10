@@ -4,12 +4,13 @@ Sistema de administracion de negocio de giro automotriz.
 ![Static Badge](https://img.shields.io/badge/Version-v1-Green)
 
 # Tecnologias 
+.NET 8
 
-Dapper
+Dapper(ORM)
 
 WPF
 
-Postgresql
+PostgreSQL
 
 # Diagrama base de datos
 

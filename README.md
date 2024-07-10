@@ -1,7 +1,7 @@
 ## TractopartesDeskApp
 
 Sistema de administracion de negocio de giro automotriz.
-
+![Static Badge](https://img.shields.io/badge/Version-v1-Green)
 
 # Tecnologias 
 

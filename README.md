@@ -11,4 +11,6 @@ WPF
 
 Postgresql
 
+# Diagrama base de datos
 
+ ![Diagrama ](https://github.com/BrandonEscobedo/TractopartesDeskApp/blob/master/Diagrama.png)
